@@ -7,21 +7,24 @@ import { ArrowRight } from "lucide-react";
 const stories = [
   {
     id: "case-study-1",
-    title: "Digital Overhaul for a Government Agency",
-    outcome: "Increased efficiency by 40% through AI automation and cloud migration.",
-    imageHint: "business meeting",
+    title: "Landing a Dream Job at a Top Tech Company",
+    outcome:
+      "After our coaching, a client secured a Senior Engineer role at a FAANG company.",
+    imageHint: "tech office",
   },
   {
     id: "case-study-2",
-    title: "Market Entry Strategy for a Tech Startup",
-    outcome: "Secured $5M in funding with our data-driven feasibility study.",
-    imageHint: "data charts",
+    title: "Career Change into Product Management",
+    outcome:
+      "We helped a marketing professional transition into a Product Manager role, increasing their salary by 30%.",
+    imageHint: "collaboration meeting",
   },
   {
     id: "case-study-3",
-    title: "E-Learning Platform for a Top University",
-    outcome: "Boosted student engagement by 60% and expanded remote learning.",
-    imageHint: "digital transformation",
+    title: "Executive Leadership Promotion",
+    outcome:
+      "A long-term client was promoted to a VP position after our leadership coaching.",
+    imageHint: "professional headshot",
   },
 ];
 

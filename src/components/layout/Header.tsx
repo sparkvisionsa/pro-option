@@ -6,10 +6,9 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
+  SheetDescription,
 } from "@/components/ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
@@ -45,7 +44,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <Mountain className="h-6 w-6 text-primary" />
           <span className="font-headline text-xl font-bold text-primary">
-            Riyadh Vision
+            Pro Option
           </span>
         </Link>
         {isMobile ? (
@@ -60,13 +59,13 @@ export function Header() {
               <SheetHeader className="sr-only">
                 <SheetTitle>Mobile Menu</SheetTitle>
                 <SheetDescription>
-                  Navigation links for Riyadh Vision Consulting.
+                  Navigation links for Pro Option Career Consulting.
                 </SheetDescription>
               </SheetHeader>
               <nav className="grid gap-6 text-lg font-medium mt-12">
                 <Link href="/" className="flex items-center gap-2 text-lg font-semibold mb-4" prefetch={false}>
                   <Mountain className="h-6 w-6 text-primary" />
-                  <span className="sr-only">Riyadh Vision Consulting</span>
+                  <span className="sr-only">Pro Option Career Consulting</span>
                 </Link>
                 {navLinks.map((link) => (
                   <Link

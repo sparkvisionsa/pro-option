@@ -29,8 +29,17 @@ const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
-  service: z.enum(["it", "statistics", "education", "valuation", "other"]),
-  message: z.string().min(10, "Message must be at least 10 characters.").max(500),
+  service: z.enum([
+    "resume-review",
+    "interview-prep",
+    "career-coaching",
+    "linkedin-profile",
+    "other",
+  ]),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters.")
+    .max(500),
 });
 
 export function ContactForm() {
@@ -49,7 +58,8 @@ export function ContactForm() {
     console.log(values);
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We will get back to you shortly.",
+      description:
+        "Thank you for contacting us. We will get back to you shortly.",
     });
     form.reset();
   }
@@ -104,17 +114,28 @@ export function ContactForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Service of Interest</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="it">IT Consulting</SelectItem>
-                      <SelectItem value="statistics">Statistics Consulting</SelectItem>
-                      <SelectItem value="education">Education Consulting</SelectItem>
-                      <SelectItem value="valuation">Valuation & Financial Consulting</SelectItem>
+                      <SelectItem value="resume-review">
+                        Resume Review
+                      </SelectItem>
+                      <SelectItem value="interview-prep">
+                        Interview Preparation
+                      </SelectItem>
+                      <SelectItem value="career-coaching">
+                        Career Coaching
+                      </SelectItem>
+                      <SelectItem value="linkedin-profile">
+                        LinkedIn Profile Optimization
+                      </SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
@@ -130,7 +151,7 @@ export function ContactForm() {
                   <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Tell us about your project..."
+                      placeholder="Tell us about your career goals..."
                       className="min-h-[120px]"
                       {...field}
                     />
@@ -139,7 +160,11 @@ export function ContactForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
+            <Button
+              type="submit"
+              className="w-full"
+              disabled={form.formState.isSubmitting}
+            >
               {form.formState.isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>

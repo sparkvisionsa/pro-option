@@ -8,10 +8,10 @@ export function Footer() {
         <div className="flex flex-col items-start gap-4">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
             <Mountain className="h-6 w-6 text-accent" />
-            <span className="font-headline text-xl font-bold">Riyadh Vision</span>
+            <span className="font-headline text-xl font-bold">Pro Option</span>
           </Link>
           <p className="text-sm text-primary-foreground/80">
-            Empowering Decisions with Data, Technology, and Insight.
+            Unlock Your Career Potential.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 text-sm md:grid-cols-3 md:col-span-2">
@@ -37,7 +37,7 @@ export function Footer() {
         </div>
       </div>
       <div className="bg-primary/90 py-4 text-center text-sm text-primary-foreground/70">
-        <p>Copyright © 2025 Riyadh Vision Consulting. All Rights Reserved.</p>
+        <p>Copyright © 2025 Pro Option Career Consulting. All Rights Reserved.</p>
       </div>
     </footer>
   );

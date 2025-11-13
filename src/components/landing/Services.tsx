@@ -1,31 +1,41 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, BarChart3, GraduationCap, TrendingUp } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  FileText,
+  Briefcase,
+  Users,
+  Linkedin,
+} from "lucide-react";
 import { SectionWrapper } from "./SectionWrapper";
 
 const services = [
   {
-    icon: Bot,
-    title: "IT Consulting",
+    icon: FileText,
+    title: "Resume Review",
     description:
-      "Digital transformation, cloud migration, and AI automation to future-proof your business.",
+      "Get a professional resume that stands out and gets you noticed by recruiters.",
   },
   {
-    icon: BarChart3,
-    title: "Statistics Consulting",
+    icon: Briefcase,
+    title: "Interview Prep",
     description:
-      "Harness the power of your data with advanced analytics, surveys, and predictive modeling.",
+      "Ace your interviews with mock sessions and expert feedback.",
   },
   {
-    icon: GraduationCap,
-    title: "Education Consulting",
+    icon: Users,
+    title: "Career Coaching",
     description:
-      "Forge academic partnerships, develop training programs, and design cutting-edge e-learning.",
+      "Personalized guidance to help you navigate career transitions and growth.",
   },
   {
-    icon: TrendingUp,
-    title: "Valuation & Financial Consulting",
+    icon: Linkedin,
+    title: "LinkedIn Optimization",
     description:
-      "In-depth business valuation, feasibility studies, and market analysis for strategic decisions.",
+      "Enhance your professional brand and attract opportunities with a powerful LinkedIn profile.",
   },
 ];
 
@@ -34,7 +44,7 @@ export function Services() {
     <SectionWrapper
       id="services"
       title="Our Services"
-      subtitle="Tailored solutions to drive your success."
+      subtitle="Tailored solutions to drive your career success."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {services.map((service) => (

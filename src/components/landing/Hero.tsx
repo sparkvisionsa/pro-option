@@ -22,11 +22,11 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto space-y-6">
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Empowering Decisions with Data, Technology, and Insight.
+            Unlock Your Career Potential.
           </h1>
           <p className="text-lg text-gray-200 md:text-xl">
-            Leading Consulting Solutions in IT, Statistics, Education, and
-            Valuation — tailored for Saudi Arabia’s Vision 2030.
+            Expert career consulting to help you navigate your professional
+            journey and achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

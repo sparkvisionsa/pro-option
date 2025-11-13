@@ -6,18 +6,17 @@ export function Contact() {
     <SectionWrapper
       id="contact"
       title="Let's Collaborate"
-      subtitle="Reach out to us to start a conversation about your project."
+      subtitle="Reach out to us to start a conversation about your career."
       className="bg-card"
     >
       <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
         <ContactForm />
         <div className="flex flex-col justify-center">
           <h3 className="font-headline text-2xl font-bold text-primary">
-            Based in Riyadh, Serving the Kingdom
+            Start Your Journey With Us
           </h3>
           <p className="mt-4 text-muted-foreground">
-            While our roots are in Riyadh, our services span the entire Kingdom
-            of Saudi Arabia. We are ready to partner with you, wherever you are.
+            We are ready to partner with you to achieve your career goals.
           </p>
           <div className="mt-8 rounded-lg overflow-hidden border shadow-lg">
             <iframe

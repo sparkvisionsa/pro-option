@@ -6,9 +6,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { WhatsappChat } from "@/components/landing/WhatsappChat";
 
 export const metadata: Metadata = {
-  title: "Riyadh Vision Consulting",
+  title: "Pro Option Career Consulting",
   description:
-    "Empowering Decisions with Data, Technology, and Insight. Leading Consulting Solutions in IT, Statistics, Education, and Valuation — tailored for Saudi Arabia’s Vision 2030.",
+    "Your trusted partner in career development, providing expert guidance and consulting to help you achieve your professional goals.",
 };
 
 export default function RootLayout({
