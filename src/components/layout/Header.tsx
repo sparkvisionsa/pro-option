@@ -9,6 +9,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetDescription,
+  SheetTrigger,
 } from "@/components/ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
@@ -56,17 +57,17 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <SheetHeader className="sr-only">
-                <SheetTitle>Mobile Menu</SheetTitle>
-                <SheetDescription>
+              <SheetHeader className="text-left">
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetDescription className="sr-only">
                   Navigation links for Pro Option Career Consulting.
                 </SheetDescription>
-              </SheetHeader>
-              <nav className="grid gap-6 text-lg font-medium mt-12">
-                <Link href="/" className="flex items-center gap-2 text-lg font-semibold mb-4" prefetch={false}>
+                <Link href="/" className="flex items-center gap-2" prefetch={false}>
                   <Mountain className="h-6 w-6 text-primary" />
-                  <span className="sr-only">Pro Option Career Consulting</span>
+                  <span className="font-headline text-xl font-bold text-primary">Pro Option</span>
                 </Link>
+              </SheetHeader>
+              <nav className="grid gap-6 text-lg font-medium mt-8">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
