@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import { handleEnhanceContent } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -41,7 +41,7 @@ function SubmitButton() {
 }
 
 export function EnhanceContentForm() {
-  const [state, formAction] = useActionState(handleEnhanceContent, initialState);
+  const [state, formAction] = useFormState(handleEnhanceContent, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
