@@ -1,6 +1,5 @@
 import { ContactForm } from "./ContactForm";
 import { SectionWrapper } from "./SectionWrapper";
-import { MapPin } from "lucide-react";
 
 export function Contact() {
   return (
@@ -21,12 +20,16 @@ export function Contact() {
             of Saudi Arabia. We are ready to partner with you, wherever you are.
           </p>
           <div className="mt-8 rounded-lg overflow-hidden border shadow-lg">
-            <div className="w-full h-80 bg-muted flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                    <MapPin className="h-12 w-12 mx-auto" />
-                    <p className="mt-2 font-semibold">Riyadh, Saudi Arabia</p>
-                </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.2415770981506!2d46.50943418628744!3d24.6153573690804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f21fc0c1e05dd%3A0x2a74126884075bff!2zUkRMRjMyNzTYjCAzMjc0INi02KfYsdi5INix2YLZhSAyNTTYjCA3MTg32Iwg2K3ZiiDYuNmH2LHYqSDZhNio2YYsIFJpeWFkaCAxMzc4Nw!5e0!3m2!1sen!2ssa!4v1763030496029!5m2!1sen!2ssa"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-96"
+            ></iframe>
           </div>
         </div>
       </div>
