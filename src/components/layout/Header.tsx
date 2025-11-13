@@ -13,7 +13,6 @@ const navLinks = [
   { href: "/#services", label: "Services" },
   { href: "/#success", label: "Success Stories" },
   { href: "/#contact", label: "Contact" },
-  { href: "/enhance", label: "AI Content Enhancer" },
 ];
 
 export function Header() {
