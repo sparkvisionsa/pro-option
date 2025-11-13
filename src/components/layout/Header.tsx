@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { Menu, Mountain } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import React from "react";
@@ -50,6 +57,12 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader className="sr-only">
+                <SheetTitle>Mobile Menu</SheetTitle>
+                <SheetDescription>
+                  Navigation links for Riyadh Vision Consulting.
+                </SheetDescription>
+              </SheetHeader>
               <nav className="grid gap-6 text-lg font-medium mt-12">
                 <Link href="/" className="flex items-center gap-2 text-lg font-semibold mb-4" prefetch={false}>
                   <Mountain className="h-6 w-6 text-primary" />
