@@ -5,37 +5,44 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  FileText,
-  Briefcase,
-  Users,
-  Linkedin,
+  Server,
+  BarChart,
+  GraduationCap,
+  Factory,
+  ClipboardList,
 } from "lucide-react";
 import { SectionWrapper } from "./SectionWrapper";
 
 const services = [
   {
-    icon: FileText,
-    title: "Resume Review",
+    icon: Server,
+    title: "IT",
     description:
-      "Get a professional resume that stands out and gets you noticed by recruiters.",
+      "Expert IT consulting to streamline your technology infrastructure and operations.",
   },
   {
-    icon: Briefcase,
-    title: "Interview Prep",
+    icon: BarChart,
+    title: "Statistics",
     description:
-      "Ace your interviews with mock sessions and expert feedback.",
+      "Data analysis and statistical modeling to drive informed business decisions.",
   },
   {
-    icon: Users,
-    title: "Career Coaching",
+    icon: GraduationCap,
+    title: "Education",
     description:
-      "Personalized guidance to help you navigate career transitions and growth.",
+      "Consulting services to enhance educational programs and institutional effectiveness.",
   },
   {
-    icon: Linkedin,
-    title: "LinkedIn Optimization",
+    icon: Factory,
+    title: "Plant and Equipment Valuation",
     description:
-      "Enhance your professional brand and attract opportunities with a powerful LinkedIn profile.",
+      "Accurate and reliable valuation of your industrial assets and machinery.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Administration",
+    description:
+      "Optimizing administrative processes for improved efficiency and productivity.",
   },
 ];
 
@@ -46,7 +53,7 @@ export function Services() {
       title="Our Services"
       subtitle="Tailored solutions to drive your career success."
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         {services.map((service) => (
           <Card
             key={service.title}
