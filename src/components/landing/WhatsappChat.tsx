@@ -23,7 +23,7 @@ export function WhatsappChat() {
         className="h-14 w-14 rounded-full bg-[#25D366] text-white hover:bg-[#128C7E] shadow-lg"
         aria-label="Chat on WhatsApp"
       >
-        <Link href="https://wa.me/966000000000" target="_blank" rel="noopener noreferrer">
+        <Link href="https://wa.me/00966555931192" target="_blank" rel="noopener noreferrer">
           <WhatsAppIcon />
         </Link>
       </Button>

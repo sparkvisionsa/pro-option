@@ -14,6 +14,12 @@ import {
 import { SectionWrapper } from "./SectionWrapper";
 
 const services = [
+   {
+    icon: Factory,
+    title: "Plant and Equipment Valuation",
+    description:
+      "Accurate and reliable valuation of your industrial assets and machinery.",
+  },
   {
     icon: Server,
     title: "IT",
@@ -32,12 +38,7 @@ const services = [
     description:
       "Consulting services to enhance educational programs and institutional effectiveness.",
   },
-  {
-    icon: Factory,
-    title: "Plant and Equipment Valuation",
-    description:
-      "Accurate and reliable valuation of your industrial assets and machinery.",
-  },
+ 
   {
     icon: ClipboardList,
     title: "Administration",

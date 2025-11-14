@@ -1,9 +1,14 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 import { Linkedin, Twitter } from "lucide-react";
-import logo from "../../app/logo.jpeg"
+import { getTranslation } from "@/lib/i18n";
+import { useLanguage } from "@/context/LanguageContext";
+import logo from '../../app/logo.jpeg'
 
 export function Footer() {
+  const { locale } = useLanguage();
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
@@ -19,24 +24,24 @@ export function Footer() {
             <span className="font-headline text-xl font-bold">Pro Option Career Consulting</span>
           </Link>
           <p className="text-sm text-primary-foreground/80">
-            Unlock Your Career Potential.
+            {getTranslation(locale, 'footer.tagline')}
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 text-sm md:grid-cols-3 md:col-span-2">
           <div className="grid gap-2">
-            <h4 className="font-semibold">Quick Links</h4>
-            <Link href="/#about" className="hover:text-accent" prefetch={false}>About Us</Link>
-            <Link href="/#services" className="hover:text-accent" prefetch={false}>Services</Link>
-            <Link href="/#success" className="hover:text-accent" prefetch={false}>Success Stories</Link>
-            <Link href="/#contact" className="hover:text-accent" prefetch={false}>Contact</Link>
+            <h4 className="font-semibold">{getTranslation(locale, 'footer.quickLinks')}</h4>
+            <Link href="/#about" className="hover:text-accent" prefetch={false}>{getTranslation(locale, 'nav.about')}</Link>
+            <Link href="/#services" className="hover:text-accent" prefetch={false}>{getTranslation(locale, 'nav.services')}</Link>
+            <Link href="/#success" className="hover:text-accent" prefetch={false}>{getTranslation(locale, 'nav.success')}</Link>
+            <Link href="/#contact" className="hover:text-accent" prefetch={false}>{getTranslation(locale, 'nav.contact')}</Link>
           </div>
           <div className="grid gap-2">
-            <h4 className="font-semibold">Legal</h4>
-            <Link href="#" className="hover:text-accent" prefetch={false}>Privacy Policy</Link>
-            <Link href="#" className="hover:text-accent" prefetch={false}>Terms of Service</Link>
+            <h4 className="font-semibold">{getTranslation(locale, 'footer.legal')}</h4>
+            <Link href="#" className="hover:text-accent" prefetch={false}>{getTranslation(locale, 'footer.privacy')}</Link>
+            <Link href="#" className="hover:text-accent" prefetch={false}>{getTranslation(locale, 'footer.terms')}</Link>
           </div>
           <div className="grid gap-2">
-            <h4 className="font-semibold">Connect</h4>
+            <h4 className="font-semibold">{getTranslation(locale, 'footer.connect')}</h4>
             <div className="flex gap-4">
               <Link href="#" aria-label="LinkedIn" className="hover:text-accent" prefetch={false}><Linkedin className="h-5 w-5" /></Link>
               <Link href="#" aria-label="Twitter" className="hover:text-accent" prefetch={false}><Twitter className="h-5 w-5" /></Link>
@@ -45,7 +50,7 @@ export function Footer() {
         </div>
       </div>
       <div className="bg-primary/90 py-4 text-center text-sm text-primary-foreground/70">
-        <p>Copyright © 2025 Pro Option Career Consulting. All Rights Reserved.</p>
+        <p>{getTranslation(locale, 'footer.copyright')}</p>
       </div>
     </footer>
   );
