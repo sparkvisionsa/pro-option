@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Mountain } from "lucide-react";
+import Image from "next/image";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -14,6 +15,7 @@ import {
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import React from "react";
+import logo from "../../app/logo.jpeg"
 
 const navLinks = [
   { href: "/#about", label: "About Us" },
@@ -43,9 +45,15 @@ export function Header() {
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Mountain className="h-6 w-6 text-primary" />
+          <Image 
+            src={logo} 
+            alt="Pro Option Logo" 
+            width={32} 
+            height={32}
+            className="rounded"
+          />
           <span className="font-headline text-xl font-bold text-primary">
-            Pro Option
+            Pro Option Career Consulting
           </span>
         </Link>
         {isMobile ? (
@@ -63,8 +71,14 @@ export function Header() {
                   Navigation links for Pro Option Career Consulting.
                 </SheetDescription>
                 <Link href="/" className="flex items-center gap-2" prefetch={false}>
-                  <Mountain className="h-6 w-6 text-primary" />
-                  <span className="font-headline text-xl font-bold text-primary">Pro Option</span>
+                  <Image 
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=40&h=40&fit=crop" 
+                    alt="Pro Option Logo" 
+                    width={32} 
+                    height={32}
+                    className="rounded"
+                  />
+                  <span className="font-headline text-xl font-bold text-primary">Pro Option Career Consulting</span>
                 </Link>
               </SheetHeader>
               <nav className="grid gap-6 text-lg font-medium mt-8">

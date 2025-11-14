@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Mountain, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
+import { Linkedin, Twitter } from "lucide-react";
+import logo from "../../app/logo.jpeg"
 
 export function Footer() {
   return (
@@ -7,8 +9,14 @@ export function Footer() {
       <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
         <div className="flex flex-col items-start gap-4">
           <Link href="/" className="flex items-center gap-2" prefetch={false}>
-            <Mountain className="h-6 w-6 text-accent" />
-            <span className="font-headline text-xl font-bold">Pro Option</span>
+            <Image 
+              src={logo}
+              alt="Pro Option Logo" 
+              width={32} 
+              height={32}
+              className="rounded"
+            />
+            <span className="font-headline text-xl font-bold">Pro Option Career Consulting</span>
           </Link>
           <p className="text-sm text-primary-foreground/80">
             Unlock Your Career Potential.
