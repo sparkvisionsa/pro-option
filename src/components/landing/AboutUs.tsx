@@ -1,7 +1,12 @@
+'use client';
+
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/lib/i18n";
 
 export function AboutUs() {
+  const { locale } = useLanguage();
   const aboutImage = PlaceHolderImages.find((p) => p.id === "about-us-visual");
 
   return (
@@ -9,25 +14,19 @@ export function AboutUs() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            About Pro Option Career Consulting
+            {getTranslation(locale, 'aboutPro.headingMain')}
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <h3 className="font-headline text-2xl font-bold text-primary/90">
-              Your Partner in Progress
+              {getTranslation(locale, 'aboutPro.headingSecond')}
             </h3>
             <p className="text-muted-foreground">
-              Our mission is to empower individuals to achieve their career
-              aspirations by providing unparalleled consulting services. With a
-              commitment to excellence, we align our strategies with your
-              personal and professional goals. We are more than consultants; we
-              are your dedicated partners in navigating your future career path.
+              {getTranslation(locale, 'aboutPro.description')}
             </p>
             <p className="text-muted-foreground">
-              We blend industry best practices with a deep understanding of the
-              job market, ensuring our guidance is not only innovative but also
-              practical and impactful.
+              {getTranslation(locale, 'aboutPro.description2')}
             </p>
           </div>
           <div className="w-full">

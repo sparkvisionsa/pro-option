@@ -1,31 +1,36 @@
+'use client';
+
 import { ContactForm } from "./ContactForm";
 import { SectionWrapper } from "./SectionWrapper";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/lib/i18n";
 
 export function Contact() {
+  const { locale } = useLanguage();
   return (
     <SectionWrapper
       id="contact"
-      title="Let's Collaborate"
-      subtitle="Reach out to us to start a conversation about your career."
+      title={getTranslation(locale, 'contact.collaborate')}
+      subtitle={getTranslation(locale, 'contact.collaborateSubtitle')}
       className="bg-card"
     >
       <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
         <ContactForm />
         <div className="flex flex-col justify-center">
           <h3 className="font-headline text-2xl font-bold text-primary">
-            Start Your Journey With Us
+            {getTranslation(locale, 'contact.journey')}
           </h3>
           <p className="mt-4 text-muted-foreground">
-            We are ready to partner with you to achieve your career goals.
+            {getTranslation(locale, 'contact.ready')}
           </p>
 
           <div className="mt-8 space-y-6">
             <div className="flex items-start gap-4">
               <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-foreground">Email</h4>
+                <h4 className="font-semibold text-foreground">{getTranslation(locale, 'contact.emailLabel')}</h4>
                 <Link href="mailto:Info@pro-option.sa" className="text-primary hover:underline">
                   Info@pro-option.sa
                 </Link>
@@ -35,7 +40,7 @@ export function Contact() {
             <div className="flex items-start gap-4">
               <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-foreground">Phone</h4>
+                <h4 className="font-semibold text-foreground">{getTranslation(locale, 'contact.phoneLabel')}</h4>
                 <Link href="tel:+966555931192" className="text-primary hover:underline">
                   +966 55 593 1192
                 </Link>
@@ -45,9 +50,9 @@ export function Contact() {
             <div className="flex items-start gap-4">
               <MessageCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold text-foreground">WhatsApp</h4>
+                <h4 className="font-semibold text-foreground">{getTranslation(locale, 'contact.whatsappLabel')}</h4>
                 <Link href="https://wa.me/966555931192" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                  Chat with us on WhatsApp
+                  {getTranslation(locale, 'contact.whatsappText')}
                 </Link>
               </div>
             </div>

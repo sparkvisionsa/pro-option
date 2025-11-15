@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Facebook, MessageCircle, X } from "lucide-react";
 import { getTranslation } from "@/lib/i18n";
 import { useLanguage } from "@/context/LanguageContext";
 import logo from '../../app/logo.jpeg'
@@ -42,9 +42,13 @@ export function Footer() {
           </div>
           <div className="grid gap-2">
             <h4 className="font-semibold">{getTranslation(locale, 'footer.connect')}</h4>
-            <div className="flex gap-4">
-              <Link href="#" aria-label="LinkedIn" className="hover:text-accent" prefetch={false}><Linkedin className="h-5 w-5" /></Link>
-              <Link href="#" aria-label="Twitter" className="hover:text-accent" prefetch={false}><Twitter className="h-5 w-5" /></Link>
+            <div className="flex gap-4 flex-wrap">
+              <Link href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-accent" prefetch={false}><X className="h-5 w-5" /></Link>
+              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent" prefetch={false}><Instagram className="h-5 w-5" /></Link>
+              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent" prefetch={false}><Facebook className="h-5 w-5" /></Link>
+              <Link href="https://snapchat.com" target="_blank" rel="noopener noreferrer" aria-label="Snapchat" className="hover:text-accent" prefetch={false}><MessageCircle className="h-5 w-5" /></Link>
+              <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent" prefetch={false}><Linkedin className="h-5 w-5" /></Link>
+              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-accent" prefetch={false}><Twitter className="h-5 w-5" /></Link>
             </div>
           </div>
         </div>

@@ -24,6 +24,8 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/lib/i18n";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -43,6 +45,7 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
+  const { locale } = useLanguage();
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -57,9 +60,9 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
-      title: "Message Sent!",
+      title: getTranslation(locale, 'contactForm.messageSent'),
       description:
-        "Thank you for contacting us. We will get back to you shortly.",
+        getTranslation(locale, 'contactForm.messageDescription'),
     });
     form.reset();
   }
@@ -74,9 +77,9 @@ export function ContactForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>{getTranslation(locale, 'contactForm.name')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your full name" {...field} />
+                    <Input placeholder={getTranslation(locale, 'contactForm.namePlaceholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -87,9 +90,9 @@ export function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{getTranslation(locale, 'contactForm.email')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="your.email@example.com" {...field} />
+                    <Input placeholder={getTranslation(locale, 'contactForm.emailPlaceholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -100,9 +103,9 @@ export function ContactForm() {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Phone (Optional)</FormLabel>
+                  <FormLabel>{getTranslation(locale, 'contactForm.phone')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your phone number" {...field} />
+                    <Input placeholder={getTranslation(locale, 'contactForm.phonePlaceholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -113,30 +116,30 @@ export function ContactForm() {
               name="service"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Service of Interest</FormLabel>
+                  <FormLabel>{getTranslation(locale, 'contactForm.service')}</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select a service" />
+                        <SelectValue placeholder={getTranslation(locale, 'contactForm.serviceSelect')} />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
                       <SelectItem value="resume-review">
-                        Resume Review
+                        {getTranslation(locale, 'contactForm.resumeReview')}
                       </SelectItem>
                       <SelectItem value="interview-prep">
-                        Interview Preparation
+                        {getTranslation(locale, 'contactForm.interviewPrep')}
                       </SelectItem>
                       <SelectItem value="career-coaching">
-                        Career Coaching
+                        {getTranslation(locale, 'contactForm.careerCoaching')}
                       </SelectItem>
                       <SelectItem value="linkedin-profile">
-                        LinkedIn Profile Optimization
+                        {getTranslation(locale, 'contactForm.linkedinProfile')}
                       </SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="other">{getTranslation(locale, 'contactForm.other')}</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -148,10 +151,10 @@ export function ContactForm() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Message</FormLabel>
+                  <FormLabel>{getTranslation(locale, 'contactForm.message')}</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Tell us about your career goals..."
+                      placeholder={getTranslation(locale, 'contactForm.messagePlaceholder')}
                       className="min-h-[120px]"
                       {...field}
                     />
@@ -165,7 +168,9 @@ export function ContactForm() {
               className="w-full"
               disabled={form.formState.isSubmitting}
             >
-              {form.formState.isSubmitting ? "Sending..." : "Send Message"}
+              {form.formState.isSubmitting 
+                ? getTranslation(locale, 'contactForm.sending')
+                : getTranslation(locale, 'contactForm.sendMessage')}
             </Button>
           </form>
         </Form>

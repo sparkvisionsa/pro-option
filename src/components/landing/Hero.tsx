@@ -1,9 +1,14 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/lib/i18n";
 
 export function Hero() {
+  const { locale } = useLanguage();
   const heroImage = PlaceHolderImages.find((p) => p.id === "hero-skyline");
 
   return (
@@ -22,11 +27,10 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto space-y-6">
           <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            Unlock Your Career Potential.
+            {getTranslation(locale, 'hero.head')}
           </h1>
           <p className="text-lg text-gray-200 md:text-xl">
-            Expert career consulting to help you navigate your professional
-            journey and achieve your goals.
+            {getTranslation(locale, 'hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -34,7 +38,7 @@ export function Hero() {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
             >
-              <Link href="/#contact">Book a Consultation</Link>
+              <Link href="/#contact">{getTranslation(locale, 'hero.consultation')}</Link>
             </Button>
             <Button
               asChild
@@ -42,7 +46,7 @@ export function Hero() {
               variant="outline"
               className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
             >
-              <Link href="/#services">Learn More</Link>
+              <Link href="/#services">{getTranslation(locale, 'hero.learnMore')}</Link>
             </Button>
           </div>
         </div>
