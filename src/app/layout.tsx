@@ -25,6 +25,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
+  icons: './logo.jpeg',
   title: "Pro Option Career Consulting",
   description:
     "Your trusted partner in career development, providing expert guidance and consulting to help you achieve your professional goals.",
