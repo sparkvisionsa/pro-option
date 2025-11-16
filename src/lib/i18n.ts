@@ -90,6 +90,10 @@ export const translations: Record<Locale, Translation> = {
           sending: 'Sending...',
           messageSent: 'Message Sent!',
           messageDescription: 'Thank you for contacting us. We will get back to you shortly.',
+          warningNodemailer: 'Email system not configured — message logged on server. Install nodemailer or set SMTP credentials to send emails.',
+          warningSmtp: 'SMTP not configured. Please set your SMTP credentials in .env.local to enable sending email.',
+          sendError: 'Error sending message',
+          sendErrorDescription: 'There was a problem sending your message. Please try again later.',
         },
         contact: {
           collaborate: 'Let\'s Collaborate',
@@ -195,6 +199,10 @@ export const translations: Record<Locale, Translation> = {
       sending: 'جاري الإرسال...',
       messageSent: 'تم إرسال الرسالة!',
       messageDescription: 'شكراً لتواصلك معنا. سنعود إليك قريباً.',
+          sendError: 'خطأ أثناء إرسال الرسالة',
+          sendErrorDescription: 'حدثت مشكلة في إرسال رسالتك. يرجى المحاولة مرة أخرى لاحقاً.',
+          warningNodemailer: 'نظام البريد الإلكتروني غير مهيأ — تم تسجيل الرسالة في سجل الخادم. قم بتثبيت nodemailer أو إعداد بيانات SMTP لإرسال رسائل البريد.' ,
+          warningSmtp: 'لم يتم تكوين SMTP. الرجاء ضبط بيانات اعتماد SMTP في .env.local لتمكين إرسال البريد.' ,
     },
 
     contact: {

@@ -9,7 +9,7 @@ import { Contact } from "@/components/landing/Contact";
 const MAINTENANCE = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true';
 
 export default function Home() {
-  if (MAINTENANCE===false) {
+  if (MAINTENANCE) {
     return <MaintenancePage />;
   }
 

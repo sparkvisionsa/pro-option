@@ -53,18 +53,68 @@ export function ContactForm() {
       name: "",
       email: "",
       phone: "",
+      service: "other",
       message: "",
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: getTranslation(locale, 'contactForm.messageSent'),
-      description:
-        getTranslation(locale, 'contactForm.messageDescription'),
-    });
-    form.reset();
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (res.ok) {
+        // helpful debugging in the browser console
+        console.log("Contact form response status:", res.status);
+
+        const data = await res.json().catch(() => ({}));
+        console.log("Contact form response body:", data);
+
+        // If the API returned a warning we surface that separately so dev knows
+        if (data?.warning) {
+          if (data.warning === "nodemailer-not-installed") {
+            toast({
+              title: getTranslation(locale, "contactForm.messageSent"),
+              description: getTranslation(locale, "contactForm.warningNodemailer"),
+            });
+          } else if (data?.warning === "smtp-not-configured") {
+            toast({
+              title: getTranslation(locale, "contactForm.messageSent"),
+              description: getTranslation(locale, "contactForm.warningSmtp"),
+            });
+          } else {
+            toast({
+              title: getTranslation(locale, "contactForm.messageSent"),
+              description: getTranslation(locale, "contactForm.messageDescription"),
+            });
+          }
+        } else {
+          toast({
+            title: getTranslation(locale, "contactForm.messageSent"),
+            description: getTranslation(locale, "contactForm.messageDescription"),
+          });
+        }
+
+        form.reset();
+      } else {
+        const err = await res.json().catch(() => ({}));
+        toast({
+          title: getTranslation(locale, "contactForm.sendError") || "Error sending message",
+          description: err?.error || getTranslation(locale, "contactForm.sendErrorDescription") || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error: any) {
+      console.error("Contact submit error:", error);
+      toast({
+        title: getTranslation(locale, "contactForm.sendError") || "Error sending message",
+        description: error?.message || getTranslation(locale, "contactForm.sendErrorDescription") || "Please try again later.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
