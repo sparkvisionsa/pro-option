@@ -6,7 +6,7 @@ import { WhyChooseUs } from "@/components/landing/WhyChooseUs";
 import { SuccessStories } from "@/components/landing/SuccessStories";
 import { Contact } from "@/components/landing/Contact";
 
-const MAINTENANCE = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true';
+const MAINTENANCE = process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'false';
 
 export default function Home() {
   if (MAINTENANCE) {
