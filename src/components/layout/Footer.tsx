@@ -45,11 +45,11 @@ export function Footer() {
             <div className="flex gap-4 flex-wrap">
               {/* <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent" prefetch={false}><Instagram className="h-5 w-5" /></Link>
               <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent" prefetch={false}><Facebook className="h-5 w-5" /></Link> */}
-              <Link href="https://www.snapchat.com/@sparkvisionsa" target="_blank" rel="noopener noreferrer" aria-label="Snapchat" className="hover:text-accent" prefetch={false}><MessageCircle className="h-5 w-5" /></Link>
-              <Link href="https://linkedin.com/in/spark-vision-59b1b4387/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent" prefetch={false}><Linkedin className="h-5 w-5" /></Link>
-              <Link href="https://x.com/sparkvisiosa" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-accent" prefetch={false}><Twitter className="h-5 w-5" /></Link>
-              <Link href="https://www.pinterest.com/sparkvisionsa/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:text-accent" prefetch={false}><Pin className="h-5 w-5" /></Link>
-              <Link href="https://www.tiktok.com/@sparkvisionsa" target="_blank" rel="noopener noreferrer" aria-label="Tiktok" className="hover:text-accent" prefetch={false}><TicketCheckIcon className="h-5 w-5" /></Link>
+              <Link href="https://www.snapchat.com/@prooption1" target="_blank" rel="noopener noreferrer" aria-label="Snapchat" className="hover:text-accent" prefetch={false}><MessageCircle className="h-5 w-5" /></Link>
+              <Link href="https://www.linkedin.com/in/pro-option-7a8344393/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent" prefetch={false}><Linkedin className="h-5 w-5" /></Link>
+              <Link href="https://x.com/prooption11" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-accent" prefetch={false}><Twitter className="h-5 w-5" /></Link>
+              {/* <Link href="https://www.pinterest.com/sparkvisionsa/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" className="hover:text-accent" prefetch={false}><Pin className="h-5 w-5" /></Link> */}
+              <Link href="https://www.tiktok.com/@prooption" target="_blank" rel="noopener noreferrer" aria-label="Tiktok" className="hover:text-accent" prefetch={false}><TicketCheckIcon className="h-5 w-5" /></Link>
             </div>
           </div>
         </div>
