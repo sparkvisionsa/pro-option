@@ -1,6 +1,8 @@
+'use client';
 
+import { useLanguage } from "@/context/LanguageContext";
+import { getTranslation } from "@/lib/i18n";
 import Image from "next/image";
-import Link from "next/link";
 import logo from "../logo.jpeg";
 
 // Custom animation keyframes (for demo, ideally move to global CSS)
@@ -16,6 +18,8 @@ const animationStyles = `
 `;
 
 export default function MaintenancePage() {
+  const { locale } = useLanguage();
+
   return (
     <main className="min-h-screen flex items-center justify-center bg-background text-foreground">
       {/* Inline style for custom keyframes (move to global CSS for production) */}
@@ -35,10 +39,10 @@ export default function MaintenancePage() {
             animation: 'fade-slide-up 1s 0.5s cubic-bezier(0.4,0,0.2,1) both',
           }}
         >
-          We Are Under Maintenance
+          {getTranslation(locale, 'maintenance.title')}
         </h1>
         <p className="text-muted-foreground mb-6">
-          We're performing scheduled updates to make the site better. Please check back soon.
+          {getTranslation(locale, 'maintenance.description')}
         </p>
       </div>
     </main>

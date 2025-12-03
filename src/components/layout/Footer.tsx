@@ -43,8 +43,8 @@ export function Footer() {
           <div className="grid gap-2">
             <h4 className="font-semibold">{getTranslation(locale, 'footer.connect')}</h4>
             <div className="flex gap-4 flex-wrap">
-              <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent" prefetch={false}><Instagram className="h-5 w-5" /></Link>
-              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent" prefetch={false}><Facebook className="h-5 w-5" /></Link>
+              {/* <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-accent" prefetch={false}><Instagram className="h-5 w-5" /></Link>
+              <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-accent" prefetch={false}><Facebook className="h-5 w-5" /></Link> */}
               <Link href="https://www.snapchat.com/@sparkvisionsa" target="_blank" rel="noopener noreferrer" aria-label="Snapchat" className="hover:text-accent" prefetch={false}><MessageCircle className="h-5 w-5" /></Link>
               <Link href="https://linkedin.com/in/spark-vision-59b1b4387/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-accent" prefetch={false}><Linkedin className="h-5 w-5" /></Link>
               <Link href="https://x.com/sparkvisiosa" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-accent" prefetch={false}><Twitter className="h-5 w-5" /></Link>

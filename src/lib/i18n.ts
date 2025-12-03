@@ -26,6 +26,10 @@ export const translations: Record<Locale, Translation> = {
       consultation: 'Book a Consultation',
       learnMore:'Learn More',
     },
+    maintenance: {
+      title: 'We Are Under Maintenance',
+      description: "We're performing scheduled updates to make the site better. Please check back soon.",
+    },
     aboutPro: {
       headingMain: 'About Pro Option Career Consulting',
       headingSecond: 'Your Partner in Career Success',
@@ -128,6 +132,10 @@ export const translations: Record<Locale, Translation> = {
     description: 'استشارات مهنية متخصصة لمساعدتك على التنقل في رحلتك المهنية وتحقيق أهدافك.',
     consultation: 'احجز استشارة',
     learnMore: 'اعرف المزيد',
+    },
+    maintenance: {
+      title: 'الموقع قيد الصيانة',
+      description: 'نقوم بإجراء تحديثات مجدولة لتحسين الموقع. يرجى التحقق لاحقاً.',
     },
     aboutPro: {
     headingMain: 'عن خيار برو للاستشارات المهنية',
