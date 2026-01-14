@@ -32,10 +32,10 @@ const formSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
   service: z.enum([
-    "resume-review",
-    "interview-prep",
-    "career-coaching",
-    "linkedin-profile",
+    "valuation-machinery",
+    "condition-assessment",
+    "compliance-report",
+    "transaction-support",
     "other",
   ]),
   message: z
@@ -53,7 +53,7 @@ export function ContactForm() {
       name: "",
       email: "",
       phone: "",
-      service: "other",
+      service: "valuation-machinery",
       message: "",
     },
   });
@@ -177,17 +177,17 @@ export function ContactForm() {
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="resume-review">
-                        {getTranslation(locale, 'contactForm.resumeReview')}
+                      <SelectItem value="valuation-machinery">
+                        {getTranslation(locale, 'contactForm.valuationMachinery')}
                       </SelectItem>
-                      <SelectItem value="interview-prep">
-                        {getTranslation(locale, 'contactForm.interviewPrep')}
+                      <SelectItem value="condition-assessment">
+                        {getTranslation(locale, 'contactForm.conditionAssessment')}
                       </SelectItem>
-                      <SelectItem value="career-coaching">
-                        {getTranslation(locale, 'contactForm.careerCoaching')}
+                      <SelectItem value="compliance-report">
+                        {getTranslation(locale, 'contactForm.complianceReport')}
                       </SelectItem>
-                      <SelectItem value="linkedin-profile">
-                        {getTranslation(locale, 'contactForm.linkedinProfile')}
+                      <SelectItem value="transaction-support">
+                        {getTranslation(locale, 'contactForm.transactionSupport')}
                       </SelectItem>
                       <SelectItem value="other">{getTranslation(locale, 'contactForm.other')}</SelectItem>
                     </SelectContent>

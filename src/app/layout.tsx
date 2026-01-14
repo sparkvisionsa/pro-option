@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { WhatsappChat } from "@/components/landing/WhatsappChat";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { cn } from "@/lib/utils";
+import MaintenanceBanner from "@/components/landing/MaintenanceBanner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,9 +27,9 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   icons: './logo.jpeg',
-  title: "Pro Option Career Consulting",
+  title: "Pro Option Valuations | Machinery & Equipment Experts",
   description:
-    "Your trusted partner in career development, providing expert guidance and consulting to help you achieve your professional goals.",
+    "Certified valuation specialists delivering defendable machinery and equipment appraisals for audits, lending, insurance, and transactions.",
 };
 
 export default function RootLayout({
@@ -48,6 +49,7 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <div className="flex min-h-screen flex-col">
+            <MaintenanceBanner />
             <Header />
             <main className="flex-grow">{children}</main>
             <Footer />

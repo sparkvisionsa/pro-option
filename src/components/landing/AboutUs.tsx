@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import { Target, Sparkles, MapPin } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
@@ -8,6 +9,23 @@ import { getTranslation } from "@/lib/i18n";
 export function AboutUs() {
   const { locale } = useLanguage();
   const aboutImage = PlaceHolderImages.find((p) => p.id === "about-us-visual");
+  const highlights = [
+    {
+      icon: Target,
+      title: getTranslation(locale, 'aboutPro.visionTitle'),
+      copy: getTranslation(locale, 'aboutPro.visionCopy'),
+    },
+    {
+      icon: Sparkles,
+      title: getTranslation(locale, 'aboutPro.missionTitle'),
+      copy: getTranslation(locale, 'aboutPro.missionCopy'),
+    },
+    {
+      icon: MapPin,
+      title: getTranslation(locale, 'aboutPro.scaleTitle'),
+      copy: getTranslation(locale, 'aboutPro.scaleCopy'),
+    },
+  ];
 
   return (
     <section id="about" className="py-16 sm:py-24 bg-card">
@@ -18,18 +36,34 @@ export function AboutUs() {
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
+          <div className="space-y-5 animate-in fade-in slide-in-from-left duration-500">
             <h3 className="font-headline text-2xl font-bold text-primary/90">
               {getTranslation(locale, 'aboutPro.headingSecond')}
             </h3>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-lg leading-relaxed">
               {getTranslation(locale, 'aboutPro.description')}
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground text-lg leading-relaxed">
               {getTranslation(locale, 'aboutPro.description2')}
             </p>
+            <div className="grid sm:grid-cols-2 gap-4 pt-2">
+              {highlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="group rounded-xl border border-primary/10 bg-white/5 p-4 shadow-md backdrop-blur transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <item.icon className="h-5 w-5" />
+                    </span>
+                    <h4 className="font-semibold text-foreground">{item.title}</h4>
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.copy}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="w-full">
+          <div className="w-full animate-in fade-in slide-in-from-right duration-500">
             {aboutImage && (
               <Image
                 src={aboutImage.imageUrl}

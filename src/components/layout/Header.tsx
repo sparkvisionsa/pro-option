@@ -23,6 +23,9 @@ import logo from '../../app/logo.jpeg'
 const navLinks = [
   { href: "/#about", labelKey: "nav.about" },
   { href: "/#services", labelKey: "nav.services" },
+  { href: "/#process", labelKey: "nav.process" },
+  { href: "/#purposes", labelKey: "nav.purposes" },
+  { href: "/#values", labelKey: "nav.values" },
   { href: "/#success", labelKey: "nav.success" },
   { href: "/#contact", labelKey: "nav.contact" },
 ];
@@ -57,7 +60,7 @@ export function Header() {
             className="rounded"
           />
           <span className="font-headline text-xl font-bold text-primary">
-            Pro Option Career Consulting
+            Pro Option Valuations
           </span>
         </Link>
         {isMobile ? (
@@ -74,7 +77,7 @@ export function Header() {
                 <SheetHeader className={locale === 'ar' ? 'text-right' : 'text-left'}>
                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                   <SheetDescription className="sr-only">
-                    Navigation links for Pro Option Career Consulting.
+                    Navigation links for Pro Option Valuations.
                   </SheetDescription>
                   <Link href="/" className="flex items-center gap-2" prefetch={false}>
                     <Image 
@@ -84,7 +87,7 @@ export function Header() {
                       height={32}
                       className="rounded"
                     />
-                    <span className="font-headline text-xl font-bold text-primary">Pro Option Career Consulting</span>
+                    <span className="font-headline text-xl font-bold text-primary">Pro Option Valuations</span>
                   </Link>
                 </SheetHeader>
                 <nav className="grid gap-6 text-lg font-medium mt-8">
