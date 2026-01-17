@@ -168,6 +168,8 @@ const valuationCopy: Translation = {
       'Email system not configured — request logged on server. Install nodemailer or set SMTP credentials to send emails.',
     warningSmtp:
       'SMTP not configured. Please set your SMTP credentials in .env.local to enable sending email.',
+    warningSmtpError:
+      'SMTP authentication failed. Verify your credentials or complete the email draft that just opened.',
     sendError: 'Error submitting request',
     sendErrorDescription:
       'There was a problem sending your request. Please try again later.',
@@ -353,6 +355,8 @@ const valuationCopyAr: Translation = {
       'لم يتم إعداد البريد الإلكتروني — تم حفظ الطلب على الخادم. يرجى إعداد nodemailer أو بيانات SMTP لإرسال الرسائل.',
     warningSmtp:
       'لم يتم إعداد SMTP. يرجى إضافة بيانات SMTP في .env.local لتمكين إرسال البريد.',
+    warningSmtpError:
+      'فشل المصادقة مع SMTP. تحقق من بيانات الاعتماد أو أكمل مسودة البريد التي فتحت للتو.',
     sendError: 'خطأ في إرسال الطلب',
     sendErrorDescription: 'حدثت مشكلة أثناء الإرسال. حاول مرة أخرى لاحقاً.',
   },

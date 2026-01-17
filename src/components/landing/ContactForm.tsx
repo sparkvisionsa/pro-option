@@ -61,6 +61,44 @@ export function ContactForm() {
     },
   });
 
+  const CONTACT_EMAIL = "Info@pro-option.sa";
+  const serviceLabelMap: Record<(typeof serviceOptions)[number], string> = {
+    "valuation-assets": getTranslation(locale, "contactForm.valuationMachinery"),
+    "administrative-consulting": getTranslation(locale, "contactForm.administrativeConsulting"),
+    "educational-consulting": getTranslation(locale, "contactForm.educationalConsulting"),
+    other: getTranslation(locale, "contactForm.other"),
+  };
+
+  function openMailClient(values: z.infer<typeof formSchema>) {
+    if (typeof window === "undefined") return;
+
+    const serviceLabel = serviceLabelMap[values.service] || values.service;
+    const labels = {
+      name: getTranslation(locale, "contactForm.name"),
+      email: getTranslation(locale, "contactForm.email"),
+      phone: getTranslation(locale, "contactForm.phone"),
+      service: getTranslation(locale, "contactForm.service"),
+      message: getTranslation(locale, "contactForm.message"),
+    };
+
+    const subject = `${labels.service} - ${values.name}`;
+    const bodyLines = [
+      `${labels.name}: ${values.name}`,
+      `${labels.email}: ${values.email}`,
+      `${labels.phone}: ${values.phone || "-"}`,
+      `${labels.service}: ${serviceLabel}`,
+      "",
+      `${labels.message}:`,
+      values.message,
+    ];
+
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      bodyLines.join("\n")
+    )}`;
+
+    window.location.href = mailtoUrl;
+  }
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const res = await fetch("/api/contact", {
@@ -83,6 +121,11 @@ export function ContactForm() {
               title: getTranslation(locale, "contactForm.messageSent"),
               description: getTranslation(locale, "contactForm.warningNodemailer"),
             });
+          } else if (data.warning === "smtp-send-failed") {
+            toast({
+              title: getTranslation(locale, "contactForm.messageSent"),
+              description: getTranslation(locale, "contactForm.warningSmtpError"),
+            });
           } else if (data?.warning === "smtp-not-configured") {
             toast({
               title: getTranslation(locale, "contactForm.messageSent"),
@@ -94,6 +137,7 @@ export function ContactForm() {
               description: getTranslation(locale, "contactForm.messageDescription"),
             });
           }
+          openMailClient(values);
         } else {
           toast({
             title: getTranslation(locale, "contactForm.messageSent"),
@@ -109,6 +153,7 @@ export function ContactForm() {
           description: err?.error || getTranslation(locale, "contactForm.sendErrorDescription") || "Please try again later.",
           variant: "destructive",
         });
+        openMailClient(values);
       }
     } catch (error: any) {
       console.error("Contact submit error:", error);
@@ -117,6 +162,7 @@ export function ContactForm() {
         description: error?.message || getTranslation(locale, "contactForm.sendErrorDescription") || "Please try again later.",
         variant: "destructive",
       });
+      openMailClient(values);
     }
   }
 
