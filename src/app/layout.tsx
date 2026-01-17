@@ -26,8 +26,19 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  icons: './logo.jpeg',
-  title: "Pro Option Valuations | Machinery & Equipment Experts",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-64x64.png', type: 'image/png', sizes: '64x64' },
+      { url: '/favicon-128x128.png', type: 'image/png', sizes: '128x128' },
+      { url: '/favicon-256x256.png', type: 'image/png', sizes: '256x256' },
+      { url: '/favicon-512x512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/favicon-512x512.png',
+  },
+  title: "Pro Option ",
   description:
     "Certified valuation specialists delivering defendable machinery and equipment appraisals for audits, lending, insurance, and transactions.",
 };

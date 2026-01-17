@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { Target, Sparkles, MapPin } from "lucide-react";
+import { Target, Sparkles } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
@@ -19,11 +19,6 @@ export function AboutUs() {
       icon: Sparkles,
       title: getTranslation(locale, 'aboutPro.missionTitle'),
       copy: getTranslation(locale, 'aboutPro.missionCopy'),
-    },
-    {
-      icon: MapPin,
-      title: getTranslation(locale, 'aboutPro.scaleTitle'),
-      copy: getTranslation(locale, 'aboutPro.scaleCopy'),
     },
   ];
 

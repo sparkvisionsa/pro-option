@@ -21,7 +21,7 @@ export function Footer() {
               height={32}
               className="rounded"
             />
-            <span className="font-headline text-xl font-bold">Pro Option Valuations</span>
+            <span className="font-headline text-xl font-bold">Pro Option </span>
           </Link>
           <p className="text-sm text-primary-foreground/80">
             {getTranslation(locale, 'footer.tagline')}

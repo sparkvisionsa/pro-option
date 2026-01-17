@@ -1,7 +1,7 @@
 ﻿export type Locale = 'en' | 'ar';
 
 export const locales: Locale[] = ['en', 'ar'];
-export const defaultLocale: Locale = 'en';
+export const defaultLocale: Locale = 'ar';
 
 export const isRTL = (locale: Locale) => locale === 'ar';
 
@@ -21,18 +21,20 @@ const valuationCopy: Translation = {
     consultation: 'Book a valuation',
   },
   hero: {
-    head: 'Pro Option | Machinery & Equipment Valuation',
+    head: 'Pro Option Professional Consulting',
     description:
-      'Certified valuers delivering defendable reports for machinery, equipment, and industrial assets across Saudi Arabia and MENA.',
+      'Pro-Option: A leading firm in professional consulting, backed by a team of certified local and global experts.',
     consultation: 'Book a valuation',
     learnMore: 'Explore our process',
-    badge: 'IVS / IFRS aligned deliverables',
-    metricPrecisionTitle: '150+ IVS reports / year',
-    metricPrecisionCopy: 'Signed by accredited machinery valuers.',
-    metricSpeedTitle: '48h mobilization',
-    metricSpeedCopy: 'Bilingual teams onsite across KSA.',
-    metricCoverageTitle: '60% fewer lender queries',
-    metricCoverageCopy: 'Evidence-backed schedules and reconciliations.',
+    metricPrecisionTitle: 'Integrated professional consulting',
+    metricPrecisionCopy:
+      'Statistical, administrative, strategic, educational, and technical experts collaborating with IVS-compliant valuation rigor.',
+    metricSpeedTitle: 'Deployed teams for complex mandates',
+    metricSpeedCopy:
+      'Bilingual consultants and valuers immersed in operational and strategic needs across the Kingdom.',
+    metricCoverageTitle: 'Evidence-led insights for informed decisions',
+    metricCoverageCopy:
+      'Schedules and reconciliations that defend financing, governance, and transformation choices.',
   },
   maintenance: {
     title: 'We Are Under Maintenance',
@@ -42,54 +44,30 @@ const valuationCopy: Translation = {
   },
   aboutPro: {
     headingMain: 'About Pro Option',
-    headingSecond: 'Trusted valuation partner for machinery & equipment',
+    headingSecond: 'Integrated consulting & valuation partner',
     description:
-      'A professional firm focused on valuations and advisory, bringing together certified local and international experts.',
+      'Pro Option is a professional consulting firm delivering technical, administrative, and strategic advisory alongside IVS-aligned machinery and equipment valuations.',
     description2:
-      'We earned the first machinery valuation license, were recognized by the Saudi Authority of Accredited Valuers, and grew to five branches with 150+ specialists.',
+      'Bilingual teams of certified local and international experts support audits, financing, and transformation programs across the Kingdom with defendable insights.',
     visionTitle: 'Vision',
     visionCopy:
-      'Lead the valuation and advisory market across MENA with defendable numbers and service excellence.',
+      'Set the benchmark for professional consulting and valuation with evidence-led guidance across KSA.',
     missionTitle: 'Mission',
     missionCopy:
-      'Deliver transparent, inspection-driven valuations aligned with IVS and each client objective.',
-    scaleTitle: 'Footprint',
-    scaleCopy:
-      '5+ branches, 150+ professionals, and the largest roster of accredited machinery valuers in the Kingdom.',
+      'Provide transparent, inspection-driven advisory and valuation work tailored to each client objective and compliant with IVS standards.',
   },
   ourServices: {
-    services: 'Our services',
-    tag: 'Integrated valuation and advisory for asset-heavy organizations.',
+    services: 'our services',
+    tag: 'A layered consulting practice spanning technical, administrative, and logistics disciplines, alongside machinery valuation and asset tagging.',
     inventory: 'Asset inventory, tagging & coding',
     descriptionInventory:
-      'Physical counts, barcoding/QR, and reconciliation against fixed-asset registers to clean and trust your data.',
+      'Physical counts, barcoding/QR, and reconciliation against fixed-asset registers to guarantee trusted asset data.',
     valuation: 'Machinery & equipment valuation',
     descriptionValuation:
-      'Factories, production lines, fleets, heavy equipment, and data centers valued for fair market, orderly liquidation, or forced-sale scenarios.',
-    advisory: 'Professional valuation advisory',
+      'Valuations of factories, production lines, fleets, heavy machinery, and data centers with IVS rigor for reporting and transactions.',
+    advisory: 'Administrative & strategic consulting',
     descriptionAdvisory:
-      'Purpose scoping, methodology selection, and defense support for audits, lending, insurance, and disputes.',
-    strategy: 'Management & strategy consulting',
-    descriptionStrategy:
-      'Strategy building, marketing advisory, feasibility studies, restructuring, and inventory optimization.',
-    reporting: 'Financial & insurance reporting',
-    descriptionReporting:
-      'IVS/IFRS-ready deliverables with assumptions, reconciliations, and photo logs for financing, insurance, M&A, and compliance.',
-  },
-  features: {
-    choose: 'Why asset owners choose Pro Option',
-    trust: 'Accredited & recognized',
-    trustDescription:
-      'Licensed by the Saudi Authority of Accredited Valuers with a record of national mandates and repeat clients.',
-    expertise: 'Sector specialists',
-    expertiseDescription:
-      'Engineers and appraisers across manufacturing, logistics, energy, construction, and technology assets.',
-    localInsight: 'Nationwide reach',
-    localInsightDescription:
-      'Bilingual, safety-ready teams mobilized across the Kingdom for rapid inspections and delivery.',
-    innovation: 'Transparent & fair',
-    innovationDescription:
-      'Evidence-backed assumptions, reconciliations, and clear communication at every milestone.',
+      'Strategic, administrative, and technical advisory aligned with audits, financing, training programs, or operational transformation.',
   },
   valuationProcess: {
     title: 'How we work',
@@ -114,10 +92,6 @@ const valuationCopy: Translation = {
     subtitle: 'Reports tailored to your objective.',
     purpose1Title: 'Buying & selling',
     purpose1Copy: 'Market-aligned values for acquisitions and disposals.',
-    purpose2Title: 'Financial reporting & accounting',
-    purpose2Copy: 'IFRS-compliant fair value, impairment, and ledger alignment.',
-    purpose3Title: 'Mergers & acquisitions',
-    purpose3Copy: 'Due diligence, allocation, and deal support with auditable evidence.',
     purpose4Title: 'Litigation, inheritance & expropriation',
     purpose4Copy: 'Defensible documentation for courts, settlements, and estate distribution.',
     purpose5Title: 'Liquidation',
@@ -143,23 +117,26 @@ const valuationCopy: Translation = {
   },
   successStories: {
     title: 'FAQ',
-    subtitle: 'Answers to the most common questions about our valuations.',
+    subtitle: 'Answers to the most common questions about our services.',
     story1: 'What is AFK?',
     story1Outcome:
       'AFK is our focused machinery & equipment valuation suite built on IVS standards.',
     story2: 'How fast can you mobilize?',
     story2Outcome:
-      'We mobilize within 48 hours with bilingual teams and calibrated tools.',
+      'We mobilize swiftly with bilingual teams and calibrated tools.',
     story3: 'Are reports audit-ready?',
     story3Outcome:
       'Yes. Reports include reconciliations, assumptions, and photo evidence for audit and lending.',
     readMore: 'View summary',
   },
   faq: {
+    q0: 'What services does Pro Option offer?',
+    a0:
+      'Pro Option is a professional consulting firm offering logistics, administrative, educational, and technical advisory supported by rigorous machinery and equipment valuations.',
     title: 'FAQ',
-    subtitle: 'Answers to the most common questions about our valuations.',
+    subtitle: 'Answers to the most common questions about our services.',
     q1: 'How fast can you mobilize?',
-    a1: 'We mobilize within 48 hours with bilingual teams and calibrated tools.',
+    a1: 'We mobilize swiftly with bilingual teams and calibrated tools.',
     q2: 'Are reports audit-ready?',
     a2: 'Yes. Reports include reconciliations, assumptions, and photo evidence for audit and lending.',
     q3: 'Which purposes do you cover?',
@@ -168,23 +145,21 @@ const valuationCopy: Translation = {
     a4: 'Yes. Nationwide coverage with on-site inspections and evidence-led schedules.',
   },
   contactForm: {
-    name: 'Name',
-    namePlaceholder: 'Full name',
+    name: 'Client name',
+    namePlaceholder: '',
     email: 'Work email',
-    emailPlaceholder: 'you@company.com',
-    phone: 'Phone (for site access)',
-    phonePlaceholder: '+966 55 593 1192',
-    service: 'What do you need valued?',
+    emailPlaceholder: 'Email address',
+    phone: 'Phone',
+    phonePlaceholder: 'Phone number',
+    service: 'Requested service',
     serviceSelect: 'Select an engagement',
-    valuationMachinery: 'Machinery & equipment valuation',
-    conditionAssessment: 'Condition assessment & remaining useful life',
-    complianceReport: 'IVS/IFRS-compliant report',
-    transactionSupport: 'Transaction, lending, or insurance support',
+    valuationMachinery: 'Machinery, equipment & movable asset valuation request',
+    administrativeConsulting: 'Administrative consulting request',
+    educationalConsulting: 'Educational & training consulting request',
     other: 'Other',
-    message: 'Scope details',
-    messagePlaceholder:
-      'Asset types, quantity, locations, urgency, and any deadlines.',
-    sendMessage: 'Submit request',
+    message: 'Details',
+    messagePlaceholder: 'Describe the engagement, priorities, and any deadlines.',
+    sendMessage: 'Send',
     sending: 'Scheduling...',
     messageSent: 'Request received',
     messageDescription:
@@ -216,7 +191,7 @@ const valuationCopy: Translation = {
     connect: 'Connect',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
-    copyright: '© 2026 Pro Option Valuations. All rights reserved.',
+    copyright: '© Pro Option . All rights reserved.',
   },
 };
 
@@ -229,81 +204,59 @@ const valuationCopyAr: Translation = {
     process: 'منهجيتنا',
     purposes: 'أغراض التقييم',
     values: 'قيمنا',
-    consultation: 'احجز تقييمك',
+    consultation: 'طلب الخدمة',
   },
   hero: {
-    head: 'برو أوبشن | تقييم الآلات والمعدات',
+    head: 'برو أوبشن للأستشارات المهنية',
     description:
-      'مقيّمون معتمدون يقدمون تقارير قابلة للدفاع لتقييم الآلات والمعدات والأصول الصناعية في السعودية والمنطقة ',
-    consultation: 'احجز تقييمك',
+      'برو أوبشن: شركة رائدة في الاستشارات المهنية، مدعومة بفريق من الكفاءات المعتمدة المحلية والعالمية.',
+    consultation: 'طلب الخدمة ',
     learnMore: 'استكشف منهجيتنا',
-    badge: 'تقارير متوافقة مع IVS / IFRS',
-    metricPrecisionTitle: '150+ تقرير IVS سنوياً',
-    metricPrecisionCopy: 'موقعة من مقيمين معتمدين للآلات.',
-    metricSpeedTitle: 'جاهزية خلال 48 ساعة',
-    metricSpeedCopy: 'فرق ثنائية اللغة ميدانية في كل مناطق المملكة.',
-    metricCoverageTitle: '60٪ استفسارات أقل من الممولين',
-    metricCoverageCopy: 'جداول مدعومة بالأدلة والتسويات.',
+    metricPrecisionTitle: 'استشارات مهنية متكاملة',
+    metricPrecisionCopy:
+      'خبراء إحصاء، إدارة، استراتيجية، تربوية، وتقنية ينسقون مع منهجيات تقييم الآلات وفق معايير IVS.',
+    metricSpeedTitle: 'فرق جاهزة لكل تحدٍ عملي واستراتيجي',
+    metricSpeedCopy:
+      'فرق ثنائية اللغة تغطي المملكة وتقدم حلولاً إدارية وتقنية وتقييمية متزامنة.',
+    metricCoverageTitle: 'بيانات موثوقة لقرارات واضحة',
+    metricCoverageCopy:
+      'جداول موثقة بالأدلة والتسويات تدعم التمويل، الحوكمة، والتحول التنظيمي.',
   },
   maintenance: {
     title: 'نقوم بأعمال صيانة',
     description: 'نُجري تحديثات مجدولة لتحسين الموقع. يرجى العودة لاحقاً.',
-    banner: 'الموقع لا زال تحت الصيانة',
+    banner: 'الموقع تحت الصيانة',
   },
   aboutPro: {
     headingMain: 'نبذة عن برو أوبشن',
-    headingSecond: 'شريك التقييم الموثوق للآلات والمعدات',
+    headingSecond: 'برو اوبشن للأستشارات المهنيه وخدمات التقييم',
     description:
-      ' برو أوبشن عام كشركة مهنية متخصصة في التقييم والاستشارات، تضم نخبة من الكفاءات المحلية والدولية المعتمدة.',
+      'برو أوبشن هي شركة استشارات مهنية توفر حلولاً تقنية وإدارية واستراتيجية عامة، مدعومة بخبرات التقييم المتأصلة في الآلات والمعدات وفق IVS.',
     description2:
-      'حصلنا على أول ترخيص لتقييم الآلات والمعدات، وتوسعنا إلى أكثر من خمسة فروع وفريق يتجاوز 150 مختصاً معتمدين من الهيئة السعودية للمقيّمين المعتمدين.',
+      'ندعم المستفيدين من القطاعات الصناعية والحكومة والتمويل بفِرق ثنائية اللغة، مزيج من الخبرة الميدانية والإدارية، وتنسيق دائم مع الجهات الرقابية لتوفير رؤى مدعومة بالأدلة.',
     visionTitle: 'رؤيتنا',
     visionCopy:
-      'قيادة سوق التقييم والاستشارات في الشرق الأوسط وشمال أفريقيا بأرقام موثوقة وخدمة مميزة.',
+      'أن نكون المرجع الأول للاستشارات المهنية والتقييم الدقيق في المملكة عبر حلول قائمة على البيانات.',
     missionTitle: 'رسالتنا',
     missionCopy:
-      'تقديم تقييمات شفافة مبنية على المعاينة الميدانية والبيانات ومتوافقة مع معايير IVS وبما يحقق أهداف العميل.',
-    scaleTitle: 'انتشارنا',
-    scaleCopy:
-      'أكثر من 5 فروع، 150+ متخصصاً، وأكبر فريق من المقيمين المعتمدين للآلات والمعدات في المملكة.',
+      'تقديم استشارات دقيقة تستند إلى المعاينة والبيانات إلى جانب تقييمات آليات متوافقة IVS تلبي أهداف كل عميل.',
   },
   ourServices: {
-    services: 'أبرز خدماتنا',
-    tag: 'حلول تقييم واستشارات متكاملة للمنشآت كثيفة الأصول.',
+    services: 'خدماتنا',
+    tag: 'شبكة استشارات مهنية تشمل الجوانب الفنية والإدارية واللوجستية إلى جانب تقييم الآلات والمعدات وحصر الأصول.',
     inventory: 'حصر وجرد وترميز الأصول',
     descriptionInventory:
-      'عدّ ميداني، ترميز باركود/QR، ومطابقة مع سجلات الأصول لضمان بيانات موثوقة.',
+      'أعمال الحصر الميداني والترميز والربط مع سجلات الأصول لضمان بيانات متكاملة وموثوقة.',
     valuation: 'تقييم الآلات والمعدات',
     descriptionValuation:
-      'تقييم المصانع وخطوط الإنتاج ووسائل النقل والمعدات الثقيلة ومراكز البيانات للقيمة السوقية العادلة أو التصفية.',
-    advisory: 'استشارات مهنية للتقييم',
+      'تقييمات معرفية للورش والمصانع والأساطيل والمعدات الثقيلة ومراكز البيانات بأسلوب متوافق مع IVS.',
+    advisory: 'استشارات إدارية واستراتيجية',
     descriptionAdvisory:
-      'تحديد غرض التقييم والمنهجية الأنسب ودعم الدفاع أمام المدققين والممولين وشركات التأمين.',
-    strategy: 'استشارات إدارية واستراتيجية',
-    descriptionStrategy:
-      'بناء استراتيجيات، استشارات تسويقية، دراسات جدوى، إعادة هيكلة، وحصر المخزون وترميزه.',
-    reporting: 'تقارير مالية وتأمينية',
-    descriptionReporting:
-      'مخرجات جاهزة لـ IVS/IFRS مع افتراضات موثقة وجداول تسويات وملحق صور لتمويل أو تأمين أو اندماج واستحواذ.',
-  },
-  features: {
-    choose: 'لماذا يختارنا ملاك الأصول',
-    trust: 'اعتماد وثقة',
-    trustDescription:
-      'مرخصون من الهيئة السعودية للمقيّمين المعتمدين وسجل حافل بالتكليفات الوطنية.',
-    expertise: 'متخصصون قطاعياً',
-    expertiseDescription:
-      'مهندسون ومقيمون يغطيون المصانع، اللوجستيات، الطاقة، التشييد، والتقنية.',
-    localInsight: 'تغطية وطنية',
-    localInsightDescription:
-      'فرق جاهزة تعمل في جميع مناطق المملكة مع التزام بالسلامة وسرعة التنفيذ.',
-    innovation: 'شفافية وإنصاف',
-    innovationDescription:
-      'افتراضات معللة، جداول تسويات، وتواصل واضح في كل خطوة.',
+      'استشارات استراتيجية وإدارية وتقنية تربط بين المتطلبات التنظيمية والتحول التشغيلي وبرامج التدريب.',
   },
   valuationProcess: {
     title: 'كيف نعمل',
-    subtitle: 'رحلة تقييم من سبع مراحل وفق معايير IVS.',
+    subtitle: 'رحلة تقييم متكاملة وفق معايير IVS.',
     step1Title: 'الاتفاق وتحديد الغرض',
     step1Copy: 'تحديد الهدف والأصول وتوقيع عقد الخدمة بجدول زمني واضح.',
     step2Title: 'جمع البيانات',
@@ -324,10 +277,6 @@ const valuationCopyAr: Translation = {
     subtitle: 'تقارير موجهة لهدفك.',
     purpose1Title: 'البيع والشراء',
     purpose1Copy: 'قيم سوقية عادلة لدعم قرارات الاستحواذ أو التخارج.',
-    purpose2Title: 'التقارير المالية والمحاسبية',
-    purpose2Copy: 'قيم عادلة متوافقة مع IFRS ودعم اختبارات الهبوط.',
-    purpose3Title: 'الاندماج والاستحواذ',
-    purpose3Copy: 'تقييمات جاهزة للفحص النافي للجهالة وتخصيص القيمة.',
     purpose4Title: 'التقاضي والتركات ونزع الملكية',
     purpose4Copy: 'مستندات قابلة للدفاع أمام المحاكم والتسويات وتوزيع التركات.',
     purpose5Title: 'التصفية',
@@ -356,7 +305,7 @@ const valuationCopyAr: Translation = {
     subtitle: 'إجابات موجزة حول تقييمات AFK.',
     story1: 'ما سرعة بدء التقييم؟',
     story1Outcome:
-      'نبدأ خلال 48 ساعة بفِرَق ثنائية اللغة ومعدات معايرة.',
+      'ننتقل بسرعة مع فرق ثنائية اللغة ومعدات معايرة دقيقة.',
     story2: 'هل التقارير جاهزة للتدقيق والتمويل؟',
     story2Outcome:
       'نعم، مع افتراضات موثقة وجداول تسويات وسجلات صور تدعم التدقيق والتمويل.',
@@ -366,10 +315,13 @@ const valuationCopyAr: Translation = {
     readMore: 'عرض الملخص',
   },
   faq: {
+    q0: 'ما هي الخدمات التي تقدمها برو أوبشن؟',
+    a0:
+      'برو أوبشن شركة استشارات مهنية تقدم خدمات لوجستية وإدارية وتربوية وتقنية، إلى جانب خدمات تقييم الآلات والمعدات وفق معايير IVS.',
     title: 'الأسئلة الشائعة',
-    subtitle: 'إجابات عن أبرز الأسئلة حول تقييماتنا.',
+    subtitle: 'إجابات عن أبرز الأسئلة حول خدماتنا.',
     q1: 'ما سرعة البدء؟',
-    a1: 'نبدأ خلال 48 ساعة بفرق ثنائية اللغة ومعدات معايرة.',
+    a1: 'ننتقل بسرعة مع فرق ثنائية اللغة ومعدات معايرة دقيقة.',
     q2: 'هل التقارير جاهزة للتدقيق؟',
     a2: 'نعم، تشمل افتراضات موثقة وجداول تسويات وسجلات صور تدعم التدقيق والتمويل.',
     q3: 'ما الأغراض التي يغطيها التقييم؟',
@@ -378,23 +330,21 @@ const valuationCopyAr: Translation = {
     a4: 'نعم، تغطية وطنية مع معاينات ميدانية وجداول مدعومة بالأدلة.',
   },
   contactForm: {
-    name: 'الاسم',
-    namePlaceholder: 'الاسم الكامل',
+    name: 'اسم العميل',
+    namePlaceholder: '',
     email: 'البريد الإلكتروني',
-    emailPlaceholder: 'you@company.com',
-    phone: 'رقم الهاتف (لدخول الموقع)',
-    phonePlaceholder: '+966 55 593 1192',
-    service: 'ما الذي تحتاج تقييمه؟',
+    emailPlaceholder: 'البريد الإلكتروني',
+    phone: 'رقم الهاتف',
+    phonePlaceholder: 'رقم الهاتف',
+    service: 'الخدمة المطلوبة',
     serviceSelect: 'اختر نوع الخدمة',
-    valuationMachinery: 'تقييم الآلات والمعدات',
-    conditionAssessment: 'تقييم الحالة والعمر المتبقي',
-    complianceReport: 'تقرير متوافق مع IVS/IFRS',
-    transactionSupport: 'دعم صفقة أو تمويل أو تأمين',
+    valuationMachinery: 'طلب تقييم الآلات والمعدات والأصول المنقولة',
+    administrativeConsulting: 'طلب استشارة إدارية',
+    educationalConsulting: 'طلب استشارة تربوية وتعليمية',
     other: 'أخرى',
-    message: 'تفاصيل النطاق',
-    messagePlaceholder:
-      'نوع الأصول، الكمية، المواقع، درجة الإلحاح، والمواعيد النهائية إن وجدت.',
-    sendMessage: 'إرسال الطلب',
+    message: 'التفاصيل',
+    messagePlaceholder: 'شارك تفاصيل المشروع، التوقيت، وأي متطلبات إضافية.',
+    sendMessage: 'إرسال',
     sending: 'يتم الجدولة...',
     messageSent: 'تم استلام الطلب',
     messageDescription:
@@ -407,15 +357,15 @@ const valuationCopyAr: Translation = {
     sendErrorDescription: 'حدثت مشكلة أثناء الإرسال. حاول مرة أخرى لاحقاً.',
   },
   contact: {
-    collaborate: 'احجز تقييمك الآن',
-    collaborateSubtitle: 'زودنا بالأصول والمواقع وسننسق زيارة ميدانية سريعة.',
+    collaborate: ' طلب الخدمة',
+    collaborateSubtitle: 'زودنا بتفاصيل الخدمة.',
     journey: 'جاهزون للجولة الميدانية',
     ready:
       'مهندسونا ثنائيو اللغة يتحركون بسرعة مع اعتماد السلامة والأدوات المجهزة.',
     emailLabel: 'البريد الإلكتروني',
     phoneLabel: 'رقم الهاتف',
     whatsappLabel: 'واتساب',
-    whatsappText: 'تواصل مع فريق التقييم',
+    whatsappText: 'التواصل مباشرة عبر واتساب  ',
   },
   footer: {
     tagline: 'تقييمات موثوقة للآلات والمعدات والأصول الصناعية.',
@@ -424,7 +374,7 @@ const valuationCopyAr: Translation = {
     connect: 'تواصل',
     privacy: 'سياسة الخصوصية',
     terms: 'الشروط والأحكام',
-    copyright: '© 2026 برو أوبشن. جميع الحقوق محفوظة.',
+    copyright: '© برو أوبشن. جميع الحقوق محفوظة.',
   },
 };
 

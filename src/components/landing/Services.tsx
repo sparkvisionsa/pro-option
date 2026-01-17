@@ -13,9 +13,9 @@ import { getTranslation } from "@/lib/i18n";
 
 const serviceKeys = [
   {
-    icon: ClipboardList,
-    titleKey: "ourServices.inventory",
-    descKey: "ourServices.descriptionInventory",
+    icon: ShieldCheck,
+    titleKey: "ourServices.advisory",
+    descKey: "ourServices.descriptionAdvisory",
   },
   {
     icon: Factory,
@@ -23,19 +23,9 @@ const serviceKeys = [
     descKey: "ourServices.descriptionValuation",
   },
   {
-    icon: ShieldCheck,
-    titleKey: "ourServices.advisory",
-    descKey: "ourServices.descriptionAdvisory",
-  },
-  {
-    icon: Compass,
-    titleKey: "ourServices.strategy",
-    descKey: "ourServices.descriptionStrategy",
-  },
-  {
-    icon: FileCheck,
-    titleKey: "ourServices.reporting",
-    descKey: "ourServices.descriptionReporting",
+    icon: ClipboardList,
+    titleKey: "ourServices.inventory",
+    descKey: "ourServices.descriptionInventory",
   },
 ];
 

@@ -7,6 +7,7 @@ import { Globe } from 'lucide-react';
 
 export function LanguageSwitcher() {
   const { locale, toggleLanguage } = useLanguage();
+  const nextLocale = locale === 'en' ? 'ar' : 'en';
 
   return (
     <Button
@@ -14,10 +15,10 @@ export function LanguageSwitcher() {
       size="sm"
       onClick={toggleLanguage}
       className="flex items-center gap-2"
-      title={locale === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+      title={nextLocale === 'en' ? 'Switch to English' : 'Switch to Arabic'}
     >
       <Globe className="h-4 w-4" />
-      <span>{locale.toUpperCase()}</span>
+      <span>{nextLocale.toUpperCase()}</span>
     </Button>
   );
 }

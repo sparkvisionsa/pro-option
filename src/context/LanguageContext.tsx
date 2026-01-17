@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { Locale, locales, defaultLocale, isRTL } from '@/lib/i18n';
 
 interface LanguageContextType {
@@ -15,11 +15,40 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const storage = window.localStorage;
+    if (!storage || typeof storage.getItem !== 'function') {
+      return;
+    }
+
+    const storedLocale = storage.getItem('locale') as Locale | null;
+    if (storedLocale && locales.includes(storedLocale)) {
+      setLocaleState(storedLocale);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof document === 'undefined') {
+      return;
+    }
+
+    document.documentElement.lang = locale;
+    document.documentElement.dir = isRTL(locale) ? 'rtl' : 'ltr';
+
+    if (typeof window !== 'undefined') {
+      const storage = window.localStorage;
+      if (storage && typeof storage.setItem === 'function') {
+        storage.setItem('locale', locale);
+      }
+    }
+  }, [locale]);
+
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
-    document.documentElement.lang = newLocale;
-    document.documentElement.dir = isRTL(newLocale) ? 'rtl' : 'ltr';
-    localStorage.setItem('locale', newLocale);
   }, []);
 
   const toggleLanguage = useCallback(() => {

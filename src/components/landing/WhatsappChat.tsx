@@ -12,11 +12,11 @@ export function WhatsappChat() {
       <Button
         asChild
         size="icon"
-        className="h-14 w-14 rounded-full bg-[#25D366] text-white hover:bg-[#128C7E] shadow-lg"
+        className="h-16 w-16 rounded-full bg-[#25D366] text-white hover:bg-[#128C7E] shadow-xl shadow-black/30"
         aria-label="Chat on WhatsApp"
       >
-        <Link href="https://wa.me/+966555931192" target="_blank" rel="noopener noreferrer">
-          <MessageCircle />
+        <Link href="https://wa.me/+966555765446" target="_blank" rel="noopener noreferrer">
+          <MessageCircle className="h-7 w-7" />
         </Link>
       </Button>
     </div>

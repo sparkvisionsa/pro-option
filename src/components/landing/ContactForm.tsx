@@ -27,17 +27,20 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 
+const serviceOptions = [
+  "valuation-assets",
+  "administrative-consulting",
+  "educational-consulting",
+  "other",
+] as const;
+
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters."),
+  name: z.string().min(2, "Please provide your contact details."),
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
-  service: z.enum([
-    "valuation-machinery",
-    "condition-assessment",
-    "compliance-report",
-    "transaction-support",
-    "other",
-  ]),
+  service: z.union([z.literal(""), z.enum(serviceOptions)]).refine((value): value is (typeof serviceOptions)[number] => {
+    return value !== "";
+  }, "Please select a service."),
   message: z
     .string()
     .min(10, "Message must be at least 10 characters.")
@@ -53,7 +56,7 @@ export function ContactForm() {
       name: "",
       email: "",
       phone: "",
-      service: "valuation-machinery",
+      service: "",
       message: "",
     },
   });
@@ -127,9 +130,12 @@ export function ContactForm() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{getTranslation(locale, 'contactForm.name')}</FormLabel>
+                    <FormLabel>{getTranslation(locale, 'contactForm.name')}</FormLabel>
                   <FormControl>
-                    <Input placeholder={getTranslation(locale, 'contactForm.namePlaceholder')} {...field} />
+                    <Input
+                      placeholder=""
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -166,28 +172,25 @@ export function ContactForm() {
               name="service"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{getTranslation(locale, 'contactForm.service')}</FormLabel>
-                  <Select
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder={getTranslation(locale, 'contactForm.serviceSelect')} />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="valuation-machinery">
-                        {getTranslation(locale, 'contactForm.valuationMachinery')}
+                    <FormLabel>{getTranslation(locale, 'contactForm.service')}</FormLabel>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder={getTranslation(locale, 'contactForm.serviceSelect')} />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="valuation-assets">
+                          {getTranslation(locale, 'contactForm.valuationMachinery')}
+                        </SelectItem>
+                      <SelectItem value="administrative-consulting">
+                        {getTranslation(locale, 'contactForm.administrativeConsulting')}
                       </SelectItem>
-                      <SelectItem value="condition-assessment">
-                        {getTranslation(locale, 'contactForm.conditionAssessment')}
-                      </SelectItem>
-                      <SelectItem value="compliance-report">
-                        {getTranslation(locale, 'contactForm.complianceReport')}
-                      </SelectItem>
-                      <SelectItem value="transaction-support">
-                        {getTranslation(locale, 'contactForm.transactionSupport')}
+                      <SelectItem value="educational-consulting">
+                        {getTranslation(locale, 'contactForm.educationalConsulting')}
                       </SelectItem>
                       <SelectItem value="other">{getTranslation(locale, 'contactForm.other')}</SelectItem>
                     </SelectContent>

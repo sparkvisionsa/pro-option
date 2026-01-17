@@ -60,7 +60,7 @@ export function Header() {
             className="rounded"
           />
           <span className="font-headline text-xl font-bold text-primary">
-            Pro Option Valuations
+            Pro Option
           </span>
         </Link>
         {isMobile ? (
@@ -77,7 +77,7 @@ export function Header() {
                 <SheetHeader className={locale === 'ar' ? 'text-right' : 'text-left'}>
                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                   <SheetDescription className="sr-only">
-                    Navigation links for Pro Option Valuations.
+                    Navigation links for Pro Option .
                   </SheetDescription>
                   <Link href="/" className="flex items-center gap-2" prefetch={false}>
                     <Image 
@@ -87,7 +87,7 @@ export function Header() {
                       height={32}
                       className="rounded"
                     />
-                    <span className="font-headline text-xl font-bold text-primary">Pro Option Valuations</span>
+                    <span className="font-headline text-xl font-bold text-primary">Pro Option </span>
                   </Link>
                 </SheetHeader>
                 <nav className="grid gap-6 text-lg font-medium mt-8">

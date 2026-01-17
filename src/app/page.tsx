@@ -5,7 +5,6 @@ import { Services } from "@/components/landing/Services";
 import { ValuationProcess } from "@/components/landing/ValuationProcess";
 import { ValuationPurposes } from "@/components/landing/ValuationPurposes";
 import { Values } from "@/components/landing/Values";
-import { WhyChooseUs } from "@/components/landing/WhyChooseUs";
 import { FAQ } from "@/components/landing/FAQ";
 import { Contact } from "@/components/landing/Contact";
 
@@ -24,7 +23,6 @@ export default function Home() {
       <ValuationProcess />
       <ValuationPurposes />
       <Values />
-      <WhyChooseUs />
       <FAQ />
       <Contact />
     </>

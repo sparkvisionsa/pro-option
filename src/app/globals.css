@@ -63,3 +63,37 @@
     @apply border-border;
   }
 }
+
+@keyframes hero-drop-from-top {
+  0% {
+    transform: translateY(-40px) scale(1.02);
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@layer components {
+  .hero-reveal {
+    opacity: 0;
+    transform: translateY(-28px);
+    animation: hero-drop-from-top 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    will-change: transform, opacity;
+  }
+
+  .hero-card {
+    border-radius: 1.5rem;
+    backdrop-filter: blur(24px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .hero-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 45px 90px rgba(4, 5, 20, 0.85);
+  }
+}

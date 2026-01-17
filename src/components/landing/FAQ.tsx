@@ -8,6 +8,10 @@ import { ChevronDown } from "lucide-react";
 
 const faqItems = [
   {
+    qKey: "faq.q0",
+    aKey: "faq.a0",
+  },
+  {
     qKey: "faq.q1",
     aKey: "faq.a1",
   },

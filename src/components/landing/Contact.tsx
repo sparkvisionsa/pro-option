@@ -19,12 +19,6 @@ export function Contact() {
       <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
         <ContactForm />
         <div className="flex flex-col justify-center">
-          <h3 className="font-headline text-2xl font-bold text-primary">
-            {getTranslation(locale, 'contact.journey')}
-          </h3>
-          <p className="mt-4 text-muted-foreground">
-            {getTranslation(locale, 'contact.ready')}
-          </p>
 
           <div className="mt-8 space-y-6">
             <div className="flex items-start gap-4">
@@ -41,8 +35,8 @@ export function Contact() {
               <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h4 className="font-semibold text-foreground">{getTranslation(locale, 'contact.phoneLabel')}</h4>
-                <Link href="tel:+966555931192" className="text-primary hover:underline">
-                  +966 55 593 1192
+                <Link href="tel:+966555765446" className="text-primary hover:underline">
+                  +966 55 576 5446
                 </Link>
               </div>
             </div>
@@ -51,7 +45,7 @@ export function Contact() {
               <MessageCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h4 className="font-semibold text-foreground">{getTranslation(locale, 'contact.whatsappLabel')}</h4>
-                <Link href="https://wa.me/966555931192" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                <Link href="https://wa.me/966555765446" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                   {getTranslation(locale, 'contact.whatsappText')}
                 </Link>
               </div>

@@ -5,7 +5,7 @@ import { AlertTriangle } from "lucide-react";
 
 export default function MaintenanceBanner() {
   const { locale } = useLanguage();
-  const text = locale === 'ar' ? 'الموقع لا زال تحت الصيانة' : 'Website under maintenance';
+  const text = locale === 'ar' ? 'الموقع تحت الصيانة' : 'Website under maintenance';
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white">
