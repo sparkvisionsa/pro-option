@@ -2,7 +2,7 @@
 
 This project includes a server API endpoint at `/api/contact` that will send incoming contact messages to the configured email address using `nodemailer`.
 
-Steps to enable sending with Gmail (recommended for Info@pro-option.sa):
+Steps to enable sending with Gmail (recommended for m.hosney33@gmail.com):
 
 1. Install nodemailer
 
@@ -20,9 +20,9 @@ npm install nodemailer
 ```
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_USER=Info@pro-option.sa
+SMTP_USER=m.hosney33@gmail.com
 SMTP_PASS=your_app_password_here
-CONTACT_TO=Info@pro-option.sa
+CONTACT_TO=m.hosney33@gmail.com
 ```
 
 4. Restart your dev server

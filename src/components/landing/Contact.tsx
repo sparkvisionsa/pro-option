@@ -25,8 +25,8 @@ export function Contact() {
               <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h4 className="font-semibold text-foreground">{getTranslation(locale, 'contact.emailLabel')}</h4>
-                <Link href="mailto:Info@pro-option.sa" className="text-primary hover:underline">
-                  Info@pro-option.sa
+                <Link href="mailto:m.hosney33@gmail.com" className="text-primary hover:underline">
+                  m.hosney33@gmail.com
                 </Link>
               </div>
             </div>

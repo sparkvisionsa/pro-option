@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import { Target, Sparkles } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 
 export function AboutUs() {
   const { locale } = useLanguage();
-  const aboutImage = PlaceHolderImages.find((p) => p.id === "about-us-visual");
   const highlights = [
     {
       icon: Target,
@@ -59,16 +57,13 @@ export function AboutUs() {
             </div>
           </div>
           <div className="w-full animate-in fade-in slide-in-from-right duration-500">
-            {aboutImage && (
-              <Image
-                src={aboutImage.imageUrl}
-                alt={aboutImage.description}
-                width={800}
-                height={600}
-                className="rounded-lg shadow-xl object-cover aspect-[4/3]"
-                data-ai-hint={aboutImage.imageHint}
-              />
-            )}
+            <Image
+              src="/content.jfif"
+              alt="About Pro Option"
+              width={800}
+              height={600}
+              className="rounded-lg shadow-xl object-cover aspect-[4/3]"
+            />
           </div>
         </div>
       </div>

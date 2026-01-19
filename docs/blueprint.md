@@ -5,7 +5,7 @@
 - Hero Section: Dynamic hero section with headline, subtext, CTA buttons, and a subtle Saudi cityscape background.
 - About Us Section: A section providing a brief introduction about the company's mission, emphasizing credibility, local expertise, and alignment with Vision 2030.
 - Service Offerings: Showcase consulting services, including IT, statistics, education and financial valuation in dedicated sections.
-- Success Stories: Present case studies and achievements that highlight success with measurable results, with options for client testimonials or logos.
+- Success Stories: Present FAQ and achievements that highlight success with measurable results, with options for client testimonials or logos.
 - Contact Form: Interactive form to collect user information, facilitate consultation requests, and capture details such as name, email, and preferred service type.
 - Integrated Chat: Integrate a WhatsApp chat button for immediate communication with potential clients.
 - AI-Powered Content Enhancement Tool: AI-powered tool to rewrite and refine existing content such as website text, reports, and other consulting outputs to resonate better with target Saudi Arabian audiences and Vision 2030 objectives, taking design cues such as elegant geometric patterns into account.

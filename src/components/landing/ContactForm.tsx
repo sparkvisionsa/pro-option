@@ -47,6 +47,8 @@ const formSchema = z.object({
     .max(500),
 });
 
+const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/m.hosney33@gmail.com";
+
 export function ContactForm() {
   const { locale } = useLanguage();
   const { toast } = useToast();
@@ -56,12 +58,12 @@ export function ContactForm() {
       name: "",
       email: "",
       phone: "",
-      service: "",
+      service: undefined,
       message: "",
     },
   });
 
-  const CONTACT_EMAIL = "Info@pro-option.sa";
+  const CONTACT_EMAIL = "m.hosney33@gmail.com";
   const serviceLabelMap: Record<(typeof serviceOptions)[number], string> = {
     "valuation-assets": getTranslation(locale, "contactForm.valuationMachinery"),
     "administrative-consulting": getTranslation(locale, "contactForm.administrativeConsulting"),
@@ -101,65 +103,39 @@ export function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(FORM_SUBMIT_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          phone: values.phone || "-",
+          service: values.service,
+          message: values.message,
+        }),
       });
 
-      if (res.ok) {
-        // helpful debugging in the browser console
-        console.log("Contact form response status:", res.status);
-
-        const data = await res.json().catch(() => ({}));
-        console.log("Contact form response body:", data);
-
-        // If the API returned a warning we surface that separately so dev knows
-        if (data?.warning) {
-          if (data.warning === "nodemailer-not-installed") {
-            toast({
-              title: getTranslation(locale, "contactForm.messageSent"),
-              description: getTranslation(locale, "contactForm.warningNodemailer"),
-            });
-          } else if (data.warning === "smtp-send-failed") {
-            toast({
-              title: getTranslation(locale, "contactForm.messageSent"),
-              description: getTranslation(locale, "contactForm.warningSmtpError"),
-            });
-          } else if (data?.warning === "smtp-not-configured") {
-            toast({
-              title: getTranslation(locale, "contactForm.messageSent"),
-              description: getTranslation(locale, "contactForm.warningSmtp"),
-            });
-          } else {
-            toast({
-              title: getTranslation(locale, "contactForm.messageSent"),
-              description: getTranslation(locale, "contactForm.messageDescription"),
-            });
-          }
-          openMailClient(values);
-        } else {
-          toast({
-            title: getTranslation(locale, "contactForm.messageSent"),
-            description: getTranslation(locale, "contactForm.messageDescription"),
-          });
-        }
-
-        form.reset();
-      } else {
+      if (!res.ok) {
         const err = await res.json().catch(() => ({}));
-        toast({
-          title: getTranslation(locale, "contactForm.sendError") || "Error sending message",
-          description: err?.error || getTranslation(locale, "contactForm.sendErrorDescription") || "Please try again later.",
-          variant: "destructive",
-        });
-        openMailClient(values);
+        throw new Error(err?.message || "Failed to send request.");
       }
+
+      toast({
+        title: getTranslation(locale, "contactForm.messageSent"),
+        description: getTranslation(locale, "contactForm.messageDescription"),
+      });
+      form.reset();
     } catch (error: any) {
       console.error("Contact submit error:", error);
       toast({
-        title: getTranslation(locale, "contactForm.sendError") || "Error sending message",
-        description: error?.message || getTranslation(locale, "contactForm.sendErrorDescription") || "Please try again later.",
+        title: getTranslation(locale, "contactForm.warningTitle"),
+        description:
+          error?.message ||
+          getTranslation(locale, "contactForm.sendErrorDescription") ||
+          "Unable to submit your request.",
         variant: "destructive",
       });
       openMailClient(values);

@@ -13,7 +13,7 @@ const valuationCopy: Translation = {
   nav: {
     about: 'About',
     services: 'Services',
-    success: 'Case Studies',
+    success: 'FAQ',
     contact: 'Contact',
     process: 'Process',
     purposes: 'Purposes',
@@ -164,6 +164,7 @@ const valuationCopy: Translation = {
     messageSent: 'Request received',
     messageDescription:
       "Thank you. We'll reply with the timeline and the information needed for site access.",
+    warningTitle: 'Request not sent',
     warningNodemailer:
       'Email system not configured — request logged on server. Install nodemailer or set SMTP credentials to send emails.',
     warningSmtp:
@@ -201,7 +202,7 @@ const valuationCopyAr: Translation = {
   nav: {
     about: 'من نحن',
     services: 'خدماتنا',
-    success: 'دراسات حالة',
+    success: 'الأسئلة الشائعة',
     contact: 'تواصل',
     process: 'منهجيتنا',
     purposes: 'أغراض التقييم',
@@ -351,6 +352,7 @@ const valuationCopyAr: Translation = {
     messageSent: 'تم استلام الطلب',
     messageDescription:
       'شكرًا لك. سنعاود الاتصال بموعد التنفيذ والبيانات اللازمة لدخول الموقع.',
+    warningTitle: 'الطلب لم يُرسل',
     warningNodemailer:
       'لم يتم إعداد البريد الإلكتروني — تم حفظ الطلب على الخادم. يرجى إعداد nodemailer أو بيانات SMTP لإرسال الرسائل.',
     warningSmtp:
