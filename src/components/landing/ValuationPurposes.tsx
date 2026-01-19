@@ -3,7 +3,7 @@
 import { SectionWrapper } from "./SectionWrapper";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
-import { ShoppingBag, GitMerge, Gavel, Flame, Landmark, ShieldCheck } from "lucide-react";
+import { ShoppingBag, Gavel, Flame, Landmark, ShieldCheck, FileText } from "lucide-react";
 
 const purposes = [
   { icon: ShoppingBag, titleKey: 'valuationPurposes.purpose1Title', copyKey: 'valuationPurposes.purpose1Copy' },
@@ -11,6 +11,7 @@ const purposes = [
   { icon: Flame, titleKey: 'valuationPurposes.purpose5Title', copyKey: 'valuationPurposes.purpose5Copy' },
   { icon: Landmark, titleKey: 'valuationPurposes.purpose6Title', copyKey: 'valuationPurposes.purpose6Copy' },
   { icon: ShieldCheck, titleKey: 'valuationPurposes.purpose7Title', copyKey: 'valuationPurposes.purpose7Copy' },
+  { icon: FileText, titleKey: 'valuationPurposes.purpose8Title', copyKey: 'valuationPurposes.purpose8Copy' },
 ];
 
 export function ValuationPurposes() {

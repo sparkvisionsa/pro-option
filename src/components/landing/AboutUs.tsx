@@ -58,8 +58,8 @@ export function AboutUs() {
           </div>
           <div className="w-full animate-in fade-in slide-in-from-right duration-500">
             <Image
-              src="/content.jfif"
-              alt="About Pro Option"
+              src="/r.png"
+              alt="Person in Saudi attire working at a desk with laptop and papers"
               width={800}
               height={600}
               className="rounded-lg shadow-xl object-cover aspect-[4/3]"

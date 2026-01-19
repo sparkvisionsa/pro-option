@@ -31,7 +31,7 @@ const valuationCopy: Translation = {
       'Statistical, administrative, strategic, educational, and technical experts collaborating with IVS-compliant valuation rigor.',
     metricSpeedTitle: 'Deployed teams for complex mandates',
     metricSpeedCopy:
-      'Bilingual consultants and valuers immersed in operational and strategic needs across the Kingdom.',
+      'High-performing team capable of handling operational and strategic challenges while delivering administrative, technical, and valuation solutions across the Kingdom.',
     metricCoverageTitle: 'Evidence-led insights for informed decisions',
     metricCoverageCopy:
       'Schedules and reconciliations that defend financing, governance, and transformation choices.',
@@ -92,14 +92,17 @@ const valuationCopy: Translation = {
     subtitle: 'Reports tailored to your objective.',
     purpose1Title: 'Buying & selling',
     purpose1Copy: 'Market-aligned values for acquisitions and disposals.',
-    purpose4Title: 'Litigation, inheritance & expropriation',
-    purpose4Copy: 'Defensible documentation for courts, settlements, and estate distribution.',
+    purpose4Title: 'Disputes & litigation',
+    purpose4Copy: 'Defensible documentation for litigation, disputes, and regulatory reviews.',
     purpose5Title: 'Liquidation',
     purpose5Copy: 'Orderly and forced-sale scenarios with realistic timelines and demand signals.',
     purpose6Title: 'Financing & mortgage',
     purpose6Copy: 'Collateral values and lender-ready schedules with clear assumptions.',
     purpose7Title: 'Insurance',
     purpose7Copy: 'Insurable values, adequacy checks, and post-expansion updates.',
+    purpose8Title: 'Accounting & financial reporting',
+    purpose8Copy:
+      'Audit-ready reconciliations and disclosures that feed financial statements and accounting reports.',
   },
   values: {
     title: 'Our values',
@@ -220,7 +223,7 @@ const valuationCopyAr: Translation = {
       'خبراء إحصاء، إدارة، استراتيجية، تربوية، وتقنية ينسقون مع منهجيات تقييم الآلات وفق معايير IVS.',
     metricSpeedTitle: 'فرق جاهزة لكل تحدٍ عملي واستراتيجي',
     metricSpeedCopy:
-      'فرق ثنائية اللغة تغطي المملكة وتقدم حلولاً إدارية وتقنية وتقييمية متزامنة.',
+      'فريق عمل ذو كفاءة عالية، مهيأ للتعامل مع التحديات العملية والاستراتيجية، ويوفر حلولًا إدارية وتقنية وتقييمية.',
     metricCoverageTitle: 'بيانات موثوقة لقرارات واضحة',
     metricCoverageCopy:
       'جداول موثقة بالأدلة والتسويات تدعم التمويل، الحوكمة، والتحول التنظيمي.',
@@ -280,14 +283,17 @@ const valuationCopyAr: Translation = {
     subtitle: 'تقارير موجهة لهدفك.',
     purpose1Title: 'البيع والشراء',
     purpose1Copy: 'قيم سوقية عادلة لدعم قرارات الاستحواذ أو التخارج.',
-    purpose4Title: 'التقاضي والتركات ونزع الملكية',
-    purpose4Copy: 'مستندات قابلة للدفاع أمام المحاكم والتسويات وتوزيع التركات.',
+    purpose4Title: 'النزاعات والتقاضي',
+    purpose4Copy: 'توثيق يمكن الدفاع عنه للنزاعات والتقاضي والمراجعات التنظيمية.',
     purpose5Title: 'التصفية',
     purpose5Copy: 'سيناريوهات تصفية منظمة أو قسرية بجدول زمني واقعي.',
     purpose6Title: 'الرهن والتمويل',
     purpose6Copy: 'قيم ضمانات وجداول أصول جاهزة للممولين.',
     purpose7Title: 'التأمين وإعادة التأمين',
     purpose7Copy: 'قيم تأمينية وفحص كفاية بعد التوسعات والمشاريع الجديدة.',
+    purpose8Title: 'الاغراض المحاسبية والقوائم المالية',
+    purpose8Copy:
+      'تسويات الأصول والبيانات المالية المتوافقة مع معايير المحاسبة، جاهزة للتدقيق وتقارير القوائم.',
   },
   values: {
     title: 'قيمنا',
