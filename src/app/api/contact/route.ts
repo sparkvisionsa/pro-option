@@ -37,7 +37,7 @@ export async function POST(req: Request) {
 
     const SMTP_HOST = process.env.SMTP_HOST || "smtp.gmail.com";
     const SMTP_PORT = Number(process.env.SMTP_PORT || 587);
-    const SMTP_USER = process.env.SMTP_USER; // your gmail/business email (eg, m.hosney33@gmail.com)
+    const SMTP_USER = process.env.SMTP_USER; // your gmail/business email (eg, Info@pro-option.sa)
     const SMTP_PASS = process.env.SMTP_PASS; // app password or OAuth token
     const CONTACT_TO = process.env.CONTACT_TO || SMTP_USER;
 

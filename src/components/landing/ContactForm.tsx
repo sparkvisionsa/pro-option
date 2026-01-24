@@ -47,7 +47,7 @@ const formSchema = z.object({
     .max(500),
 });
 
-const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/m.hosney33@gmail.com";
+const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/Info@pro-option.sa";
 
 export function ContactForm() {
   const { locale } = useLanguage();
@@ -63,7 +63,7 @@ export function ContactForm() {
     },
   });
 
-  const CONTACT_EMAIL = "m.hosney33@gmail.com";
+  const CONTACT_EMAIL = "Info@pro-option.sa";
   const serviceLabelMap: Record<(typeof serviceOptions)[number], string> = {
     "valuation-assets": getTranslation(locale, "contactForm.valuationMachinery"),
     "administrative-consulting": getTranslation(locale, "contactForm.administrativeConsulting"),
