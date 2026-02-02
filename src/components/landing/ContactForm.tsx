@@ -38,9 +38,13 @@ const formSchema = z.object({
   name: z.string().min(2, "Please provide your contact details."),
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
-  service: z.union([z.literal(""), z.enum(serviceOptions)]).refine((value): value is (typeof serviceOptions)[number] => {
-    return value !== "";
-  }, "Please select a service."),
+  service: z
+    .enum(serviceOptions)
+    .optional()
+    .refine(
+      (value): value is (typeof serviceOptions)[number] => value !== undefined,
+      "Please select a service."
+    ),
   message: z
     .string()
     .min(10, "Message must be at least 10 characters.")
@@ -197,7 +201,7 @@ export function ContactForm() {
                     <FormLabel>{getTranslation(locale, 'contactForm.service')}</FormLabel>
                     <Select
                       onValueChange={field.onChange}
-                      defaultValue={field.value}
+                      value={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
