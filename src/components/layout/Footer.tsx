@@ -61,7 +61,9 @@ export function Footer() {
                 <div style={{
                   fontFamily: "'Playfair Display', serif",
                   fontSize: "1.05rem", fontWeight: 700, color: "#ffffff",
-                }}>Pro Option</div>
+                }}>
+                  Pro Option
+                </div>
                 <div style={{
                   fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                   fontSize: "0.72rem", color: "rgba(255,255,255,0.5)",

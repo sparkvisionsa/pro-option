@@ -151,7 +151,9 @@ export function Header() {
                 fontSize: "1rem", fontWeight: 700,
                 color: logoTitleColor, letterSpacing: "0.02em",
                 transition: "color 0.3s",
-              }}>Pro Option</div>
+              }}>
+                Pro Option
+              </div>
               <div style={{
                 fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                 fontSize: "0.68rem",

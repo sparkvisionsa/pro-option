@@ -208,7 +208,7 @@ const organizationSchema = {
     },
   ],
   sameAs: [
-    "https://www.linkedin.com/in/pro-option-7a8344393/",
+    "https://www.linkedin.com/company/pro-option/",
     "https://x.com/prooption11",
     "https://www.snapchat.com/@prooption1",
     "https://www.tiktok.com/@prooption",

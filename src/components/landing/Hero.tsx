@@ -37,7 +37,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      aria-label="القسم الرئيسي — برو أوبشن للاستشارات المهنية"
+      aria-label="القسم الرئيسي - برو أوبشن للاستشارات المهنية"
       style={{
         position: "relative",
         background: "var(--bg-primary)",
@@ -47,9 +47,9 @@ export function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* ── خلفية هندسية خفيفة ──────────────────────────────── */}
+      {/* â”€â”€ Ø®Ù„ÙÙŠØ© Ù‡Ù†Ø¯Ø³ÙŠØ© Ø®ÙÙŠÙØ© â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-        {/* Blobs كحلية وبرتقالية خفية */}
+        {/* Blobs ÙƒØ­Ù„ÙŠØ© ÙˆØ¨Ø±ØªÙ‚Ø§Ù„ÙŠØ© Ø®ÙÙŠØ© */}
         <div style={{
           position: "absolute", top: "-15%", right: "-8%",
           width: "min(600px, 60vw)", height: "min(600px, 60vw)",
@@ -63,7 +63,7 @@ export function Hero() {
           background: "radial-gradient(circle, rgba(232,98,42,0.06) 0%, transparent 65%)",
         }} />
 
-        {/* نقاط هندسية ديكورية */}
+        {/* Ù†Ù‚Ø§Ø· Ù‡Ù†Ø¯Ø³ÙŠØ© Ø¯ÙŠÙƒÙˆØ±ÙŠØ© */}
         <svg
           className="geo-shape geo-shape-3"
           style={{ top: "10%", left: "4%", width: "clamp(60px,8vw,110px)", opacity: 0.08 }}
@@ -82,7 +82,7 @@ export function Hero() {
           <polygon points="50,20 80,50 50,80 20,50" stroke="var(--accent-navy)" strokeWidth="0.8" fill="none"/>
         </svg>
 
-        {/* خط عمودي زخرفي برتقالي — جانب */}
+        {/* Ø®Ø· Ø¹Ù…ÙˆØ¯ÙŠ Ø²Ø®Ø±ÙÙŠ Ø¨Ø±ØªÙ‚Ø§Ù„ÙŠ â€” Ø¬Ø§Ù†Ø¨ */}
         <div style={{
           position: "absolute", top: "5%", bottom: "5%",
           left: locale === "ar" ? "auto" : "0",
@@ -92,7 +92,7 @@ export function Hero() {
           opacity: 0.18, borderRadius: "2px",
         }} />
 
-        {/* شبكة نقاط خلفية */}
+        {/* Ø´Ø¨ÙƒØ© Ù†Ù‚Ø§Ø· Ø®Ù„ÙÙŠØ© */}
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.025 }}>
           <defs>
             <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -103,7 +103,7 @@ export function Hero() {
         </svg>
       </div>
 
-      {/* ── المحتوى الرئيسي ─────────────────────────────────── */}
+      {/* â”€â”€ Ø§Ù„Ù…Ø­ØªÙˆÙ‰ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div style={{
         position: "relative", zIndex: 1,
         maxWidth: "1400px", margin: "0 auto",
@@ -115,7 +115,7 @@ export function Hero() {
           gap: "3rem", alignItems: "center",
         }}>
 
-          {/* ── النص ─────────────────────────────────────────── */}
+          {/* â”€â”€ Ø§Ù„Ù†Øµ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
           <div style={{ order: locale === "ar" ? 1 : 0 }}>
             {/* Badge */}
             <div style={{
@@ -136,7 +136,7 @@ export function Hero() {
                 fontSize: "0.74rem", fontWeight: 700,
                 color: "var(--accent-orange)", letterSpacing: "0.1em",
               }}>
-                {locale === "ar" ? "معتمد وطنياً • IVS Certified" : "Nationally Accredited • IVS Certified"}
+                {locale === "ar" ? "معتمد وطنيًا • معتمد وفق IVS" : "Nationally Accredited • IVS Certified"}
               </span>
             </div>
 
@@ -180,10 +180,12 @@ export function Hero() {
               marginBottom: "1.5rem", letterSpacing: "0.08em", fontWeight: 600,
               animation: "fadeInUp 0.9s ease 0.45s both",
             }}>
-              From Strategy to Valuation — We Deliver Certainty
+              {locale === "ar"
+                ? "من الاستراتيجية إلى التقييم - نصنع لك اليقين"
+                : "From Strategy to Valuation - We Deliver Certainty"}
             </p>
 
-            {/* وصف */}
+            {/* ÙˆØµÙ */}
             <p style={{
               fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
               fontSize: "clamp(0.88rem, 1.5vw, 0.98rem)",
@@ -271,14 +273,14 @@ export function Hero() {
             </div>
           </div>
 
-          {/* ── الصورة r.png ────────────────────────────────── */}
+          {/* â”€â”€ Ø§Ù„ØµÙˆØ±Ø© r.png â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
           <div style={{
             order: locale === "ar" ? 0 : 1,
             display: "flex", alignItems: "center", justifyContent: "center",
             position: "relative",
             animation: "fadeInLeft 1s ease 0.3s both",
           }}>
-            {/* إطار كحلي فاتح خلف الصورة */}
+            {/* Ø¥Ø·Ø§Ø± ÙƒØ­Ù„ÙŠ ÙØ§ØªØ­ Ø®Ù„Ù Ø§Ù„ØµÙˆØ±Ø© */}
             <div aria-hidden="true" style={{
               position: "absolute",
               top: "10%", bottom: "10%",
@@ -292,7 +294,7 @@ export function Hero() {
               transition: "background-color 0.4s, border-color 0.3s",
             }} />
 
-            {/* الصورة الرئيسية */}
+            {/* Ø§Ù„ØµÙˆØ±Ø© Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ© */}
             <div className="float-img" style={{
               position: "relative", zIndex: 1,
               width: "100%", maxWidth: "520px",
@@ -301,20 +303,20 @@ export function Hero() {
             }}>
               <Image
                 src="/r.png"
-                alt="برو أوبشن — استشارات مهنية وتقييم أصول في المملكة العربية السعودية"
+                alt="برو أوبشن - استشارات مهنية وتقييم أصول في المملكة العربية السعودية"
                 width={520}
                 height={420}
                 style={{ width: "100%", height: "auto", display: "block" }}
                 priority
               />
-              {/* Overlay gradient أسفل الصورة */}
+              {/* Overlay gradient Ø£Ø³ÙÙ„ Ø§Ù„ØµÙˆØ±Ø© */}
               <div style={{
                 position: "absolute", bottom: 0, left: 0, right: 0,
                 height: "40%",
                 background: "linear-gradient(to top, rgba(29,41,82,0.65) 0%, transparent 100%)",
                 pointerEvents: "none",
               }} />
-              {/* نص فوق الصورة */}
+              {/* Ù†Øµ ÙÙˆÙ‚ Ø§Ù„ØµÙˆØ±Ø© */}
               <div style={{
                 position: "absolute", bottom: "1.25rem",
                 left: locale === "ar" ? "auto" : "1.25rem",
@@ -331,12 +333,12 @@ export function Hero() {
                   fontFamily: "'IBM Plex Sans', sans-serif",
                   fontSize: "0.68rem", color: "rgba(255,255,255,0.65)",
                 }}>
-                  All regions of Saudi Arabia
+                  {locale === "ar" ? "جميع مناطق المملكة العربية السعودية" : "All regions of Saudi Arabia"}
                 </div>
               </div>
             </div>
 
-            {/* Badge عائم — IVS */}
+            {/* Badge Ø¹Ø§Ø¦Ù… â€” IVS */}
             <div style={{
               position: "absolute",
               top: "8%",
@@ -363,7 +365,7 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Badge عائم — خبرة */}
+            {/* Badge Ø¹Ø§Ø¦Ù… â€” Ø®Ø¨Ø±Ø© */}
             <div style={{
               position: "absolute",
               bottom: "12%",
