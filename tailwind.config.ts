@@ -10,8 +10,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['var(--font-cairo)', 'var(--font-inter)', 'sans-serif'],
-        headline: ['var(--font-cairo)', 'var(--font-playfair-display)', 'serif'],
+        body: ['var(--font-arabic)', 'var(--font-latin)', 'sans-serif'],
+        headline: ['var(--font-playfair)', 'var(--font-arabic)', 'serif'],
+        arabic: ['var(--font-arabic)', 'sans-serif'],
+        latin: ['var(--font-latin)', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

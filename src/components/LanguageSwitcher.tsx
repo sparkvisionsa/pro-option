@@ -1,24 +1,50 @@
-'use client';
+"use client";
 
-import { useLanguage } from '@/context/LanguageContext';
-import { getTranslation } from '@/lib/i18n';
-import { Button } from '@/components/ui/button';
-import { Globe } from 'lucide-react';
+import { useLanguage } from "@/context/LanguageContext";
 
-export function LanguageSwitcher() {
+interface Props {
+  inHero?: boolean; /* true = على خلفية داكنة → نصوص بيضاء */
+}
+
+export function LanguageSwitcher({ inHero = false }: Props) {
   const { locale, toggleLanguage } = useLanguage();
-  const nextLocale = locale === 'en' ? 'ar' : 'en';
+  const nextLocale = locale === "en" ? "AR" : "EN";
+
+  const borderColor = inHero ? "rgba(255,255,255,0.30)" : "rgba(29,41,82,0.20)";
+  const textColor   = inHero ? "rgba(255,255,255,0.75)"  : "var(--text-muted)";
 
   return (
-    <Button
-      variant="ghost"
-      size="sm"
+    <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2"
-      title={nextLocale === 'en' ? 'Switch to English' : 'Switch to Arabic'}
+      aria-label={locale === "en" ? "Switch to Arabic" : "التبديل إلى الإنجليزية"}
+      style={{
+        display: "inline-flex", alignItems: "center", gap: "0.35rem",
+        padding: "0.35rem 0.75rem",
+        background: "transparent",
+        border: `1px solid ${borderColor}`,
+        borderRadius: "100px", cursor: "pointer",
+        fontFamily: "'IBM Plex Sans', sans-serif",
+        fontSize: "0.75rem", fontWeight: 700,
+        color: textColor,
+        letterSpacing: "0.06em",
+        transition: "all 0.2s",
+      }}
+      onMouseEnter={e => {
+        const el = e.currentTarget as HTMLElement;
+        el.style.borderColor = "var(--accent-orange)";
+        el.style.color = "var(--accent-orange)";
+      }}
+      onMouseLeave={e => {
+        const el = e.currentTarget as HTMLElement;
+        el.style.borderColor = borderColor;
+        el.style.color = textColor;
+      }}
     >
-      <Globe className="h-4 w-4" />
-      <span>{nextLocale.toUpperCase()}</span>
-    </Button>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5"/>
+        <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" strokeWidth="1.5"/>
+      </svg>
+      {nextLocale}
+    </button>
   );
 }
