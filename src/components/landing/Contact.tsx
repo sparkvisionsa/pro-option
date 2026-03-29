@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 import { ContactForm } from "./ContactForm";
@@ -52,8 +53,12 @@ export function Contact() {
 
   return (
     <section id="contact" aria-labelledby="contact-heading"
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+      itemID="https://www.pro-option.sa/#contact"
       style={{ background: "var(--bg-secondary)", padding: "6rem 1.5rem", position: "relative", overflow: "hidden" }}
     >
+      <SectionMeta id="contact" locale={locale} />
       <div className="gold-divider" style={{ position: "absolute", top: 0, left: "5%", right: "5%" }} />
 
       {/* خلفية دائرية كحلية فاتحة */}

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 
@@ -30,8 +31,12 @@ export function FAQ() {
 
   return (
     <section id="faq" aria-labelledby="faq-heading"
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+      itemID="https://www.pro-option.sa/#faq"
       style={{ background: "var(--bg-primary)", padding: "6rem 1.5rem", position: "relative" }}
     >
+      <SectionMeta id="faq" locale={locale} />
       <div className="gold-divider" style={{ position: "absolute", top: 0, left: "5%", right: "5%" }} />
 
       <div ref={ref} style={{ maxWidth: "820px", margin: "0 auto" }}>

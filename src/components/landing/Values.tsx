@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 
@@ -115,9 +116,13 @@ export function Values() {
 
   return (
     <section id="values" aria-labelledby="values-heading"
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+      itemID="https://www.pro-option.sa/#values"
       style={{ background: "var(--bg-secondary)", padding: "6rem 1.5rem", position: "relative", overflow: "hidden" }}
     >
       {/* خط زخرفي علوي */}
+      <SectionMeta id="values" locale={locale} />
       <div className="gold-divider" />
 
       <div ref={ref} style={{ maxWidth: "1400px", margin: "3rem auto 0" }}>

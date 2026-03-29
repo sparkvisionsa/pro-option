@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 
@@ -37,6 +38,9 @@ export function Hero() {
   return (
     <section
       id="hero"
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+      itemID="https://www.pro-option.sa/#hero"
       aria-label="القسم الرئيسي - برو أوبشن للاستشارات المهنية"
       style={{
         position: "relative",
@@ -48,6 +52,7 @@ export function Hero() {
       }}
     >
       {/* â”€â”€ Ø®Ù„ÙÙŠØ© Ù‡Ù†Ø¯Ø³ÙŠØ© Ø®ÙÙŠÙØ© â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <SectionMeta id="hero" locale={locale} />
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
         {/* Blobs ÙƒØ­Ù„ÙŠØ© ÙˆØ¨Ø±ØªÙ‚Ø§Ù„ÙŠØ© Ø®ÙÙŠØ© */}
         <div style={{

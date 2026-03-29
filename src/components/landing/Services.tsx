@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
 import { getTranslation } from "@/lib/i18n";
@@ -454,6 +455,9 @@ export function Services() {
   return (
     <section
       id="services"
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+      itemID="https://www.pro-option.sa/#services"
       aria-labelledby="services-heading"
       style={{
         background:
@@ -463,6 +467,7 @@ export function Services() {
         overflow: "hidden",
       }}
     >
+      <SectionMeta id="services" locale={locale} />
       <div
         className="gold-divider"
         style={{ position: "absolute", top: 0, left: "5%", right: "5%" }}

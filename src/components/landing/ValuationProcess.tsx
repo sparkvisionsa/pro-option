@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 
@@ -40,9 +41,13 @@ export function ValuationProcess() {
 
   return (
     <section id="process" aria-labelledby="process-heading"
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+      itemID="https://www.pro-option.sa/#process"
       style={{ background: "var(--bg-secondary)", padding: "6rem 1.5rem", position: "relative", overflow: "hidden" }}
     >
       {/* زخرفة */}
+      <SectionMeta id="process" locale={locale} />
       <div aria-hidden="true" style={{
         position: "absolute", bottom: 0, left: 0,
         width: "300px", height: "300px",

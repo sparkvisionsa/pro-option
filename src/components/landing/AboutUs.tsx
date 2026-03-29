@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 
@@ -29,9 +30,13 @@ export function AboutUs() {
           قسم "من نحن" — نص + صورة slider.png
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
       <section id="about" aria-labelledby="about-heading"
+        itemScope
+        itemType="https://schema.org/WebPageElement"
+        itemID="https://www.pro-option.sa/#about"
         style={{ background: "var(--bg-secondary)", padding: "6rem 1.5rem", position: "relative", overflow: "hidden" }}
       >
         {/* زخرفة خلفية */}
+        <SectionMeta id="about" locale={locale} />
         <div aria-hidden="true" style={{
           position: "absolute", top: 0, bottom: 0,
           right: locale === "ar" ? "auto" : "0",

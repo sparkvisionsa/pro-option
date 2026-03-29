@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
 import { getTranslation } from "@/lib/i18n";
 
@@ -112,8 +113,12 @@ export function ValuationPurposes() {
 
   return (
     <section id="purposes" aria-labelledby="purposes-heading"
+      itemScope
+      itemType="https://schema.org/WebPageElement"
+      itemID="https://www.pro-option.sa/#purposes"
       style={{ background: "var(--bg-primary)", padding: "6rem 1.5rem" }}
     >
+      <SectionMeta id="purposes" locale={locale} />
       <div className="gold-divider" style={{ marginBottom: "4rem" }} />
 
       <div ref={ref} style={{ maxWidth: "1400px", margin: "0 auto" }}>
