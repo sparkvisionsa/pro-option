@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
+import { trackEvent } from "@/lib/analytics";
 import { getTranslation } from "@/lib/i18n";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import logo from "../../app/logo.jpeg";
@@ -220,6 +221,13 @@ export function Header() {
               boxShadow: "0 4px 16px rgba(232,98,42,0.30)", whiteSpace: "nowrap",
               transition: "all 0.2s ease",
             }}
+              onClick={() =>
+                trackEvent("cta_click", {
+                  cta_name: "header_consultation",
+                  location: "header_desktop",
+                  target_section: "contact",
+                })
+              }
               onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "var(--accent-orange-light)"; el.style.transform = "translateY(-1px)"; el.style.boxShadow = "0 6px 22px rgba(232,98,42,0.45)"; }}
               onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "var(--accent-orange)"; el.style.transform = "translateY(0)"; el.style.boxShadow = "0 4px 16px rgba(232,98,42,0.30)"; }}
             >
@@ -298,7 +306,14 @@ export function Header() {
               {getTranslation(locale, link.labelKey)}
             </Link>
           ))}
-          <Link href="#contact" onClick={() => setMobileOpen(false)} style={{
+          <Link href="#contact" onClick={() => {
+            trackEvent("cta_click", {
+              cta_name: "header_consultation",
+              location: "header_mobile",
+              target_section: "contact",
+            });
+            setMobileOpen(false);
+          }} style={{
             display: "inline-flex", background: "var(--accent-orange)", color: "#fff",
             fontFamily: "'IBM Plex Sans Arabic', sans-serif",
             fontSize: "1rem", fontWeight: 700,

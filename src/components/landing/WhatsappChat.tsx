@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 export function WhatsappChat() {
   return (
@@ -8,6 +9,11 @@ export function WhatsappChat() {
       href="https://wa.me/966555765446"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() =>
+        trackEvent("whatsapp_click", {
+          location: "floating_button",
+        })
+      }
       aria-label="تواصل معنا عبر واتساب — WhatsApp"
       className="whatsapp-float"
       style={{

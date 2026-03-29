@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 import { getTranslation } from "@/lib/i18n";
 
 function useCountUp(target: number, duration = 2000, startCounting = false) {
@@ -218,6 +219,13 @@ export function Hero() {
                 boxShadow: "0 6px 24px rgba(232,98,42,0.35)",
                 transition: "all 0.25s ease",
               }}
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    cta_name: "free_consultation",
+                    location: "hero",
+                    target_section: "contact",
+                  })
+                }
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "var(--accent-orange-light)"; el.style.transform = "translateY(-2px)"; el.style.boxShadow = "0 10px 32px rgba(232,98,42,0.50)"; }}
                 onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "var(--accent-orange)"; el.style.transform = "translateY(0)"; el.style.boxShadow = "0 6px 24px rgba(232,98,42,0.35)"; }}
               >
@@ -233,6 +241,13 @@ export function Hero() {
                 border: "2px solid var(--border-card)",
                 transition: "all 0.25s ease",
               }}
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    cta_name: "explore_services",
+                    location: "hero",
+                    target_section: "services",
+                  })
+                }
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--accent-navy)"; el.style.background = "rgba(29,41,82,0.04)"; el.style.transform = "translateY(-2px)"; }}
                 onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--border-card)"; el.style.background = "transparent"; el.style.transform = "translateY(0)"; }}
               >

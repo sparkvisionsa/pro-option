@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 import { getTranslation } from "@/lib/i18n";
 
 function useReveal() {
@@ -292,6 +293,13 @@ function ImageBanner({ locale }: { locale: string }) {
                 boxShadow: "0 6px 24px rgba(232,98,42,0.40)",
                 transition: "all 0.25s ease",
               }}
+                onClick={() =>
+                  trackEvent("cta_click", {
+                    cta_name: "contact_us_now",
+                    location: "about_banner",
+                    target_section: "contact",
+                  })
+                }
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "var(--accent-orange-light)"; el.style.transform = "translateY(-2px)"; }}
                 onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "var(--accent-orange)"; el.style.transform = "translateY(0)"; }}
               >

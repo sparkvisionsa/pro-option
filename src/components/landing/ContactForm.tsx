@@ -25,6 +25,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 import { getTranslation } from "@/lib/i18n";
 
 const serviceOptions = [
@@ -78,6 +79,11 @@ export function ContactForm() {
   function openMailClient(values: z.infer<typeof formSchema>) {
     if (typeof window === "undefined") return;
 
+    trackEvent("contact_form_mailto_fallback", {
+      service: values.service,
+      location: "contact_form",
+    });
+
     const serviceLabel = serviceLabelMap[values.service] || values.service;
     const labels = {
       name: getTranslation(locale, "contactForm.name"),
@@ -106,6 +112,11 @@ export function ContactForm() {
   }
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    trackEvent("contact_form_submit_attempt", {
+      service: values.service,
+      location: "contact_form",
+    });
+
     try {
       const res = await fetch(FORM_SUBMIT_ENDPOINT, {
         method: "POST",
@@ -131,9 +142,17 @@ export function ContactForm() {
         title: getTranslation(locale, "contactForm.messageSent"),
         description: getTranslation(locale, "contactForm.messageDescription"),
       });
+      trackEvent("contact_form_submit_success", {
+        service: values.service,
+        location: "contact_form",
+      });
       form.reset();
     } catch (error: any) {
       console.error("Contact submit error:", error);
+      trackEvent("contact_form_submit_error", {
+        service: values.service,
+        location: "contact_form",
+      });
       toast({
         title: getTranslation(locale, "contactForm.warningTitle"),
         description:

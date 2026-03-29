@@ -3,6 +3,7 @@
 import React from "react";
 import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 import { getTranslation } from "@/lib/i18n";
 import { ContactForm } from "./ContactForm";
 
@@ -107,6 +108,18 @@ export function Contact() {
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label={locale === "ar" ? item.labelAr : item.labelEn}
+                  onClick={() =>
+                    trackEvent("contact_click", {
+                      location: "contact_section",
+                      method: item.href.startsWith("mailto:")
+                        ? "email"
+                        : item.href.startsWith("tel:")
+                          ? "phone"
+                          : item.href.includes("wa.me")
+                            ? "whatsapp"
+                            : "location",
+                    })
+                  }
                   style={{
                     display: "flex", alignItems: "center", gap: "1rem",
                     background: "#ffffff",

@@ -1,5 +1,6 @@
 import "./globals.css";
 import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic, Playfair_Display } from "next/font/google";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ScrollToTopButton } from "@/components/layout/ScrollToTopButton";
@@ -73,6 +74,7 @@ export default function RootLayout({
           playfairDisplay.variable
         )}
       >
+        <GoogleAnalytics />
         <a href="#main-content" className="skip-link">
           انتقل إلى المحتوى الرئيسي
         </a>
