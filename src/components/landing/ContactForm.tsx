@@ -241,6 +241,12 @@ export function ContactForm() {
                       <SelectItem value="educational-consulting">
                         {getTranslation(locale, 'contactForm.educationalConsulting')}
                       </SelectItem>
+                      <SelectItem value="technical-consulting">
+                        {getTranslation(locale, 'contactForm.technicalConsulting')}
+                      </SelectItem>
+                      <SelectItem value="statistical-consulting">
+                        {getTranslation(locale, 'contactForm.statisticalConsulting')}
+                      </SelectItem>
                       <SelectItem value="other">{getTranslation(locale, 'contactForm.other')}</SelectItem>
                     </SelectContent>
                   </Select>

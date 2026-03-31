@@ -95,7 +95,7 @@ export function AboutUs() {
               </p>
 
               {/* Vision & Mission */}
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              <div className="about-vision-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                 {[
                   { titleKey: "aboutPro.visionTitle", bodyKey: "aboutPro.visionCopy",
                     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="#e8622a" strokeWidth="1.5"/><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" stroke="#e8622a" strokeWidth="1.5" fill="none"/></svg> },

@@ -218,7 +218,7 @@ export function Hero() {
             </div>
 
             {/* Stats */}
-            <div ref={statsRef} style={{
+            <div ref={statsRef} className="hero-stats-grid" style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
               gap: "0.75rem",
@@ -316,7 +316,7 @@ export function Hero() {
             </div>
 
             {/* Badge */}
-            <div style={{
+            <div className="hero-badge-top" style={{
               position: "absolute",
               top: "8%",
               left: locale === "ar" ? "auto" : "0",
@@ -337,7 +337,7 @@ export function Hero() {
               }}>{locale === "ar" ? "مرخصة من الهيئة السعودية للمقيمين المعتمدين" : "Licensed by Saudi Authority for Accredited Valuers"}</div>
             </div>
 
-            <div style={{
+            <div className="hero-badge-bottom" style={{
               position: "absolute",
               bottom: "12%",
               left: locale === "ar" ? "0" : "auto",

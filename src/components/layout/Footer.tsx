@@ -56,10 +56,10 @@ export function Footer() {
               textDecoration: "none", marginBottom: "1.25rem",
             }}>
               <Image src={logo} alt="شعار برو أوبشن للاستشارات المهنية" width={42} height={42} style={{ borderRadius: "8px" }} />
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <div style={{
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: "1.05rem", fontWeight: 700, color: "#ffffff",
+                  fontSize: "clamp(0.82rem, 2.5vw, 1.05rem)", fontWeight: 700, color: "#ffffff",
                 }}>
                   Pro Option for Professional Consultant
                 </div>

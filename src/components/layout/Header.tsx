@@ -128,22 +128,25 @@ export function Header() {
         boxShadow: headerShadow,
         transition: "background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease",
       }}>
-        <div style={{
+        <div className="header-inner" style={{
           maxWidth: "1400px", margin: "0 auto",
           padding: "0 1.5rem",
           display: "flex", alignItems: "center", justifyContent: "space-between",
           height: "72px",
+          gap: "0.5rem",
         }}>
           {/* Logo */}
           <Link href="/" aria-label="برو أوبشن للاستشارات المهنية — الصفحة الرئيسية" style={{
-            display: "flex", alignItems: "center", gap: "0.625rem",
-            textDecoration: "none", flexShrink: 0,
+            display: "flex", alignItems: "center", gap: "0.5rem",
+            textDecoration: "none",
+            minWidth: 0,
+            flexShrink: 1,
           }}>
             <Image src={logo} alt="شعار برو أوبشن للاستشارات المهنية | Pro Option for Professional Consultant Logo"
-              width={38} height={38} style={{ borderRadius: "7px" }} priority />
-            <div suppressHydrationWarning style={{ lineHeight: 1.15 }}>
+              width={38} height={38} style={{ borderRadius: "7px", flexShrink: 0 }} priority />
+            <div suppressHydrationWarning className="header-logo-text" style={{ lineHeight: 1.15, minWidth: 0 }}>
               {locale === "ar" ? (
-                <div style={{
+                <div className="header-logo-ar" style={{
                   fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                   fontSize: "1.1rem", fontWeight: 700,
                   color: logoTitleColor, letterSpacing: "0.01em",
@@ -239,7 +242,7 @@ export function Header() {
           </div>
 
           {/* Mobile Actions */}
-          <div className="mobile-actions" style={{ alignItems: "center", gap: "0.4rem" }}>
+          <div className="mobile-actions" style={{ alignItems: "center", gap: "0.4rem", flexShrink: 0 }}>
             <button onClick={toggleTheme} aria-label={themeBtnLabel} style={{
               display: "flex", alignItems: "center", justifyContent: "center",
               width: "34px", height: "34px", borderRadius: "50%",

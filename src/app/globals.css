@@ -556,6 +556,70 @@ article:hover .service-img-wrap img { transform: scale(1.06); }
   }
 }
 
+/* Hero stats: stack on very small screens */
+@media (max-width: 480px) {
+  .hero-stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+}
+
+/* AboutUs vision/mission: stack on mobile */
+@media (max-width: 640px) {
+  .about-vision-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Hero floating badges: hide on very small screens to avoid overlap */
+@media (max-width: 480px) {
+  .hero-badge-top,
+  .hero-badge-bottom {
+    display: none !important;
+  }
+}
+/* Scale badges down on tablets */
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero-badge-top,
+  .hero-badge-bottom {
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+}
+
+/* Header: reduce padding on small screens */
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 0 0.75rem !important;
+  }
+  .header-logo-ar {
+    font-size: 0.92rem !important;
+  }
+}
+
+/* Header logo text: scale down further on very small screens */
+@media (max-width: 380px) {
+  .header-inner {
+    padding: 0 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+  .header-logo-text {
+    max-width: 140px;
+  }
+  .header-logo-ar {
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Mobile actions: compact sizing on small screens */
+@media (max-width: 480px) {
+  .mobile-actions {
+    gap: 0.25rem !important;
+    flex-shrink: 0;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════
    INPUTS
    ═══════════════════════════════════════════════════════════════ */
