@@ -32,6 +32,8 @@ const serviceOptions = [
   "valuation-assets",
   "administrative-consulting",
   "educational-consulting",
+  "technical-consulting",
+  "statistical-consulting",
   "other",
 ] as const;
 
@@ -73,6 +75,8 @@ export function ContactForm() {
     "valuation-assets": getTranslation(locale, "contactForm.valuationMachinery"),
     "administrative-consulting": getTranslation(locale, "contactForm.administrativeConsulting"),
     "educational-consulting": getTranslation(locale, "contactForm.educationalConsulting"),
+    "technical-consulting": getTranslation(locale, "contactForm.technicalConsulting"),
+    "statistical-consulting": getTranslation(locale, "contactForm.statisticalConsulting"),
     other: getTranslation(locale, "contactForm.other"),
   };
 

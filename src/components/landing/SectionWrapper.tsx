@@ -59,11 +59,11 @@ export function SectionWrapper({
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
+          <h2 suppressHydrationWarning className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl">
             {title}
           </h2>
           {subtitle && (
-            <p className="mt-4 text-xl text-muted-foreground">{subtitle}</p>
+            <p suppressHydrationWarning className="mt-4 text-xl text-muted-foreground">{subtitle}</p>
           )}
         </div>
         {children}

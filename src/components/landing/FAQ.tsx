@@ -45,9 +45,9 @@ export function FAQ() {
             {locale === "ar" ? "الأسئلة الشائعة" : "FAQ"}
           </div>
           <h2 id="faq-heading" style={{
-            fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+            fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
             fontSize: "clamp(1.75rem,3.5vw,2.75rem)",
-            fontWeight: 700, color: "var(--accent-navy)", marginBottom: "1rem",
+            fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem",
           }}>
             {getTranslation(locale, "faq.title")}
           </h2>
@@ -58,14 +58,14 @@ export function FAQ() {
             const isOpen = openIndex === i;
             return (
               <div key={i} style={{
-                background: "#ffffff",
-                border: `1.5px solid ${isOpen ? "rgba(232,98,42,0.30)" : "rgba(29,41,82,0.09)"}`,
+                background: "var(--card-gradient-warm)",
+                border: `1.5px solid ${isOpen ? "rgba(232,98,42,0.34)" : "rgba(232,98,42,0.18)"}`,
                 borderRadius: "12px",
                 overflow: "hidden",
                 boxShadow: isOpen
-                  ? "0 6px 24px rgba(232,98,42,0.08)"
-                  : "0 2px 10px rgba(29,41,82,0.05)",
-                transition: "border-color 0.3s, box-shadow 0.3s",
+                  ? "var(--card-shadow-warm-hover)"
+                  : "var(--card-shadow-warm)",
+                transition: "border-color 0.3s, box-shadow 0.3s, background 0.3s",
                 opacity: visible ? 1 : 0,
                 transform: visible ? "translateY(0)" : "translateY(16px)",
                 transitionDelay: `${i * 70}ms`,
@@ -83,23 +83,23 @@ export function FAQ() {
                   }}
                 >
                   <span style={{
-                    fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+                    fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
                     fontSize: "clamp(0.9rem,1.5vw,1rem)", fontWeight: 700,
-                    color: isOpen ? "var(--accent-orange)" : "var(--accent-navy)",
+                    color: isOpen ? "var(--accent-orange)" : "var(--text-primary)",
                     flex: 1, lineHeight: 1.4, transition: "color 0.3s",
                   }}>{item.q}</span>
 
                   <span style={{
                     flexShrink: 0, width: "28px", height: "28px",
                     borderRadius: "50%",
-                    background: isOpen ? "var(--accent-orange)" : "rgba(29,41,82,0.06)",
+                    background: isOpen ? "var(--accent-orange)" : "rgba(232,98,42,0.10)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     transition: "background 0.3s, transform 0.3s",
                     transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
                   }}>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                      <line x1="6" y1="0" x2="6" y2="12" stroke={isOpen ? "#fff" : "var(--accent-navy)"} strokeWidth="1.5" strokeLinecap="round"/>
-                      <line x1="0" y1="6" x2="12" y2="6" stroke={isOpen ? "#fff" : "var(--accent-navy)"} strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="6" y1="0" x2="6" y2="12" stroke={isOpen ? "#fff" : "var(--accent-orange)"} strokeWidth="1.5" strokeLinecap="round"/>
+                      <line x1="0" y1="6" x2="12" y2="6" stroke={isOpen ? "#fff" : "var(--accent-orange)"} strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                   </span>
                 </button>
@@ -119,7 +119,7 @@ export function FAQ() {
                     paddingTop: "1rem",
                   }}>
                     <p style={{
-                      fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+                      fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
                       fontSize: "clamp(0.87rem,1.4vw,0.95rem)",
                       color: "var(--text-secondary)", lineHeight: 1.85, margin: 0,
                     }}>{item.a}</p>

@@ -59,35 +59,35 @@ export function AboutUs() {
               transform: visible ? "translateX(0)" : locale === "ar" ? "translateX(30px)" : "translateX(-30px)",
               transition: "opacity 0.8s ease, transform 0.8s ease",
             }}>
-              <div className="section-label" style={{ display: "inline-block" }}>
+              <div className="section-label" suppressHydrationWarning style={{ display: "inline-block" }}>
                 {locale === "ar" ? "من نحن" : "About Us"}
               </div>
-              <h2 id="about-heading" style={{
-                fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+              <h2 id="about-heading" suppressHydrationWarning style={{
+                fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
                 fontSize: "clamp(1.75rem,3.5vw,2.75rem)",
                 fontWeight: 700, color: "var(--text-primary)",
                 marginBottom: "1.25rem", lineHeight: 1.3,
               }}>
                 {locale === "ar" ? (
-                  <>برو أوبشن: المرجع المهني الأول
-                    <br /><span style={{ color: "var(--accent-orange)" }}>للاستشارات والتقييم في المملكة</span>
+                  <>برو أوبشن: مرجعك المهني الأول
+                    <br /><span suppressHydrationWarning style={{ color: "var(--accent-orange)" }}>للاستشارات والتقييم في المملكة العربية السعودية</span>
                   </>
                 ) : (
-                  <>Pro Option: The Premier Reference
-                    <br /><span style={{ color: "var(--accent-orange)" }}>for Consulting & Valuation in KSA</span>
+                  <>Pro Option: Your Premier Professional Reference
+                    <br /><span suppressHydrationWarning style={{ color: "var(--accent-orange)" }}>for Consulting & Valuation in Saudi Arabia</span>
                   </>
                 )}
               </h2>
 
-              <p style={{
-                fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+              <p suppressHydrationWarning style={{
+                fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
                 fontSize: "clamp(0.95rem,1.6vw,1.05rem)",
                 color: "var(--text-secondary)", lineHeight: 1.9, marginBottom: "1rem",
               }}>
                 {getTranslation(locale, "aboutPro.description")}
               </p>
-              <p style={{
-                fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+              <p suppressHydrationWarning style={{
+                fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
                 fontSize: "clamp(0.95rem,1.6vw,1.05rem)",
                 color: "var(--text-secondary)", lineHeight: 1.9, marginBottom: "2rem",
               }}>
@@ -103,25 +103,25 @@ export function AboutUs() {
                     icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L15 9H22L16.5 13.5L18.5 21L12 17L5.5 21L7.5 13.5L2 9H9L12 2Z" stroke="#e8622a" strokeWidth="1.5" fill="none"/></svg> },
                 ].map((box, i) => (
                   <div key={i} style={{
-                    background: "var(--bg-card)",
-                    border: "1.5px solid var(--border-card)",
+                    background: "var(--card-gradient-warm)",
+                    border: "1.5px solid rgba(232,98,42,0.18)",
                     borderRadius: "12px", padding: "1.25rem",
-                    boxShadow: "var(--shadow-card)",
+                    boxShadow: "var(--card-shadow-warm)",
                     transition: "all 0.3s ease",
                   }}
-                    onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(232,98,42,0.35)"; el.style.boxShadow = "0 6px 20px rgba(232,98,42,0.10)"; el.style.transform = "translateY(-2px)"; }}
-                    onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--border-card)"; el.style.boxShadow = "var(--shadow-card)"; el.style.transform = "translateY(0)"; }}
+                    onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(232,98,42,0.35)"; el.style.boxShadow = "var(--card-shadow-warm-hover)"; el.style.transform = "translateY(-2px)"; }}
+                    onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "rgba(232,98,42,0.18)"; el.style.boxShadow = "var(--card-shadow-warm)"; el.style.transform = "translateY(0)"; }}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
                       {box.icon}
-                      <h3 style={{
+                      <h3 suppressHydrationWarning style={{
                         fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                         fontSize: "0.875rem", fontWeight: 700, color: "var(--accent-orange)", margin: 0,
                       }}>
                         {getTranslation(locale, box.titleKey)}
                       </h3>
                     </div>
-                    <p style={{
+                    <p suppressHydrationWarning style={{
                       fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                       fontSize: "0.82rem", color: "var(--text-secondary)", lineHeight: 1.7, margin: 0,
                     }}>
@@ -174,7 +174,7 @@ export function AboutUs() {
                   left: locale === "ar" ? "auto" : "1.25rem",
                   right: locale === "ar" ? "1.25rem" : "auto",
                 }}>
-                  <div style={{
+                  <div suppressHydrationWarning style={{
                     fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                     fontSize: "0.85rem", fontWeight: 700, color: "#fff",
                   }}>
@@ -196,11 +196,11 @@ export function AboutUs() {
                 animation: "float-slow 9s ease-in-out infinite",
                 transition: "background-color 0.4s",
               }}>
-                <div style={{
+                <div suppressHydrationWarning style={{
                   fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                   fontSize: "0.72rem", fontWeight: 700, color: "var(--accent-orange)",
                 }}>
-                  {locale === "ar" ? "✓ معتمد — تغطية وطنية" : "✓ Certified — National Coverage"}
+                  {locale === "ar" ? "✓ تغطية شاملة  " : "✓  National Coverage"}
                 </div>
               </div>
             </div>
@@ -257,7 +257,7 @@ function ImageBanner({ locale }: { locale: string }) {
             justifyContent: locale === "ar" ? "flex-end" : "flex-start",
           }}>
             <div style={{ maxWidth: "480px" }}>
-              <div className="section-label" style={{
+              <div className="section-label" suppressHydrationWarning style={{
                 display: "inline-block",
                 background: "rgba(232,98,42,0.20)",
                 borderColor: "rgba(232,98,42,0.40)",
@@ -265,8 +265,8 @@ function ImageBanner({ locale }: { locale: string }) {
               }}>
                 {locale === "ar" ? "لماذا برو أوبشن؟" : "Why Pro Option?"}
               </div>
-              <h2 style={{
-                fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+              <h2 suppressHydrationWarning style={{
+                fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
                 fontSize: "clamp(1.5rem,3vw,2.25rem)", fontWeight: 800,
                 color: "#ffffff", lineHeight: 1.25, marginBottom: "1rem",
               }}>
@@ -274,8 +274,8 @@ function ImageBanner({ locale }: { locale: string }) {
                   ? "نحن نجمع بين الخبرة الميدانية والدقة الأكاديمية"
                   : "We Combine Field Expertise with Academic Precision"}
               </h2>
-              <p style={{
-                fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+              <p suppressHydrationWarning style={{
+                fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
                 fontSize: "clamp(0.88rem,1.5vw,1rem)",
                 color: "rgba(255,255,255,0.75)", lineHeight: 1.8, marginBottom: "1.75rem",
               }}>
@@ -283,7 +283,7 @@ function ImageBanner({ locale }: { locale: string }) {
                   ? "فريقنا من المحللين المعتمدين يقدم تقييمات دقيقة ومعاينات ميدانية شاملة في جميع مناطق المملكة العربية السعودية."
                   : "Our team of certified analysts delivers precise valuations and comprehensive field inspections across all regions of Saudi Arabia."}
               </p>
-              <a href="#contact" style={{
+              <a href="#contact" suppressHydrationWarning style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
                 background: "var(--accent-orange)", color: "#fff",
                 fontFamily: "'IBM Plex Sans Arabic', sans-serif",

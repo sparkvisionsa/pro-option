@@ -1,5 +1,6 @@
+import type { Viewport } from "next";
 import "./globals.css";
-import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic, Playfair_Display } from "next/font/google";
+import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -18,21 +19,23 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   display: "swap",
 });
 
-const ibmPlexSans = IBM_Plex_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-latin",
   display: "swap",
 });
 
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
 export const metadata = siteMetadata;
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c1220" },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -41,7 +44,6 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -70,8 +72,7 @@ export default function RootLayout({
       <body
         className={cn(
           ibmPlexSansArabic.variable,
-          ibmPlexSans.variable,
-          playfairDisplay.variable
+          inter.variable
         )}
       >
         <GoogleAnalytics />

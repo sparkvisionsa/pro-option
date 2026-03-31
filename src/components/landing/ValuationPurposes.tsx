@@ -43,19 +43,15 @@ function PurposeCard({ icon, titleKey, descKey, kwKey, index, visible }: Purpose
 
   return (
     <article
+      className="section-card-gradient"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: hovered ? "#fffaf8" : "#ffffff",
-        border: `1.5px solid ${hovered ? "rgba(232,98,42,0.30)" : "rgba(29,41,82,0.09)"}`,
         borderRadius: "14px",
         padding: "1.75rem 1.5rem",
         position: "relative", overflow: "hidden",
         transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
         transform: hovered ? "translateY(-3px)" : "translateY(0)",
-        boxShadow: hovered
-          ? "0 10px 32px rgba(232,98,42,0.10)"
-          : "0 2px 14px rgba(29,41,82,0.06)",
         opacity: visible ? 1 : 0,
         transitionDelay: `${index * 80}ms`,
       }}
@@ -72,14 +68,14 @@ function PurposeCard({ icon, titleKey, descKey, kwKey, index, visible }: Purpose
       <div style={{ marginBottom: "1rem" }}>{icon}</div>
 
       <h3 style={{
-        fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+        fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
         fontSize: "clamp(0.95rem,1.5vw,1.05rem)", fontWeight: 700,
-        color: "var(--accent-navy)", marginBottom: "0.5rem", lineHeight: 1.3,
+        color: "var(--text-primary)", marginBottom: "0.5rem", lineHeight: 1.3,
       }}>
         {getTranslation(locale, titleKey)}
       </h3>
       <p style={{
-        fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+        fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
         fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.75, margin: "0 0 1rem",
       }}>
         {getTranslation(locale, descKey)}
@@ -127,14 +123,14 @@ export function ValuationPurposes() {
             {locale === "ar" ? "أغراض التقييم" : "Valuation Purposes"}
           </div>
           <h2 id="purposes-heading" style={{
-            fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+            fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
             fontSize: "clamp(1.75rem,3.5vw,2.75rem)",
-            fontWeight: 700, color: "var(--accent-navy)", marginBottom: "1rem",
+            fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem",
           }}>
             {locale === "ar" ? "أغراض التقييم التي نغطيها" : "Valuation Purposes We Cover"}
           </h2>
           <p style={{
-            fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+            fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
             fontSize: "clamp(0.95rem,1.6vw,1.05rem)", color: "var(--text-secondary)",
             maxWidth: "560px", margin: "0 auto", lineHeight: 1.75,
           }}>

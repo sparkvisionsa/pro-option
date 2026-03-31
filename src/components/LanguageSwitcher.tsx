@@ -23,7 +23,7 @@ export function LanguageSwitcher({ inHero = false }: Props) {
         background: "transparent",
         border: `1px solid ${borderColor}`,
         borderRadius: "100px", cursor: "pointer",
-        fontFamily: "'IBM Plex Sans', sans-serif",
+        fontFamily: "'Inter', sans-serif",
         fontSize: "0.75rem", fontWeight: 700,
         color: textColor,
         letterSpacing: "0.06em",

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Pro Option professional consulting and asset valuation in Saudi Arabia";
+  "Pro Option for Professional Consultant in Saudi Arabia";
 export const size = {
   width: 1200,
   height: 630,
@@ -104,7 +104,7 @@ export default function OpenGraphImage() {
                     background: "#e8622a",
                   }}
                 />
-                Pro Option
+                Pro Option for Professional Consultant
               </div>
 
               <div
@@ -122,7 +122,7 @@ export default function OpenGraphImage() {
                     maxWidth: 900,
                   }}
                 >
-                  Pro Option Professional Consulting
+                  Pro Option for Professional Consultant
                 </div>
                 <div
                   style={{

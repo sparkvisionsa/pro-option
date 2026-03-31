@@ -44,18 +44,14 @@ function ValueCard({ icon, letter, titleKey, descKey, index, visible }: ValueCar
 
   return (
     <article
+      className="section-card-gradient"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: hovered ? "var(--accent-navy)" : "#ffffff",
-        border: `1.5px solid ${hovered ? "var(--accent-navy)" : "rgba(29,41,82,0.09)"}`,
         borderRadius: "14px", padding: "2rem 1.5rem",
         position: "relative", overflow: "hidden", textAlign: "center",
         transition: "all 0.35s cubic-bezier(0.16,1,0.3,1)",
         transform: hovered ? "translateY(-5px)" : "translateY(0)",
-        boxShadow: hovered
-          ? "0 14px 40px rgba(29,41,82,0.20)"
-          : "0 2px 14px rgba(29,41,82,0.06)",
         opacity: visible ? 1 : 0,
         transitionDelay: `${index * 80}ms`,
       }}
@@ -64,9 +60,9 @@ function ValueCard({ icon, letter, titleKey, descKey, index, visible }: ValueCar
       <span aria-hidden="true" style={{
         position: "absolute", bottom: "-0.5rem", left: "50%",
         transform: "translateX(-50%)",
-        fontFamily: "'Playfair Display', serif",
+        fontFamily: "'Inter', sans-serif",
         fontSize: "5.5rem", fontWeight: 800, lineHeight: 1,
-        color: hovered ? "rgba(255,255,255,0.06)" : "rgba(29,41,82,0.04)",
+        color: hovered ? "rgba(232,98,42,0.10)" : "rgba(29,41,82,0.04)",
         userSelect: "none", pointerEvents: "none",
         transition: "color 0.35s",
       }}>{letter}</span>
@@ -75,17 +71,17 @@ function ValueCard({ icon, letter, titleKey, descKey, index, visible }: ValueCar
       <div style={{
         display: "inline-flex", alignItems: "center", justifyContent: "center",
         width: "52px", height: "52px", borderRadius: "12px",
-        background: hovered ? "rgba(255,255,255,0.12)" : "rgba(232,98,42,0.08)",
-        border: `1.5px solid ${hovered ? "rgba(255,255,255,0.20)" : "rgba(232,98,42,0.20)"}`,
+        background: hovered ? "rgba(232,98,42,0.14)" : "rgba(232,98,42,0.08)",
+        border: "1.5px solid rgba(232,98,42,0.20)",
         marginBottom: "1rem",
-        color: hovered ? "#ffffff" : "var(--accent-orange)",
+        color: "var(--accent-orange)",
         transition: "all 0.35s",
       }}>{icon}</div>
 
       <h3 style={{
         fontFamily: "'IBM Plex Sans Arabic', sans-serif",
         fontSize: "clamp(1rem,1.8vw,1.15rem)", fontWeight: 700,
-        color: hovered ? "#ffffff" : "var(--accent-navy)",
+        color: hovered ? "var(--text-primary)" : "var(--text-primary)",
         marginBottom: "0.5rem", transition: "color 0.35s",
       }}>
         {getTranslation(locale, titleKey)}
@@ -93,7 +89,7 @@ function ValueCard({ icon, letter, titleKey, descKey, index, visible }: ValueCar
       <p style={{
         fontFamily: "'IBM Plex Sans Arabic', sans-serif",
         fontSize: "0.82rem", lineHeight: 1.7,
-        color: hovered ? "rgba(255,255,255,0.72)" : "var(--text-secondary)",
+        color: "var(--text-secondary)",
         margin: 0, transition: "color 0.35s",
       }}>
         {getTranslation(locale, descKey)}
@@ -131,19 +127,19 @@ export function Values() {
             {locale === "ar" ? "قيمنا" : "Our Values"}
           </div>
           <h2 id="values-heading" style={{
-            fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+            fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
             fontSize: "clamp(1.75rem,3.5vw,2.75rem)",
-            fontWeight: 700, color: "var(--accent-navy)", marginBottom: "1rem",
+            fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem",
           }}>
             {locale === "ar" ? "المبادئ التي نعمل بها" : "The Principles We Work By"}
           </h2>
           <p style={{
-            fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+            fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
             fontSize: "clamp(0.95rem,1.6vw,1.05rem)", color: "var(--text-secondary)",
             maxWidth: "520px", margin: "0 auto", lineHeight: 1.75,
           }}>
             {locale === "ar"
-              ? "ثوابت راسخة تُشكّل هوية برو أوبشن وتحدد طريقة عملنا في كل مشروع"
+              ? "ثوابت راسخة تُشكّل هوية برو أوبشن وتحدد طريقة العمل"
               : "Core principles that define Pro Option's identity and guide every project"}
           </p>
         </div>
@@ -168,11 +164,11 @@ export function Values() {
             : ["Integrity", "Objectivity", "Transparency", "Fairness", "Quality"]
           ).map((tag, i) => (
             <span key={i} style={{
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+              fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
               fontSize: "0.85rem", fontWeight: 600,
               color: "var(--accent-navy)",
-              background: "#ffffff",
-              border: "1.5px solid rgba(29,41,82,0.12)",
+              background: "var(--bg-card)",
+              border: "1.5px solid var(--border-card)",
               borderRadius: "100px",
               padding: "0.4rem 1.25rem",
               boxShadow: "0 1px 6px rgba(29,41,82,0.06)",

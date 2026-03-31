@@ -23,13 +23,12 @@ export function Footer() {
     <footer
       role="contentinfo"
       style={{
-        background: "var(--accent-navy)",    /* كحلي الشعار الداكن */
+        background: "var(--accent-navy)",
         color: "rgba(255,255,255,0.80)",
         padding: "5rem 1.5rem 0",
         position: "relative", overflow: "hidden",
       }}
     >
-      {/* زخرفة هندسية خلفية */}
       <div aria-hidden="true" style={{
         position: "absolute", top: "-20%", right: "-10%",
         width: "500px", height: "500px", borderRadius: "50%",
@@ -52,26 +51,26 @@ export function Footer() {
 
           {/* Brand Column */}
           <div>
-            <Link href="/" aria-label="برو أوبشن" style={{
+            <Link href="/" aria-label="برو أوبشن للاستشارات المهنية" style={{
               display: "flex", alignItems: "center", gap: "0.625rem",
               textDecoration: "none", marginBottom: "1.25rem",
             }}>
-              <Image src={logo} alt="شعار برو أوبشن" width={42} height={42} style={{ borderRadius: "8px" }} />
+              <Image src={logo} alt="شعار برو أوبشن للاستشارات المهنية" width={42} height={42} style={{ borderRadius: "8px" }} />
               <div>
                 <div style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "1.05rem", fontWeight: 700, color: "#ffffff",
                 }}>
-                  Pro Option
+                  Pro Option for Professional Consultant
                 </div>
                 <div style={{
                   fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                   fontSize: "0.72rem", color: "rgba(255,255,255,0.5)",
-                }}>برو أوبشن</div>
+                }}>برو أوبشن للاستشارات المهنية</div>
               </div>
             </Link>
-            <p style={{
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+            <p suppressHydrationWarning style={{
+              fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
               fontSize: "0.88rem", lineHeight: 1.75,
               color: "rgba(255,255,255,0.55)", marginBottom: "1.5rem",
             }}>
@@ -108,7 +107,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 style={{
+            <h3 suppressHydrationWarning style={{
               fontFamily: "'IBM Plex Sans Arabic', sans-serif",
               fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em",
               color: "var(--accent-orange)", marginBottom: "1.25rem",
@@ -126,7 +125,7 @@ export function Footer() {
                 { href: "#contact",  labelAr: "تواصل معنا",  labelEn: "Contact"  },
               ].map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} style={{
+                  <Link href={link.href} suppressHydrationWarning style={{
                     fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                     fontSize: "0.88rem", color: "rgba(255,255,255,0.55)",
                     textDecoration: "none", transition: "color 0.2s",
@@ -145,7 +144,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 style={{
+            <h3 suppressHydrationWarning style={{
               fontFamily: "'IBM Plex Sans Arabic', sans-serif",
               fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em",
               color: "var(--accent-orange)", marginBottom: "1.25rem",
@@ -155,7 +154,7 @@ export function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               {services.map(key => (
                 <li key={key}>
-                  <Link href="#services" style={{
+                  <Link href="#services" suppressHydrationWarning style={{
                     fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                     fontSize: "0.88rem", color: "rgba(255,255,255,0.55)",
                     textDecoration: "none", transition: "color 0.2s",
@@ -174,7 +173,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 style={{
+            <h3 suppressHydrationWarning style={{
               fontFamily: "'IBM Plex Sans Arabic', sans-serif",
               fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em",
               color: "var(--accent-orange)", marginBottom: "1.25rem",
@@ -200,8 +199,8 @@ export function Footer() {
                   onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)"; }}
                 >
                   <span style={{ fontSize: "0.85rem" }}>{item.icon}</span>
-                  <span style={{
-                    fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+                  <span suppressHydrationWarning style={{
+                    fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
                     fontSize: "0.88rem",
                   }}>{item.label}</span>
                 </a>
@@ -223,22 +222,22 @@ export function Footer() {
           justifyContent: "space-between", gap: "0.75rem",
           paddingBottom: "2rem",
         }}>
-          <p style={{
-            fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+          <p suppressHydrationWarning style={{
+            fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
             fontSize: "0.8rem", color: "rgba(255,255,255,0.35)", margin: 0,
           }}>
             © {year}{" "}
             {locale === "ar"
               ? "برو أوبشن للاستشارات المهنية. جميع الحقوق محفوظة."
-              : "Pro Option Professional Consulting. All rights reserved."}
+              : "Pro Option for Professional Consultant. All rights reserved."}
           </p>
           <div style={{ display: "flex", gap: "1.5rem" }}>
             {[
               { href: "/privacy", labelAr: "سياسة الخصوصية", labelEn: "Privacy Policy" },
               { href: "/terms",   labelAr: "الشروط والأحكام",  labelEn: "Terms of Service" },
             ].map(link => (
-              <Link key={link.href} href={link.href} style={{
-                fontFamily: "'IBM Plex Sans', sans-serif",
+              <Link key={link.href} href={link.href} suppressHydrationWarning style={{
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "0.78rem", color: "rgba(255,255,255,0.35)",
                 textDecoration: "none", transition: "color 0.2s",
               }}

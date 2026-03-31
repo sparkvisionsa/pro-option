@@ -76,14 +76,14 @@ export function Contact() {
             {locale === "ar" ? "تواصل معنا" : "Contact Us"}
           </div>
           <h2 id="contact-heading" style={{
-            fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+            fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
             fontSize: "clamp(1.75rem,3.5vw,2.75rem)",
-            fontWeight: 700, color: "var(--accent-navy)", marginBottom: "1rem",
+            fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem",
           }}>
             {locale === "ar" ? "نسعد بخدمتك" : "We're Here to Help"}
           </h2>
           <p style={{
-            fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+            fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
             fontSize: "clamp(0.95rem,1.6vw,1.05rem)", color: "var(--text-secondary)",
             maxWidth: "520px", margin: "0 auto", lineHeight: 1.75,
           }}>
@@ -122,24 +122,24 @@ export function Contact() {
                   }
                   style={{
                     display: "flex", alignItems: "center", gap: "1rem",
-                    background: "#ffffff",
-                    border: "1.5px solid rgba(29,41,82,0.09)",
+                    background: "var(--card-gradient-warm)",
+                    border: "1.5px solid rgba(232,98,42,0.18)",
                     borderRadius: "12px", padding: "1.25rem 1.5rem",
                     textDecoration: "none",
-                    boxShadow: "0 2px 12px rgba(29,41,82,0.06)",
+                    boxShadow: "var(--card-shadow-warm)",
                     transition: "all 0.25s ease",
                   }}
                   onMouseEnter={e => {
                     const el = e.currentTarget as HTMLElement;
                     el.style.borderColor = "rgba(232,98,42,0.30)";
                     el.style.transform = "translateY(-2px)";
-                    el.style.boxShadow = "0 8px 24px rgba(232,98,42,0.10)";
+                    el.style.boxShadow = "var(--card-shadow-warm-hover)";
                   }}
                   onMouseLeave={e => {
                     const el = e.currentTarget as HTMLElement;
-                    el.style.borderColor = "rgba(29,41,82,0.09)";
+                    el.style.borderColor = "rgba(232,98,42,0.18)";
                     el.style.transform = "translateY(0)";
-                    el.style.boxShadow = "0 2px 12px rgba(29,41,82,0.06)";
+                    el.style.boxShadow = "var(--card-shadow-warm)";
                   }}
                 >
                   <div style={{
@@ -150,14 +150,14 @@ export function Contact() {
                   }}>{item.icon}</div>
                   <div>
                     <div style={{
-                      fontFamily: "'IBM Plex Sans', sans-serif",
+                      fontFamily: "'Inter', sans-serif",
                       fontSize: "0.7rem", fontWeight: 700,
                       color: "var(--text-muted)", letterSpacing: "0.08em", marginBottom: "0.2rem",
                     }}>
                       {locale === "ar" ? item.labelAr : item.labelEn}
                     </div>
                     <div style={{
-                      fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+                      fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
                       fontSize: "0.95rem", fontWeight: 600,
                       color: "var(--accent-navy)",
                     }}>{item.value}</div>
@@ -169,9 +169,10 @@ export function Contact() {
             {/* Working hours */}
             <div style={{
               marginTop: "1.25rem",
-              background: "rgba(29,41,82,0.04)",
-              border: "1.5px solid rgba(29,41,82,0.08)",
+              background: "var(--card-gradient-warm)",
+              border: "1.5px solid rgba(232,98,42,0.18)",
               borderRadius: "12px", padding: "1.25rem 1.5rem",
+              boxShadow: "var(--card-shadow-warm)",
             }}>
               <div style={{
                 fontFamily: "'IBM Plex Sans Arabic', sans-serif",
@@ -193,10 +194,10 @@ export function Contact() {
 
           {/* Form */}
           <div style={{
-            background: "#ffffff",
-            border: "1.5px solid rgba(29,41,82,0.09)",
+            background: "var(--card-gradient-warm)",
+            border: "1.5px solid rgba(232,98,42,0.18)",
             borderRadius: "16px", padding: "2rem",
-            boxShadow: "0 4px 24px rgba(29,41,82,0.08)",
+            boxShadow: "var(--card-shadow-warm)",
             opacity: visible ? 1 : 0,
             transform: visible ? "translateX(0)" : locale === "ar" ? "translateX(-30px)" : "translateX(30px)",
             transition: "opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s",

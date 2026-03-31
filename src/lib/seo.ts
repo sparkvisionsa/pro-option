@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const BASE_URL = "https://www.pro-option.sa";
-export const SITE_NAME = "Pro Option | برو أوبشن";
+export const SITE_NAME = "Pro Option for Professional Consultant | برو أوبشن للاستشارات المهنية";
 export const CONTACT_EMAIL = "Info@pro-option.sa";
 export const CONTACT_PHONE = "+966555765446";
 
@@ -184,12 +184,20 @@ export function getSectionMeta(locale: SectionLocale, id: HomeSectionId) {
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  applicationName: SITE_NAME,
   title: {
     default:
-      "برو أوبشن | استشارات مهنية معتمدة وتقييم الأصول في السعودية | Pro Option",
+      "برو أوبشن للاستشارات المهنية | استشارات مهنية معتمدة وتقييم الأصول في السعودية | Pro Option for Professional Consultant",
     template: "%s | برو أوبشن للاستشارات المهنية",
   },
   description: defaultDescriptionAr,
+  manifest: "/manifest.webmanifest",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    telephone: true,
+    email: false,
+    address: false,
+  },
   keywords: [
     "برو أوبشن",
     "الاستشارات المهنية السعودية",
@@ -221,25 +229,39 @@ export const siteMetadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+    languages: {
+      "ar-SA": "/",
+      "x-default": "/",
+    },
   },
   openGraph: {
     type: "website",
     url: BASE_URL,
     title:
-      "برو أوبشن | استشارات مهنية معتمدة وتقييم الأصول في السعودية | Pro Option",
+      "برو أوبشن للاستشارات المهنية | استشارات مهنية معتمدة وتقييم الأصول في السعودية | Pro Option for Professional Consultant",
     description: defaultDescriptionAr,
     siteName: SITE_NAME,
     locale: "ar_SA",
-    images: [shareImage],
+    images: [
+      {
+        ...shareImage,
+        url: `${BASE_URL}${shareImage.url}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@prooption11",
     creator: "@prooption11",
     title:
-      "برو أوبشن | استشارات مهنية معتمدة وتقييم الأصول في السعودية",
+      "برو أوبشن للاستشارات المهنية | استشارات مهنية معتمدة وتقييم الأصول في السعودية",
     description: defaultDescriptionAr,
-    images: ["/twitter-image"],
+    images: [`${BASE_URL}/twitter-image`],
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: SITE_NAME,
   },
   icons: {
     icon: [
@@ -260,12 +282,7 @@ export const siteMetadata: Metadata = {
     "geo.placename": "Riyadh, Saudi Arabia",
     "geo.position": "24.7136;46.6753",
     ICBM: "24.7136,46.6753",
-    "format-detection": "telephone=yes",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "black-translucent",
-    "mobile-web-app-capable": "yes",
     "msapplication-TileColor": "#1d2952",
-    "theme-color": "#080e1c",
   },
 };
 
@@ -274,7 +291,7 @@ const professionalServiceSchema = {
   "@type": "ProfessionalService",
   "@id": `${BASE_URL}/#professional-service`,
   name: SITE_NAME,
-  alternateName: ["برو أوبشن للاستشارات المهنية", "Pro Option Professional Consulting"],
+  alternateName: ["برو أوبشن للاستشارات المهنية", "Pro Option for Professional Consultant"],
   url: BASE_URL,
   image: `${BASE_URL}/opengraph-image`,
   logo: {
@@ -350,7 +367,7 @@ const webPageSchema = {
   "@type": "WebPage",
   "@id": `${BASE_URL}/#webpage`,
   url: `${BASE_URL}/`,
-  name: "الصفحة الرئيسية | برو أوبشن",
+  name: "الصفحة الرئيسية | برو أوبشن للاستشارات المهنية",
   description: defaultDescriptionAr,
   isPartOf: { "@id": `${BASE_URL}/#website` },
   about: { "@id": `${BASE_URL}/#professional-service` },

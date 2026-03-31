@@ -52,24 +52,15 @@ export function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* â”€â”€ Ø®Ù„ÙÙŠØ© Ù‡Ù†Ø¯Ø³ÙŠØ© Ø®ÙÙŠÙØ© â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <SectionMeta id="hero" locale={locale} />
       <div aria-hidden="true" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-        {/* Blobs ÙƒØ­Ù„ÙŠØ© ÙˆØ¨Ø±ØªÙ‚Ø§Ù„ÙŠØ© Ø®ÙÙŠØ© */}
-        <div style={{
-          position: "absolute", top: "-15%", right: "-8%",
-          width: "min(600px, 60vw)", height: "min(600px, 60vw)",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(29,41,82,0.06) 0%, transparent 65%)",
-        }} />
-        <div style={{
-          position: "absolute", bottom: "-10%", left: "-5%",
-          width: "min(400px, 40vw)", height: "min(400px, 40vw)",
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(232,98,42,0.06) 0%, transparent 65%)",
-        }} />
+        {/* Animated orange mist */}
+        <div className="hero-mist">
+          <div className="hero-mist-layer hero-mist-1" />
+          <div className="hero-mist-layer hero-mist-2" />
+          <div className="hero-mist-layer hero-mist-3" />
+        </div>
 
-        {/* Ù†Ù‚Ø§Ø· Ù‡Ù†Ø¯Ø³ÙŠØ© Ø¯ÙŠÙƒÙˆØ±ÙŠØ© */}
         <svg
           className="geo-shape geo-shape-3"
           style={{ top: "10%", left: "4%", width: "clamp(60px,8vw,110px)", opacity: 0.08 }}
@@ -88,7 +79,6 @@ export function Hero() {
           <polygon points="50,20 80,50 50,80 20,50" stroke="var(--accent-navy)" strokeWidth="0.8" fill="none"/>
         </svg>
 
-        {/* Ø®Ø· Ø¹Ù…ÙˆØ¯ÙŠ Ø²Ø®Ø±ÙÙŠ Ø¨Ø±ØªÙ‚Ø§Ù„ÙŠ â€” Ø¬Ø§Ù†Ø¨ */}
         <div style={{
           position: "absolute", top: "5%", bottom: "5%",
           left: locale === "ar" ? "auto" : "0",
@@ -98,7 +88,6 @@ export function Hero() {
           opacity: 0.18, borderRadius: "2px",
         }} />
 
-        {/* Ø´Ø¨ÙƒØ© Ù†Ù‚Ø§Ø· Ø®Ù„ÙÙŠØ© */}
         <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.025 }}>
           <defs>
             <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
@@ -109,11 +98,10 @@ export function Hero() {
         </svg>
       </div>
 
-      {/* â”€â”€ Ø§Ù„Ù…Ø­ØªÙˆÙ‰ Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div style={{
         position: "relative", zIndex: 1,
         maxWidth: "1400px", margin: "0 auto",
-        padding: "5rem 1.5rem 3rem", width: "100%",
+        padding: "0.5rem 1.5rem 2rem", width: "100%",
       }}>
         <div style={{
           display: "grid",
@@ -121,34 +109,9 @@ export function Hero() {
           gap: "3rem", alignItems: "center",
         }}>
 
-          {/* â”€â”€ Ø§Ù„Ù†Øµ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
           <div style={{ order: locale === "ar" ? 1 : 0 }}>
-            {/* Badge */}
-            <div style={{
-              display: "inline-flex", alignItems: "center", gap: "0.5rem",
-              padding: "0.35rem 1.1rem",
-              background: "rgba(232,98,42,0.08)",
-              border: "1.5px solid rgba(232,98,42,0.28)",
-              borderRadius: "100px", marginBottom: "1.75rem",
-              animation: "fadeInDown 0.8s ease 0.1s both",
-            }}>
-              <span style={{
-                width: "7px", height: "7px", borderRadius: "50%",
-                background: "var(--accent-orange)", flexShrink: 0,
-                animation: "pulse-orange 2s ease infinite",
-              }} />
-              <span style={{
-                fontFamily: "'IBM Plex Sans', sans-serif",
-                fontSize: "0.74rem", fontWeight: 700,
-                color: "var(--accent-orange)", letterSpacing: "0.1em",
-              }}>
-                {locale === "ar" ? "معتمد وطنيًا • معتمد وفق IVS" : "Nationally Accredited • IVS Certified"}
-              </span>
-            </div>
-
-            {/* H1 */}
-            <h1 style={{
-              fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+            <h1 suppressHydrationWarning style={{
+              fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
               fontSize: "clamp(2.2rem, 5.5vw, 4rem)",
               fontWeight: 800, lineHeight: 1.18,
               color: "var(--text-primary)",
@@ -157,51 +120,49 @@ export function Hero() {
             }}>
               {locale === "ar" ? (
                 <>برو أوبشن{" "}
-                  <span style={{ color: "var(--accent-orange)" }}>للاستشارات</span>
-                  <br />المهنية المعتمدة
+                  <span suppressHydrationWarning style={{ color: "var(--accent-orange)" }}>للاستشارات</span>
+                  <br />المهنية
                 </>
               ) : (
                 <>Pro Option{" "}
-                  <span style={{ color: "var(--accent-orange)" }}>Professional</span>
+                  <span suppressHydrationWarning style={{ color: "var(--accent-orange)" }}>Professional</span>
                   <br />Consulting
                 </>
               )}
             </h1>
 
-            {/* H2 */}
-            <p style={{
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+            <p suppressHydrationWarning style={{
+              fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
               fontSize: "clamp(1rem, 1.8vw, 1.2rem)", fontWeight: 500,
               color: "var(--text-secondary)",
               marginBottom: "0.5rem", lineHeight: 1.6,
               animation: "fadeInUp 0.9s ease 0.35s both",
             }}>
               {locale === "ar"
-                ? "شريكك الاستراتيجي لكل قرار يحتاج خبرة موثوقة ودقة معتمدة"
-                : "Your Strategic Partner for Every Decision Demanding Certified Expertise"}
+                ? "شريكك الاستراتيجي لقرارات ترتكز على الخبرة والموثوقية وأحدث الدراسات"
+                : "Your strategic partner for decisions grounded in expertise, reliability, and up-to-date studies"}
             </p>
-            <p style={{
-              fontFamily: "'IBM Plex Sans', sans-serif",
+            <p suppressHydrationWarning style={{
+              fontFamily: "'Inter', sans-serif",
               fontSize: "0.8rem", color: "var(--accent-orange)",
               marginBottom: "1.5rem", letterSpacing: "0.08em", fontWeight: 600,
               animation: "fadeInUp 0.9s ease 0.45s both",
             }}>
               {locale === "ar"
-                ? "من الاستراتيجية إلى التقييم - نصنع لك اليقين"
-                : "From Strategy to Valuation - We Deliver Certainty"}
+                ? "من الاستراتيجية - نصنع لك اليقين"
+                : "From strategy - we create certainty for you"}
             </p>
 
-            {/* ÙˆØµÙ */}
-            <p style={{
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+            <p suppressHydrationWarning style={{
+              fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
               fontSize: "clamp(0.88rem, 1.5vw, 0.98rem)",
               color: "var(--text-muted)", lineHeight: 1.9,
               marginBottom: "2.5rem", maxWidth: "520px",
               animation: "fadeInUp 0.9s ease 0.55s both",
             }}>
               {locale === "ar"
-                ? "استشارات مهنية متكاملة وتقييمات دقيقة وفق معايير IVS الدولية للشركات والمؤسسات والجهات الحكومية في جميع مناطق المملكة العربية السعودية"
-                : "Integrated professional consulting and IVS-compliant valuations for companies and government entities across all regions of Saudi Arabia"}
+                ? "استشارات مهنية متكاملة وفق المعايير الدولية للشركات والمؤسسات والجهات الحكومية والافراد في جميع مناطق المملكة العربية السعودية"
+                : "Integrated professional consulting aligned with international standards for companies, institutions, government entities, and individuals across all regions of Saudi Arabia"}
             </p>
 
             {/* CTAs */}
@@ -209,7 +170,7 @@ export function Hero() {
               display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "3rem",
               animation: "fadeInUp 0.9s ease 0.65s both",
             }}>
-              <Link href="#contact" aria-label="طلب استشارة مجانية" style={{
+              <Link href="#contact" aria-label="طلب خدمة" suppressHydrationWarning style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
                 background: "var(--accent-orange)", color: "#fff",
                 fontFamily: "'IBM Plex Sans Arabic', sans-serif",
@@ -229,16 +190,17 @@ export function Hero() {
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = "var(--accent-orange-light)"; el.style.transform = "translateY(-2px)"; el.style.boxShadow = "0 10px 32px rgba(232,98,42,0.50)"; }}
                 onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = "var(--accent-orange)"; el.style.transform = "translateY(0)"; el.style.boxShadow = "0 6px 24px rgba(232,98,42,0.35)"; }}
               >
-                {locale === "ar" ? "طلب استشارة مجانية" : "Book Free Consultation"}
+                {locale === "ar" ? "طلب خدمة" : "Book Free Consultation"}
               </Link>
-              <Link href="#services" aria-label="استكشف خدماتنا" style={{
+              <Link href="#services" aria-label="استكشف خدماتنا" suppressHydrationWarning style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                background: "transparent", color: "var(--accent-navy)",
+                background: "var(--bg-card)", color: "var(--text-primary)",
                 fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                 fontSize: "1rem", fontWeight: 600,
                 padding: "0.875rem 2rem", borderRadius: "100px",
                 textDecoration: "none",
-                border: "2px solid var(--border-card)",
+                border: "1.5px solid var(--border-card)",
+                boxShadow: "var(--shadow-card)",
                 transition: "all 0.25s ease",
               }}
                 onClick={() =>
@@ -248,8 +210,8 @@ export function Hero() {
                     target_section: "services",
                   })
                 }
-                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--accent-navy)"; el.style.background = "rgba(29,41,82,0.04)"; el.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--border-card)"; el.style.background = "transparent"; el.style.transform = "translateY(0)"; }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--border-subtle)"; el.style.background = "var(--accent-orange-subtle)"; el.style.transform = "translateY(-2px)"; el.style.boxShadow = "var(--shadow-hover)"; }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = "var(--border-card)"; el.style.background = "var(--bg-card)"; el.style.transform = "translateY(0)"; el.style.boxShadow = "var(--shadow-card)"; }}
               >
                 {locale === "ar" ? "استكشف خدماتنا" : "Explore Services"}
               </Link>
@@ -264,24 +226,24 @@ export function Hero() {
             }}>
               {[
                 { value: `+${projectCount}`, label: locale === "ar" ? "مشروع مكتمل" : "Projects Done" },
-                { value: "IVS", label: locale === "ar" ? "معايير دولية" : "Intl. Standards" },
-                { value: "24h", label: locale === "ar" ? "وقت الرد" : "Response Time" },
+                { value: "✓", label: locale === "ar" ? "مرخصة من الهيئة السعودية للمقيمين المعتمدين" : "Licensed by the Saudi Authority for Accredited Valuers" },
+                { value: "1h", label: locale === "ar" ? "وقت الرد" : "Response Time" },
               ].map((stat, i) => (
-                <div key={i} style={{
+                <div key={i} suppressHydrationWarning style={{
                   background: "var(--bg-secondary)",
                   border: "1.5px solid var(--border-card)",
                   borderRadius: "12px", padding: "1rem 0.75rem", textAlign: "center",
                   transition: "border-color 0.3s, background-color 0.4s",
                 }}>
-                  <div style={{
-                    fontFamily: "'IBM Plex Sans', sans-serif",
+                  <div suppressHydrationWarning style={{
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "clamp(1.4rem,2.5vw,1.8rem)", fontWeight: 800,
                     color: "var(--accent-orange)", lineHeight: 1,
                     animation: statsVisible ? `count-up 0.6s ease ${i * 0.15}s both` : "none",
                   }}>
                     {stat.value}
                   </div>
-                  <div style={{
+                  <div suppressHydrationWarning style={{
                     fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                     fontSize: "0.72rem", color: "var(--text-muted)",
                     marginTop: "0.3rem", lineHeight: 1.3,
@@ -293,14 +255,12 @@ export function Hero() {
             </div>
           </div>
 
-          {/* â”€â”€ Ø§Ù„ØµÙˆØ±Ø© r.png â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
           <div style={{
             order: locale === "ar" ? 0 : 1,
             display: "flex", alignItems: "center", justifyContent: "center",
             position: "relative",
             animation: "fadeInLeft 1s ease 0.3s both",
           }}>
-            {/* Ø¥Ø·Ø§Ø± ÙƒØ­Ù„ÙŠ ÙØ§ØªØ­ Ø®Ù„Ù Ø§Ù„ØµÙˆØ±Ø© */}
             <div aria-hidden="true" style={{
               position: "absolute",
               top: "10%", bottom: "10%",
@@ -314,7 +274,6 @@ export function Hero() {
               transition: "background-color 0.4s, border-color 0.3s",
             }} />
 
-            {/* Ø§Ù„ØµÙˆØ±Ø© Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ© */}
             <div className="float-img" style={{
               position: "relative", zIndex: 1,
               width: "100%", maxWidth: "520px",
@@ -329,28 +288,26 @@ export function Hero() {
                 style={{ width: "100%", height: "auto", display: "block" }}
                 priority
               />
-              {/* Overlay gradient Ø£Ø³ÙÙ„ Ø§Ù„ØµÙˆØ±Ø© */}
               <div style={{
                 position: "absolute", bottom: 0, left: 0, right: 0,
                 height: "40%",
                 background: "linear-gradient(to top, rgba(29,41,82,0.65) 0%, transparent 100%)",
                 pointerEvents: "none",
               }} />
-              {/* Ù†Øµ ÙÙˆÙ‚ Ø§Ù„ØµÙˆØ±Ø© */}
               <div style={{
                 position: "absolute", bottom: "1.25rem",
                 left: locale === "ar" ? "auto" : "1.25rem",
                 right: locale === "ar" ? "1.25rem" : "auto",
               }}>
-                <div style={{
+                <div suppressHydrationWarning style={{
                   fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                   fontSize: "0.8rem", color: "rgba(255,255,255,0.9)",
                   fontWeight: 700, lineHeight: 1.3,
                 }}>
-                  {locale === "ar" ? "تغطية وطنية شاملة" : "Nationwide Coverage"}
+                  {locale === "ar" ? "تغطية شاملة" : "Comprehensive Coverage"}
                 </div>
-                <div style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
+                <div suppressHydrationWarning style={{
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "0.68rem", color: "rgba(255,255,255,0.65)",
                 }}>
                   {locale === "ar" ? "جميع مناطق المملكة العربية السعودية" : "All regions of Saudi Arabia"}
@@ -358,7 +315,7 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Badge Ø¹Ø§Ø¦Ù… â€” IVS */}
+            {/* Badge */}
             <div style={{
               position: "absolute",
               top: "8%",
@@ -372,20 +329,14 @@ export function Hero() {
               zIndex: 2,
               transition: "background-color 0.4s",
             }}>
-              <div style={{
-                fontFamily: "'IBM Plex Sans', sans-serif",
-                fontSize: "1.1rem", fontWeight: 900,
-                color: "var(--accent-orange)", lineHeight: 1,
-              }}>IVS</div>
-              <div style={{
-                fontFamily: "'IBM Plex Sans Arabic', sans-serif",
-                fontSize: "0.68rem", color: "var(--text-muted)", marginTop: "0.2rem",
-              }}>
-                {locale === "ar" ? "معتمد" : "Certified"}
-              </div>
+              <div suppressHydrationWarning style={{
+                fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
+                fontSize: "0.75rem", fontWeight: 800,
+                color: "var(--accent-orange)", lineHeight: 1.3,
+                maxWidth: "120px",
+              }}>{locale === "ar" ? "مرخصة من الهيئة السعودية للمقيمين المعتمدين" : "Licensed by Saudi Authority for Accredited Valuers"}</div>
             </div>
 
-            {/* Badge Ø¹Ø§Ø¦Ù… â€” Ø®Ø¨Ø±Ø© */}
             <div style={{
               position: "absolute",
               bottom: "12%",
@@ -398,10 +349,10 @@ export function Hero() {
               zIndex: 2,
             }}>
               <div style={{
-                fontFamily: "'IBM Plex Sans', sans-serif",
+                fontFamily: "'Inter', sans-serif",
                 fontSize: "1.1rem", fontWeight: 900, color: "#fff", lineHeight: 1,
               }}>+500</div>
-              <div style={{
+              <div suppressHydrationWarning style={{
                 fontFamily: "'IBM Plex Sans Arabic', sans-serif",
                 fontSize: "0.68rem", color: "rgba(255,255,255,0.65)", marginTop: "0.2rem",
               }}>

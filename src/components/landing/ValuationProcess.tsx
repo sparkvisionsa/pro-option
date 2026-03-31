@@ -67,14 +67,14 @@ export function ValuationProcess() {
             {locale === "ar" ? "منهجيتنا" : "Our Methodology"}
           </div>
           <h2 id="process-heading" style={{
-            fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+            fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
             fontSize: "clamp(1.75rem,3.5vw,2.75rem)",
-            fontWeight: 700, color: "var(--accent-navy)", marginBottom: "1rem",
+            fontWeight: 700, color: "var(--text-primary)", marginBottom: "1rem",
           }}>
             {locale === "ar" ? "مراحل عملية التقييم المهني" : "Professional Valuation Process"}
           </h2>
           <p style={{
-            fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+            fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
             fontSize: "clamp(0.95rem,1.6vw,1.05rem)", color: "var(--text-secondary)",
             maxWidth: "560px", margin: "0 auto", lineHeight: 1.75,
           }}>
@@ -109,8 +109,8 @@ export function ValuationProcess() {
                 <div style={{
                   width: "56px", height: "56px",
                   borderRadius: "50%",
-                  background: i === 0 ? "var(--accent-orange)" : "#ffffff",
-                  border: i === 0 ? "none" : "2px solid rgba(29,41,82,0.18)",
+                  background: i === 0 ? "var(--accent-orange)" : "var(--bg-card)",
+                  border: i === 0 ? "none" : "2px solid var(--border-card)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   margin: "0 auto 1rem",
                   boxShadow: i === 0
@@ -121,16 +121,16 @@ export function ValuationProcess() {
                   transition: "all 0.3s ease",
                 }}>
                   <span style={{
-                    fontFamily: "'IBM Plex Sans', sans-serif",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "0.85rem", fontWeight: 800,
                   }}>{step.num}</span>
                 </div>
 
                 <div style={{
-                  background: "#ffffff",
-                  border: "1.5px solid rgba(29,41,82,0.08)",
+                  background: "var(--card-gradient-warm)",
+                  border: "1.5px solid rgba(232,98,42,0.18)",
                   borderRadius: "12px", padding: "1rem 0.75rem",
-                  boxShadow: "0 2px 12px rgba(29,41,82,0.06)",
+                  boxShadow: "var(--card-shadow-warm)",
                 }}>
                   <div style={{
                     display: "flex", justifyContent: "center",
@@ -157,10 +157,10 @@ export function ValuationProcess() {
           {steps.map((step, i) => (
             <div key={i} style={{
               display: "flex", gap: "1rem", alignItems: "flex-start",
-              background: "#ffffff",
-              border: "1.5px solid rgba(29,41,82,0.08)",
+              background: "var(--card-gradient-warm)",
+              border: "1.5px solid rgba(232,98,42,0.18)",
               borderRadius: "12px", padding: "1.25rem",
-              boxShadow: "0 2px 12px rgba(29,41,82,0.06)",
+              boxShadow: "var(--card-shadow-warm)",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateX(0)" : locale === "ar" ? "translateX(20px)" : "translateX(-20px)",
               transition: `opacity 0.5s ease ${i * 80}ms, transform 0.5s ease ${i * 80}ms`,
@@ -173,7 +173,7 @@ export function ValuationProcess() {
                 color: i === 0 ? "#fff" : "var(--accent-orange)",
               }}>
                 <span style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontSize: "0.875rem", fontWeight: 800,
                 }}>{step.num}</span>
               </div>

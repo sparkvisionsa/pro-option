@@ -31,7 +31,7 @@ export default function MaintenancePage() {
             animation: 'spin-in 1s cubic-bezier(0.4,0,0.2,1) 0s both',
           }}
         >
-          <Image src={logo} alt="Pro Option Logo" width={96} height={96} className="rounded-full object-cover" />
+          <Image src={logo} alt="Pro Option for Professional Consultant Logo" width={96} height={96} className="rounded-full object-cover" />
         </div>
         <h1
           className="text-3xl font-headline font-bold mb-4"

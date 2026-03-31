@@ -55,6 +55,8 @@ const nextConfig: NextConfig = {
 
   // HTTP headers لتحسين SEO والأمان
   async headers() {
+    const isDev = process.env.NODE_ENV === 'development';
+
     return [
       {
         source: "/(.*)",
@@ -72,7 +74,9 @@ const nextConfig: NextConfig = {
           { key: "X-Robots-Tag", value: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
           {
             key: "Cache-Control",
-            value: "public, max-age=3600, stale-while-revalidate=86400",
+            value: isDev
+              ? "no-store, no-cache, must-revalidate, proxy-revalidate"
+              : "public, max-age=3600, stale-while-revalidate=86400",
           },
         ],
       },

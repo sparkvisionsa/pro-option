@@ -3,7 +3,6 @@
 import React from "react";
 import { SectionMeta } from "@/components/seo/SectionMeta";
 import { useLanguage } from "@/context/LanguageContext";
-import { useTheme } from "@/context/ThemeContext";
 import { getTranslation } from "@/lib/i18n";
 
 function useReveal(threshold = 0.08) {
@@ -38,8 +37,6 @@ const serviceImages = {
     "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&q=80&auto=format&fit=crop",
   machinery:
     "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=700&q=80&auto=format&fit=crop",
-  realEstate:
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80&auto=format&fit=crop",
   inventory:
     "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80&auto=format&fit=crop",
   statistical:
@@ -62,174 +59,89 @@ interface CardProps {
   service: ServiceItem;
   index: number;
   visible: boolean;
-  isOpen: boolean;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
-  onFocus: () => void;
-  onBlur: () => void;
-  onClick: () => void;
 }
 
-function ServiceCard({
-  service,
-  index,
-  visible,
-  isOpen,
-  onMouseEnter,
-  onMouseLeave,
-  onFocus,
-  onBlur,
-  onClick,
-}: CardProps) {
+function ServiceCard({ service, index, visible }: CardProps) {
   const { locale } = useLanguage();
-  const { theme } = useTheme();
-  const isDarkMode = theme === "dark";
+  const [hovered, setHovered] = React.useState(false);
   const title = locale === "ar" ? service.titleAr : service.titleEn;
   const desc = locale === "ar" ? service.descAr : service.descEn;
   const eyebrow = locale === "ar" ? service.eyebrowAr : service.eyebrowEn;
 
   return (
     <article
-      role="button"
-      tabIndex={0}
-      aria-expanded={isOpen}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onFocus={onFocus}
-      onBlur={onBlur}
-      onClick={onClick}
-      onKeyDown={(event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          onClick();
-        }
-      }}
+      className="section-card-gradient"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       style={{
         position: "relative",
-        minHeight: "238px",
-        borderRadius: "22px",
+        minHeight: "100%",
+        borderRadius: "24px",
         overflow: "hidden",
-        cursor: "pointer",
         isolation: "isolate",
-        padding: "1.15rem",
-        background: isOpen
-          ? "linear-gradient(160deg, rgba(8,14,28,0.96), rgba(17,27,46,0.92))"
-          : isDarkMode
-            ? "linear-gradient(160deg, rgba(21,34,58,0.96), rgba(12,18,32,0.92))"
-            : "linear-gradient(160deg, var(--bg-card), rgba(245,247,251,0.92))",
-        border: `1px solid ${
-          isOpen
-            ? "rgba(232,98,42,0.34)"
-            : isDarkMode
-              ? "rgba(255,255,255,0.08)"
-              : "rgba(29,41,82,0.10)"
-        }`,
-        boxShadow: isOpen
-          ? "0 24px 50px rgba(29,41,82,0.22), 0 12px 30px rgba(232,98,42,0.16)"
-          : isDarkMode
-            ? "0 10px 28px rgba(0,0,0,0.22)"
-            : "0 6px 20px rgba(29,41,82,0.07)",
+        padding: "1rem",
         transform: visible
-          ? isOpen
-            ? "translateY(-10px) scale(1.045)"
-            : "translateY(0) scale(1)"
-          : "translateY(30px) scale(0.98)",
+          ? hovered
+            ? "translateY(-6px)"
+            : "translateY(0)"
+          : "translateY(26px)",
         opacity: visible ? 1 : 0,
-        transition: `transform 0.55s cubic-bezier(0.16,1,0.3,1) ${
+        transition: `transform 0.45s cubic-bezier(0.16,1,0.3,1) ${
           index * 70
-        }ms, opacity 0.55s ease ${index * 70}ms, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease`,
+        }ms, opacity 0.55s ease ${index * 70}ms, box-shadow 0.3s ease, border-color 0.3s ease`,
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={service.imageUrl}
-        alt={service.imageAlt}
-        loading="lazy"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          opacity: isOpen ? 1 : 0,
-          transform: isOpen ? "scale(1.08)" : "scale(1.18)",
-          filter: isOpen ? "saturate(1.05)" : "blur(6px) saturate(0.85)",
-          transition:
-            "opacity 0.42s ease, transform 0.75s cubic-bezier(0.16,1,0.3,1), filter 0.42s ease",
-          zIndex: -3,
-        }}
-      />
-
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
-          inset: 0,
-          background: isOpen
-            ? "linear-gradient(180deg, rgba(8,14,28,0.16) 0%, rgba(8,14,28,0.62) 42%, rgba(8,14,28,0.92) 100%)"
-            : isDarkMode
-              ? "linear-gradient(180deg, rgba(21,34,58,0.90) 0%, rgba(12,18,32,0.96) 100%)"
-              : "linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(245,247,251,0.98) 100%)",
-          transition: "background 0.35s ease",
-          zIndex: -2,
-        }}
-      />
-
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: "auto auto -48px -36px",
-          width: "130px",
-          height: "130px",
+          inset: "auto -34px -46px auto",
+          width: "150px",
+          height: "150px",
           borderRadius: "50%",
           background: `radial-gradient(circle, ${service.accent} 0%, rgba(232,98,42,0) 72%)`,
-          opacity: isOpen ? 0.32 : 0.12,
-          transition: "opacity 0.35s ease, transform 0.35s ease",
-          transform: isOpen ? "scale(1.1)" : "scale(1)",
+          opacity: hovered ? 0.28 : 0.16,
+          transition: "opacity 0.3s ease, transform 0.3s ease",
+          transform: hovered ? "scale(1.08)" : "scale(1)",
           zIndex: -1,
-        }}
-      />
-
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          top: "14px",
-          left: "14px",
-          width: "42px",
-          height: "42px",
-          borderRadius: "14px",
-          border: `1px solid ${
-            isOpen
-              ? "rgba(255,255,255,0.18)"
-              : isDarkMode
-                ? "rgba(255,255,255,0.10)"
-                : "rgba(232,98,42,0.18)"
-          }`,
-          background: isOpen
-            ? "rgba(255,255,255,0.08)"
-            : isDarkMode
-              ? "rgba(255,255,255,0.06)"
-              : "rgba(232,98,42,0.07)",
-          backdropFilter: "blur(10px)",
         }}
       />
 
       <div
         style={{
           position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          minHeight: "208px",
+          display: "grid",
+          gap: "1rem",
           height: "100%",
         }}
       >
         <div
+          className="service-img-wrap"
+          style={{
+            aspectRatio: "16 / 10",
+            borderRadius: "18px",
+            overflow: "hidden",
+            border: "1px solid rgba(255,255,255,0.08)",
+            boxShadow: "0 12px 30px rgba(29,41,82,0.10)",
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={service.imageUrl}
+            alt={service.imageAlt}
+            loading="lazy"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+
+        <div
           style={{
             display: "flex",
-            alignItems: "flex-start",
+            alignItems: "center",
             justifyContent: "space-between",
             gap: "0.75rem",
           }}
@@ -242,27 +154,16 @@ function ServiceCard({
               maxWidth: "calc(100% - 56px)",
               padding: "0.38rem 0.8rem",
               borderRadius: "999px",
-              border: `1px solid ${
-                isOpen ? "rgba(255,255,255,0.14)" : "rgba(232,98,42,0.16)"
-              }`,
-              background: isOpen
-                ? "rgba(255,255,255,0.08)"
-                : isDarkMode
-                  ? "rgba(255,255,255,0.06)"
-                  : "rgba(232,98,42,0.08)",
-              color: isOpen
-                ? "rgba(255,255,255,0.88)"
-                : isDarkMode
-                  ? "rgba(240,244,255,0.72)"
-                  : "var(--accent-orange)",
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+              border: "1px solid rgba(232,98,42,0.18)",
+              background: "rgba(232,98,42,0.08)",
+              color: "var(--accent-orange)",
+              fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
               fontSize: "0.68rem",
               fontWeight: 700,
               letterSpacing: "0.04em",
               whiteSpace: "nowrap",
               overflow: "hidden",
               textOverflow: "ellipsis",
-              transition: "all 0.35s ease",
             }}
           >
             {eyebrow}
@@ -270,63 +171,38 @@ function ServiceCard({
 
           <span
             style={{
-              fontFamily: "'IBM Plex Sans', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "0.82rem",
               fontWeight: 800,
-              color: isOpen
-                ? "rgba(255,255,255,0.92)"
-                : isDarkMode
-                  ? "rgba(240,244,255,0.56)"
-                  : "var(--text-muted)",
-              transition: "color 0.35s ease",
+              color: "var(--text-muted)",
             }}
           >
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
 
-        <div style={{ marginTop: "1.6rem" }}>
+        <div style={{ display: "grid", gap: "0.8rem" }}>
           <h3
             style={{
-              fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
-              fontSize: "clamp(1.05rem, 1.6vw, 1.34rem)",
+              fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
+              fontSize: "clamp(1.05rem, 1.6vw, 1.3rem)",
               fontWeight: 700,
-              color: isOpen
-                ? "#ffffff"
-                : isDarkMode
-                  ? "rgba(240,244,255,0.96)"
-                  : "var(--text-primary)",
+              color: "var(--text-primary)",
               lineHeight: 1.35,
               margin: 0,
-              maxWidth: "16ch",
-              transition: "color 0.35s ease, transform 0.35s ease",
-              transform: isOpen ? "translateY(-2px)" : "translateY(0)",
+              maxWidth: "20ch",
             }}
           >
             {title}
           </h3>
-        </div>
 
-        <div
-          style={{
-            display: "grid",
-            gap: "0.8rem",
-            alignSelf: "stretch",
-            opacity: isOpen ? 1 : 0,
-            transform: isOpen ? "translateY(0)" : "translateY(14px)",
-            maxHeight: isOpen ? "160px" : "0",
-            overflow: "hidden",
-            transition:
-              "opacity 0.32s ease, transform 0.42s cubic-bezier(0.16,1,0.3,1), max-height 0.42s ease",
-          }}
-        >
           <p
             style={{
               margin: 0,
-              color: "rgba(255,255,255,0.82)",
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
-              fontSize: "0.83rem",
-              lineHeight: 1.75,
+              color: "var(--text-secondary)",
+              fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
+              fontSize: "0.88rem",
+              lineHeight: 1.85,
             }}
           >
             {desc}
@@ -337,8 +213,8 @@ function ServiceCard({
               display: "flex",
               alignItems: "center",
               gap: "0.55rem",
-              color: "#ffffff",
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+              color: "var(--text-muted)",
+              fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
               fontSize: "0.76rem",
               fontWeight: 700,
             }}
@@ -350,12 +226,12 @@ function ServiceCard({
                 height: "7px",
                 borderRadius: "50%",
                 background: "var(--accent-orange)",
-                boxShadow: "0 0 16px rgba(232,98,42,0.65)",
+                boxShadow: "0 0 10px rgba(232,98,42,0.35)",
               }}
             />
             {locale === "ar"
-              ? "مرر أو اضغط لاكتشاف التفاصيل"
-              : "Hover or tap to reveal details"}
+              ? "نطاق خدمة واضح وتقارير احترافية"
+              : "Clear scope and professional reporting"}
           </div>
         </div>
       </div>
@@ -367,81 +243,67 @@ const services: ServiceItem[] = [
   {
     imageUrl: serviceImages.machinery,
     imageAlt:
-      "تقييم الآلات والمعدات الصناعية وفق معايير IVS الدولية في المملكة العربية السعودية",
-    titleAr: "تقييم الآلات والمعدات",
-    titleEn: "Machinery & Equipment Valuation",
+      "تقييم الآلات والمعدات والأصول المنقولة وفق المعايير الدولية في المملكة العربية السعودية",
+    titleAr: "تقييم الآلات والمعدات والأصول المنقولة",
+    titleEn: "Machinery, Equipment & Movable Assets Valuation",
     descAr:
-      "تقارير احترافية معتمدة للمصانع والمعدات الثقيلة وأساطيل المركبات، جاهزة للتدقيق والتمويل والإجراءات النظامية.",
+      "تقارير تقييم احترافية معتمدة للآلات والمعدات الصناعية والأصول المنقولة وأساطيل المركبات، متوافقة مع المعايير الدولية وجاهزة للتدقيق والتمويل.",
     descEn:
-      "Certified reports for factories, heavy equipment, and fleets, prepared for audits, financing, and legal workflows.",
-    eyebrowAr: "حلول IVS",
-    eyebrowEn: "IVS Solutions",
+      "Certified valuation reports for machinery, industrial equipment, movable assets, and vehicle fleets — aligned with international standards and audit-ready.",
+    eyebrowAr: "تقييم الأصول",
+    eyebrowEn: "Asset Valuation",
     accent: "rgba(232,98,42,0.52)",
   },
   {
-    imageUrl: serviceImages.realEstate,
-    imageAlt:
-      "تقييم العقارات التجارية والسكنية والصناعية في الرياض والمملكة",
-    titleAr: "تقييم العقارات",
-    titleEn: "Real Estate Valuation",
-    descAr:
-      "تقييمات دقيقة للعقارات السكنية والتجارية والصناعية لأغراض البيع والشراء والرهن والتمويل البنكي.",
-    descEn:
-      "Accurate residential, commercial, and industrial valuations for sale, purchase, mortgage, and bank financing.",
-    eyebrowAr: "سكني وتجاري",
-    eyebrowEn: "Residential & Commercial",
-    accent: "rgba(29,41,82,0.42)",
-  },
-  {
     imageUrl: serviceImages.management,
-    imageAlt: "استشارات إدارية واستراتيجية للشركات السعودية",
-    titleAr: "استشارات إدارية واستراتيجية",
-    titleEn: "Management & Strategy",
+    imageAlt: "استشارات إدارية للشركات والمؤسسات في المملكة",
+    titleAr: "استشارات إدارية",
+    titleEn: "Administrative Consulting",
     descAr:
-      "رفع الأداء المؤسسي وإعادة الهيكلة والتحول التنظيمي بخطط عملية تناسب واقع الشركات في السوق السعودي.",
+      "تطوير الأداء المؤسسي وإعادة الهيكلة والتخطيط الاستراتيجي بمنهجيات إدارية حديثة تناسب واقع الشركات والمؤسسات في السوق السعودي.",
     descEn:
-      "Institutional performance, restructuring, and transformation plans aligned with the Saudi market.",
-    eyebrowAr: "نمو مؤسسي",
-    eyebrowEn: "Business Growth",
+      "Institutional performance development, restructuring, and strategic planning using modern management methodologies tailored to the Saudi market.",
+    eyebrowAr: "تطوير مؤسسي",
+    eyebrowEn: "Business Development",
     accent: "rgba(232,98,42,0.46)",
-  },
-  {
-    imageUrl: serviceImages.technical,
-    imageAlt: "استشارات فنية وهندسية للمنشآت الصناعية",
-    titleAr: "استشارات فنية وهندسية",
-    titleEn: "Technical & Engineering",
-    descAr:
-      "حلول تخصصية تدعم القرارات التشغيلية وتحسن الكفاءة الفنية وتقلل المخاطر في البيئات الصناعية.",
-    descEn:
-      "Specialized engineering support that improves technical efficiency and reduces operational risk.",
-    eyebrowAr: "كفاءة تشغيلية",
-    eyebrowEn: "Operational Efficiency",
-    accent: "rgba(29,41,82,0.46)",
   },
   {
     imageUrl: serviceImages.inventory,
-    imageAlt: "حصر وجرد وترميز الأصول الثابتة",
-    titleAr: "حصر وجرد وترميز الأصول",
-    titleEn: "Asset Inventory & Tagging",
+    imageAlt: "استشارات تربوية وتعليمية للمؤسسات الأكاديمية",
+    titleAr: "استشارات تربوية وتعليمية",
+    titleEn: "Educational Consulting",
     descAr:
-      "حصر ميداني وربط بسجلات الأصول الثابتة لتكوين قاعدة بيانات موثوقة ومتكاملة وجاهزة للمراجعة.",
+      "حلول استشارية متخصصة في المجال التربوي والتعليمي تشمل تطوير المناهج وتقييم الأداء الأكاديمي ودعم المؤسسات التعليمية.",
     descEn:
-      "Field inventory and fixed-asset register alignment to build reliable, auditable asset data.",
-    eyebrowAr: "بيانات موثوقة",
-    eyebrowEn: "Reliable Asset Data",
-    accent: "rgba(232,98,42,0.46)",
+      "Specialized advisory in education — curriculum development, academic performance evaluation, and institutional support for educational organizations.",
+    eyebrowAr: "تعليم وتطوير",
+    eyebrowEn: "Education & Development",
+    accent: "rgba(29,41,82,0.42)",
+  },
+  {
+    imageUrl: serviceImages.technical,
+    imageAlt: "استشارات تقنية للمنشآت والمؤسسات",
+    titleAr: "استشارات تقنية",
+    titleEn: "Technical Consulting",
+    descAr:
+      "حلول تقنية متخصصة تدعم التحول الرقمي وتحسّن الكفاءة التشغيلية وتقلل المخاطر التقنية للمنشآت والمؤسسات.",
+    descEn:
+      "Specialized technical solutions supporting digital transformation, improving operational efficiency, and reducing technical risk for organizations.",
+    eyebrowAr: "حلول تقنية",
+    eyebrowEn: "Tech Solutions",
+    accent: "rgba(29,41,82,0.46)",
   },
   {
     imageUrl: serviceImages.statistical,
-    imageAlt: "استشارات إحصائية وتربوية ودعم البحث العلمي",
-    titleAr: "استشارات إحصائية وتربوية",
-    titleEn: "Statistical & Educational",
+    imageAlt: "استشارات إحصائية وتحليل بيانات",
+    titleAr: "استشارات إحصائية",
+    titleEn: "Statistical Consulting",
     descAr:
-      "دعم البحث العلمي والتقييم التعليمي والتحليل الإحصائي للمؤسسات الأكاديمية والحكومية والخاصة.",
+      "تحليل إحصائي متقدم ودعم البحث العلمي وتصميم الاستبانات ومعالجة البيانات للمؤسسات الأكاديمية والحكومية والخاصة.",
     descEn:
-      "Research support, educational assessment, and applied statistical analysis for institutions.",
-    eyebrowAr: "تحليل وبحث",
-    eyebrowEn: "Research & Analytics",
+      "Advanced statistical analysis, research support, survey design, and data processing for academic, government, and private institutions.",
+    eyebrowAr: "تحليل وبيانات",
+    eyebrowEn: "Data & Analytics",
     accent: "rgba(29,41,82,0.44)",
   },
 ];
@@ -449,8 +311,6 @@ const services: ServiceItem[] = [
 export function Services() {
   const { locale } = useLanguage();
   const { ref, visible } = useReveal();
-  const [activeIndex, setActiveIndex] = React.useState<number | null>(0);
-  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
 
   return (
     <section
@@ -481,7 +341,7 @@ export function Services() {
           <h2
             id="services-heading"
             style={{
-              fontFamily: "'Playfair Display', 'IBM Plex Sans Arabic', serif",
+              fontFamily: "'Inter', 'IBM Plex Sans Arabic', sans-serif",
               fontSize: "clamp(1.75rem,3.5vw,2.75rem)",
               fontWeight: 700,
               color: "var(--text-primary)",
@@ -489,71 +349,41 @@ export function Services() {
             }}
           >
             {locale === "ar"
-              ? "بطاقات مضغوطة تكشف عمق الخدمة عند التفاعل"
-              : "Compact cards that unfold on interaction"}
+              ? "خدمات مهنية متخصصة"
+              : "Specialized Professional Services"}
           </h2>
           <p
             style={{
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+              fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
               fontSize: "clamp(0.95rem,1.6vw,1.05rem)",
               color: "var(--text-secondary)",
-              maxWidth: "700px",
+              maxWidth: "760px",
               margin: "0 auto",
               lineHeight: 1.75,
             }}
           >
             {locale === "ar"
-              ? "واجهة نظيفة ومتوازنة في البداية، ثم تتحول كل بطاقة إلى مشهد غني بالصورة والتفاصيل بمجرد الهوفر أو الضغط."
-              : "A clean, balanced layout at rest, then each card expands into an image-rich detailed panel on hover or tap."}
-          </p>
-          <p
-            style={{
-              margin: "0.85rem auto 0",
-              width: "fit-content",
-              padding: "0.48rem 0.95rem",
-              borderRadius: "999px",
-              background: "rgba(29,41,82,0.04)",
-              border: "1px solid rgba(29,41,82,0.08)",
-              color: "var(--text-muted)",
-              fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
-              fontSize: "0.78rem",
-              fontWeight: 600,
-            }}
-          >
-            {locale === "ar"
-              ? "على الجوال: اضغط على البطاقة لعرض التفاصيل"
-              : "On mobile: tap a card to reveal details"}
+              ? "نقدم باقة خدمات تقييم واستشارات مصممة لدعم القرارات التشغيلية والمالية والتنظيمية بعرض مباشر وواضح."
+              : "A focused set of valuation and consulting services presented in a direct, clearer layout for faster scanning."}
           </p>
         </div>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "1rem",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "1.25rem",
             alignItems: "stretch",
           }}
         >
-          {services.map((service, index) => {
-            const isOpen = hoveredIndex === index || activeIndex === index;
-
-            return (
-              <ServiceCard
-                key={service.titleEn}
-                service={service}
-                index={index}
-                visible={visible}
-                isOpen={isOpen}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                onFocus={() => setHoveredIndex(index)}
-                onBlur={() => setHoveredIndex(null)}
-                onClick={() =>
-                  setActiveIndex((current) => (current === index ? null : index))
-                }
-              />
-            );
-          })}
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.titleEn}
+              service={service}
+              index={index}
+              visible={visible}
+            />
+          ))}
         </div>
 
         <p
@@ -561,7 +391,7 @@ export function Services() {
             margin: "1.4rem 0 0",
             textAlign: "center",
             color: "var(--text-muted)",
-            fontFamily: "'IBM Plex Sans Arabic', 'IBM Plex Sans', sans-serif",
+            fontFamily: "'IBM Plex Sans Arabic', 'Inter', sans-serif",
             fontSize: "0.82rem",
             lineHeight: 1.7,
           }}

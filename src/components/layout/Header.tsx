@@ -18,7 +18,6 @@ const navLinks = [
   { href: "#contact",  labelKey: "nav.contact"   },
 ];
 
-/* ── أيقونة الهلال (Dark) ──────────────────────────────────── */
 function MoonIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -29,7 +28,6 @@ function MoonIcon() {
   );
 }
 
-/* ── أيقونة الشمس (Light) ─────────────────────────────────── */
 function SunIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -71,7 +69,6 @@ export function Header() {
 
   const consultLabel = getTranslation(locale, "nav.consultation");
 
-  /* الـ header يصبح ذا خلفية بعد التمرير */
   const isDarkHeader = theme === "dark";
 
   const headerBg = isDarkHeader
@@ -94,7 +91,6 @@ export function Header() {
       ? "0 2px 20px rgba(29,41,82,0.08)"
       : "0 6px 18px rgba(29,41,82,0.06)";
 
-  /* نص الـ nav فوق الـ Hero (أبيض) vs بعده (متغير) */
   const navTextColor = isDarkHeader
     ? "rgba(240,244,255,0.88)"
     : "var(--text-secondary)";
@@ -107,7 +103,6 @@ export function Header() {
     ? "rgba(240,244,255,0.64)"
     : "var(--text-muted)";
 
-  /* زر الوضع الليلي */
   const themeBtnLabel = theme === "dark"
     ? (locale === "ar" ? "الوضع النهاري" : "Light Mode")
     : (locale === "ar" ? "الوضع الليلي" : "Dark Mode");
@@ -140,27 +135,36 @@ export function Header() {
           height: "72px",
         }}>
           {/* Logo */}
-          <Link href="/" aria-label="برو أوبشن — الصفحة الرئيسية" style={{
+          <Link href="/" aria-label="برو أوبشن للاستشارات المهنية — الصفحة الرئيسية" style={{
             display: "flex", alignItems: "center", gap: "0.625rem",
             textDecoration: "none", flexShrink: 0,
           }}>
-            <Image src={logo} alt="شعار برو أوبشن Pro Option Logo"
+            <Image src={logo} alt="شعار برو أوبشن للاستشارات المهنية | Pro Option for Professional Consultant Logo"
               width={38} height={38} style={{ borderRadius: "7px" }} priority />
-            <div style={{ lineHeight: 1.1 }}>
-              <div style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: "1rem", fontWeight: 700,
-                color: logoTitleColor, letterSpacing: "0.02em",
-                transition: "color 0.3s",
-              }}>
-                Pro Option
-              </div>
-              <div style={{
-                fontFamily: "'IBM Plex Sans Arabic', sans-serif",
-                fontSize: "0.68rem",
-                color: logoSubColor, letterSpacing: "0.05em",
-                transition: "color 0.3s",
-              }}>برو أوبشن</div>
+            <div suppressHydrationWarning style={{ lineHeight: 1.15 }}>
+              {locale === "ar" ? (
+                <div style={{
+                  fontFamily: "'IBM Plex Sans Arabic', sans-serif",
+                  fontSize: "1.1rem", fontWeight: 700,
+                  color: logoTitleColor, letterSpacing: "0.01em",
+                  transition: "color 0.3s",
+                }}>برو أوبشن للاستشارات المهنية</div>
+              ) : (
+                <>
+                  <div style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: "0.95rem", fontWeight: 700,
+                    color: logoTitleColor, letterSpacing: "0.03em",
+                    transition: "color 0.3s",
+                  }}>Pro Option</div>
+                  <div style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: "0.62rem", fontWeight: 500,
+                    color: logoSubColor, letterSpacing: "0.06em",
+                    transition: "color 0.3s",
+                  }}>for Professional Consulting</div>
+                </>
+              )}
             </div>
           </Link>
 
@@ -180,7 +184,6 @@ export function Header() {
 
           {/* Desktop Actions */}
           <div className="desktop-actions" style={{ alignItems: "center", gap: "0.625rem" }}>
-            {/* زر الوضع الليلي — الهلال */}
             <button
               onClick={toggleTheme}
               aria-label={themeBtnLabel}
